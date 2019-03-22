@@ -1,5 +1,5 @@
 <?php
-require_once '/opt/lampp/htdocs/register/conpik.php';
+require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
         $_SESSION["login"] = true;
