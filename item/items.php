@@ -37,6 +37,8 @@ if(isset($_COOKIE["login"])){
      </style>
    </head>
    <body>
+
+     <!-- header -->
      <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
        <a class="nav-link" href="#">Forum</a>
        <a class="nav-link" href="#">Jual Beli</a>
@@ -96,13 +98,15 @@ if(isset($_COOKIE["login"])){
      </div>
    </nav>
    <!--end of navbar 2-->
+
+   <!--  -->
    <div class="container bg-light">
      <div class="row">
        <div class="col-8">
   <div class="row mt-3">
     <div class="col-6">
       <div class="card">
-        <img src="/main/img/urea.jpg"class="img-fluid" alt="...">
+        <img src="/PT-01/main/img/urea.jpg"class="img-fluid" alt="...">
       </div>
       <a href="/checkout/checkout.php">
         <button type="button" class="btn btn-success mt-5 col-lg-12" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
@@ -159,7 +163,7 @@ if(isset($_COOKIE["login"])){
   <div class="col-3.8 ml-2">
     <ul class="list-group text-center">
       <li class="list-group-item pl-12 mt-3" style="background:#ffffff">
-        <img class="img-thumbnail" src="/main/img/facebook.png" alt="">
+        <img class="img-thumbnail" src="/PT-01/main/img/facebook.png" alt="">
         <p style="font-size:13px;">Toko Traktor<br>
           feedback:99%<br>
           Join:10-11-2017
@@ -167,9 +171,9 @@ if(isset($_COOKIE["login"])){
       </li>
       <li class="list-group-item pl-12 mt-3" style="background:#ffffff">
         Dukungan Pengiriman<hr><br>
-        <img src="/main/img/logo JNE.png" alt=""><hr><br>
-        <img src="/main/img/pos indo.png" alt=""><hr><br>
-        <img src="/main/img/jnt.png" alt="">
+        <img src="/PT-01/main/img/logo JNE.png" alt=""><hr><br>
+        <img src="/PT-01/main/img/pos indo.png" alt=""><hr><br>
+        <img src="/PT-01/main/img/jnt.png" alt="">
       </li>
     </ul>
   </div>
@@ -181,7 +185,7 @@ if(isset($_COOKIE["login"])){
       <a href="">
         <div class="col md-4 overflow-hidden">
           <div class="card" style="width: 15rem;">
-            <img src="/main/img/tucano.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+            <img src="/PT-01/main/img/tucano.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Traktor Tucano</h5>
                 <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -195,7 +199,7 @@ if(isset($_COOKIE["login"])){
       <a href="">
         <div class="col md-4 overflow-hidden">
           <div class="card" style="width: 15rem;">
-            <img src="/main/img/rowcrop.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+            <img src="/PT-01/main/img/rowcrop.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Traktor Row Crop</h5>
                 <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -209,7 +213,7 @@ if(isset($_COOKIE["login"])){
       <a href="">
         <div class="col md-4 overflow-hidden">
           <div class="card" style="width: 15rem;">
-            <img src="/main/img/seeder.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+            <img src="/PT-01/main/img/seeder.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Traktor Penyemai</h5>
                 <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -223,7 +227,7 @@ if(isset($_COOKIE["login"])){
       <a href="">
         <div class="col md-4 overflow-hidden">
           <div class="card" style="width: 15rem;">
-            <img src="/main/img/coba.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+            <img src="/PT-01/main/img/coba.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Traktor Versatile</h5>
                 <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -254,10 +258,10 @@ if(isset($_COOKIE["login"])){
       <div class="kaki2 style="font-size: 0.5rem;"">
         <ul>
           <li>Follow KebunKu on</li>
-          <li><img src="/main/img/facebook.png"</src></li>
-          <li><img src="/main/img/twitter.png"</src></li>
-          <li><img src="/main/img/instagram.png"</src></li>
-          <li><img src="/main/img/youtube.png"</src></li>
+          <li><img src="/PT-01/main/img/facebook.png"</src></li>
+          <li><img src="/PT-01/main/img/twitter.png"</src></li>
+          <li><img src="/PT-01/main/img/instagram.png"</src></li>
+          <li><img src="/PT-01/main/img/youtube.png"</src></li>
         </ul>
       </div>
   </footer>

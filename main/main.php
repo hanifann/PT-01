@@ -87,8 +87,11 @@ if(isset($_COOKIE["login"])){
   </nav>
 
 <!--end of navbar 2-->
+
 <!--image-slider-->
-  <div class="carousel slide" style="padding-left:25%;padding-top:1rem;"data-ride="carousel" id="MagicCarousel">
+<div class="container col-8">
+
+  <div class="carousel slide" style="padding-top:1rem;"data-ride="carousel" id="MagicCarousel">
     <ol class="carousel-indicators">
       <li data-target="#MagicCarousel" data-slide-to="0" active></li>
       <li data-target="#MagicCarousel" data-slide-to="2"></li>
@@ -137,6 +140,7 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
   </div>
+</div>
   <!-- end of image slider-->
   <!--kategori-->
   <div class="laku">
