@@ -1,5 +1,5 @@
 <?php
-require '/opt/lampp/htdocs/register/conpik.php';
+require '/opt/lampp/htdocs/PT-01/register/conpik.php';
 
 if(isset($_POST["login"])){
     login($_POST);
