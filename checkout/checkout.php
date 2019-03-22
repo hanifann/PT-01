@@ -54,7 +54,7 @@ if(isset($_POST["Alamat"])){
           swal("Barang berhasil dihapus", {
             icon: "success",
           });
-        } 
+        }
       });
      }
     </script>
@@ -81,17 +81,17 @@ if(isset($_POST["Alamat"])){
         </div>
         <?php
         if(!isset($_SESSION['login'])){
-        echo "<a class='nav-link' href='/login/login.php'>Login </a>";
+        echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else{
 
-        echo " Selamat Datang <a class='nav-link dropdown' href='/materi/logut.php'> hanifan</a>";
+        echo " Selamat Datang <a class='nav-link dropdown' href='/PT-01/materi/logut.php'> hanifan</a>";
       }
         ?>
     </nav>
     <!--end of navbar 1-->
     <!--navbar 2-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
-    <a class="navbar-brand" href="/main/main.php">Home</a>
+    <a class="navbar-brand" href="/PT-01/main/main.php">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -111,7 +111,7 @@ if(isset($_POST["Alamat"])){
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item d-flex align-items-end">
-          <a class="nav-link" href="/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+          <a class="nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
         </li>
       </ul>
     </div>
@@ -131,7 +131,7 @@ if(isset($_POST["Alamat"])){
                  <div class="row">
                    <div class="col">
                      <p>Barang</p><hr>
-                     <img src="/main/img/urea.jpg" class="img-fluid" alt="">
+                     <img src="/PT-01/main/img/urea.jpg" class="img-fluid" alt="">
                    </div>
 
                    <div class="col-5">
@@ -223,10 +223,10 @@ if(isset($_POST["Alamat"])){
         <div class="kaki2 style="font-size: 0.5rem;"">
           <ul>
             <li>Follow KebunKu on</li>
-            <li><a href="#"><img src="/main/img/facebook.png"</src></a></li>
-            <li><a href="#"><img src="/main/img/twitter.png"</src></a></li>
-            <li><a href="#"><img src="/main/img/instagram.png"</src></a></li>
-            <li><a href="#"><img src="/main/img/youtube.png"</src></a></li>
+            <li><a href="#"><img src="/PT-01/main/img/facebook.png"</src></a></li>
+            <li><a href="#"><img src="/PT-01/main/img/twitter.png"</src></a></li>
+            <li><a href="#"><img src="/PT-01/main/img/instagram.png"</src></a></li>
+            <li><a href="#"><img src="/PT-01/main/img/youtube.png"</src></a></li>
           </ul>
         </div>
     </footer>

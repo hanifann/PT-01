@@ -61,18 +61,18 @@ if(isset($_COOKIE["login"])){
          </div>
          <?php
          if(!isset($_SESSION['login'])){
-         echo "<a class='nav-link' href='/login/login.php'>Login</a>";
+         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login</a>";
        }else{
          $getUser = tampilkan();
          $tampil = mysqli_fetch_assoc($getUser);
-         echo "Selamat Datang <a class='nav-link dropdown' href='/materi/logut.php'>".$tampil['username']."</a>";
+         echo "Selamat Datang <a class='nav-link dropdown' href='/PT-01/materi/logut.php'>".$tampil['username']."</a>";
          }
          ?>
      </nav>
      <!--end of navbar 1-->
      <!--navbar 2-->
      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
-     <a class="navbar-brand" href="/main/main.php">Home</a>
+     <a class="navbar-brand" href="/PT-01/main/main.php">Home</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -92,7 +92,7 @@ if(isset($_COOKIE["login"])){
        </ul>
        <ul class="navbar-nav">
          <li class="nav-item d-flex align-items-end">
-           <a class="nav-link" href="/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+           <a class="nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
          </li>
        </ul>
      </div>
@@ -108,7 +108,7 @@ if(isset($_COOKIE["login"])){
       <div class="card">
         <img src="/PT-01/main/img/urea.jpg"class="img-fluid" alt="...">
       </div>
-      <a href="/checkout/checkout.php">
+      <a href="/PT-01/checkout/checkout.php">
         <button type="button" class="btn btn-success mt-5 col-lg-12" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
       </a>
     </div>

@@ -61,16 +61,16 @@ if(isset($_POST["jual_barang"])){
         </div>
         <?php
         if(!isset($_SESSION['login'])){
-        echo "<a class='nav-link' href='/login/login.php'>Login </a>";
+        echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else{
         $getUser = tampilkan();
         $tampil = mysqli_fetch_assoc($getUser);
-        echo "Selamat Datang <a class='nav-link dropdown' href='/materi/logut.php'>".$tampil['username']."</a>";
+        echo "Selamat Datang <a class='nav-link dropdown' href='/PT-01/materi/logut.php'>".$tampil['username']."</a>";
         }
         ?>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
-    <a class="navbar-brand" href="/main/main.php">Home</a>
+    <a class="navbar-brand" href="/PT-01/main/main.php">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -210,10 +210,10 @@ if(isset($_POST["jual_barang"])){
               <div class="kaki2 style="font-size: 0.5rem;"">
                 <ul>
                   <li>Follow KebunKu on</li>
-                  <li><img src="/main/img/facebook.png"</src></li>
-                  <li><img src="/main/img/twitter.png"</src></li>
-                  <li><img src="/main/img/instagram.png"</src></li>
-                  <li><img src="/main/img/youtube.png"</src></li>
+                  <li><img src="/PT-01/main/img/facebook.png"</src></li>
+                  <li><img src="/PT-01/main/img/twitter.png"</src></li>
+                  <li><img src="/PT-01/main/img/instagram.png"</src></li>
+                  <li><img src="/PT-01/main/img/youtube.png"</src></li>
                 </ul>
               </div>
           </footer>

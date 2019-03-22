@@ -92,7 +92,6 @@ if(isset($_COOKIE["login"])){
      <div class="container">
        <div class="row col">
            <div class="col">
-             <img src="kategory/tractor.png" alt="" class="img-fluid">
            </div>
          </div>
          <hr>
@@ -101,7 +100,7 @@ if(isset($_COOKIE["login"])){
 
          <div class="col md-4 overflow-hidden mt-3">
            <div class="card" style="width: 15rem;">
-             <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+             <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
              <div class="card-body">
                <h5 class="card-title">Traktor Versatile</h5>
                <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -114,7 +113,7 @@ if(isset($_COOKIE["login"])){
 
        <div class="col md-4 overflow-hidden mt-3">
          <div class="card" style="width: 15rem;">
-           <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+           <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
            <div class="card-body">
              <h5 class="card-title">Traktor Versatile</h5>
              <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -127,7 +126,7 @@ if(isset($_COOKIE["login"])){
 
      <div class="col md-4 overflow-hidden mt-3">
        <div class="card" style="width: 15rem;">
-         <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+         <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
          <div class="card-body">
            <h5 class="card-title">Traktor Versatile</h5>
            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -140,7 +139,7 @@ if(isset($_COOKIE["login"])){
 
    <div class="col md-4 overflow-hidden mt-3">
      <div class="card" style="width: 15rem;">
-       <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+       <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
        <div class="card-body">
          <h5 class="card-title">Traktor Versatile</h5>
          <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -153,7 +152,7 @@ if(isset($_COOKIE["login"])){
 
  <div class="col md-4 overflow-hidden mt-3">
    <div class="card" style="width: 15rem;">
-     <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+     <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
      <div class="card-body">
        <h5 class="card-title">Traktor Versatile</h5>
        <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -166,7 +165,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -179,7 +178,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -192,7 +191,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -205,7 +204,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -218,7 +217,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -232,7 +231,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -247,7 +246,7 @@ if(isset($_COOKIE["login"])){
 
 <div class="col md-4 overflow-hidden mt-3">
   <div class="card" style="width: 15rem;">
-    <img src="/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
+    <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
     <div class="card-body">
       <h5 class="card-title">Traktor Versatile</h5>
       <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -274,10 +273,10 @@ if(isset($_COOKIE["login"])){
       <div class="kaki2 style="font-size: 0.5rem;"">
         <ul>
           <li>Follow KebunKu on</li>
-          <li><a href="#"><img src="/main/img/facebook.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/twitter.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/instagram.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/youtube.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/facebook.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/twitter.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/instagram.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/youtube.png"</src></a></li>
         </ul>
       </div>
   </footer>

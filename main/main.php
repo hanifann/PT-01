@@ -31,7 +31,7 @@ if(isset($_COOKIE["login"])){
     <!--Navbar 1-->
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
       <a class="nav-link" href="#">Jual Beli</a>
-      <a class="nav-link" href="/turorial/tutorial.php">Tutorial</a>
+      <a class="nav-link" href="/PT-01/turorial/tutorial.php">Tutorial</a>
       <div class="input-group md-form form-sm form-2 pl-0 w-50  ">
       <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
       <div class="input-group-append">
@@ -49,11 +49,11 @@ if(isset($_COOKIE["login"])){
         </div>
         <?php
         if(!isset($_SESSION['login'])){
-        echo "<a class='nav-link' href='/login/login.php'>Login </a>";
+        echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else{
         $getUser = tampilkan();
         $tampil = mysqli_fetch_assoc($getUser);
-        echo "Selamat Datang <a class='nav-link dropdown' href='/materi/logut.php'>".$tampil['username']."</a>";
+        echo "Selamat Datang <a class='nav-link dropdown' href='/PT-01/materi/logut.php'>".$tampil['username']."</a>";
       }
         ?>
     </nav>
@@ -80,7 +80,7 @@ if(isset($_COOKIE["login"])){
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item d-flex align-items-end">
-          <a class="nav-link" href="/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+          <a class="nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
         </li>
       </ul>
     </div>
@@ -149,7 +149,7 @@ if(isset($_COOKIE["login"])){
   <div class="container col-md-7">
     <div class="row text-center">
       <div class="col">
-        <a href="/kategori/kategori.php"><img src="kategory/tractor.png" alt="" class="img-thumbnail"></a>
+        <a href="/PT-01/kategori/kategori.php"><img src="kategory/tractor.png" alt="" class="img-thumbnail"></a>
         <p></p>
       </div>
       <div class="col">
@@ -297,7 +297,7 @@ if(isset($_COOKIE["login"])){
             </div>
           </div>
         </a>
-        <a href="/item/items.php">
+        <a href="/PT-01/item/items.php">
           <div class="col md-4 overflow-hidden">
             <div class="card" style="width: 14rem;">
               <img src="img/pupuksaja.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
