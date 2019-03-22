@@ -1,0 +1,80 @@
+.img-log{
+  margin: 0 auto;
+  width: 500px;
+}
+
+.login{
+  padding: 5px 120px;
+}
+
+.btn{
+  padding: 5px 120px;
+}
+
+.btn-info{
+  border-color: #155079;
+  margin: 20px 0;
+  border: 0;
+  transition: all 0.7s;
+  border: 1px solid #155079;
+}
+
+.btn-info:hover{
+  border-color: #fff;
+  color: #155079;
+}
+h1{
+  text-align: center;
+}
+
+.g{
+  padding: 80px 0;
+}
+
+.h{
+  margin: 15px 0;
+}
+
+.form-control{
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.7s;
+}
+
+.input-group-addon{
+  background: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.form-control:focus{
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand{
+  align-items: center;
+}
+
+
+
+
+
+
+
+/*css media quey*/
+
+@media only screen and (max-width : 500px){
+  .login{
+    padding: 5px 20px;
+  }
+  .g{
+    margin: 40px 0;
+
+  }
+}
