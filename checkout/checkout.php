@@ -55,12 +55,9 @@ if(isset($_POST["Alamat"])){
       });
      }
      $(document).ready(function(){
-       $("button").click(function(){
-         $("#div1").load("demo_test.txt");
-       });
-     });
-     $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
+      $("#opsi").click(function(){
+        $("#opsiLain").load("demo_test.txt");
+      });
     });
     </script>
    </head>
@@ -200,7 +197,6 @@ if(isset($_POST["Alamat"])){
            <div class="col-8">
              <ul class="list-group">
                <li class="list-group-item">
-
                  <div class="container">
                    <div class="row">
                      <div class="col">
@@ -223,14 +219,13 @@ if(isset($_POST["Alamat"])){
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
                    </div>
                    <div class="modal-body">
-                     <label for="bayar" class="textBayar">QuickPay <img class="infoBayar" src="rounded-info-button.png" alt=""></label>
+                     <label for="bayar" class="textBayar">QuickPay <a href="#" title="Apa itu QuickPay?" data-toggle="popover" data-placement="right" data-content="Rrekomendasi pembayaran berdasatkan hasil transaksi"><img class="infoBayar" src="rounded-info-button.png" alt=""></a></label>
                      <div class="container shadow p-3 mb-5 bg-white border rounded" id="bayar">
-                       <b class="textBayar">Rp.500.000</b>
-
+                       <b style="color:#A5A5A5">Rp.500.000</b>
                      </div>
                    </div>
                    <div class="modal-footer">
-                     <button type="button" class="btn btn-outline-success col-12" name="button">Pilih metode pembayaran lainnya</button>
+                     <button type="button" id="opsi" class="btn btn-outline-success col-12" name="opsi">Pilih metode pembayaran lainnya</button>
                    </div>
                  </div>
                </div>
