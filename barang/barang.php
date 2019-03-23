@@ -17,7 +17,6 @@ if(isset($_POST["jual_barang"])){
     $_POST['deskripsi_barang'],
     $_POST['poto_barang']
   );
-
 }
 
 ?>
