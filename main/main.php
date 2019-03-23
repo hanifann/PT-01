@@ -89,7 +89,7 @@ if(isset($_COOKIE["login"])){
 <!--end of navbar 2-->
 
 <!--image-slider-->
-<div class="container col-8">
+<div class="container col-7">
 
   <div class="carousel slide" style="padding-top:1rem;"data-ride="carousel" id="MagicCarousel">
     <ol class="carousel-indicators">
@@ -103,7 +103,7 @@ if(isset($_COOKIE["login"])){
 
       <div class="carousel-item active">
 
-        <img class="d-block w-70 d-flex justify-content-center" src="img/generic-banner.jpg" alt="First Slide">
+        <img class="d-block w-80 d-flex justify-content-center" src="img/generic-banner.jpg" alt="First Slide">
           <div class="carousel-caption">
           <h3></h3>
           <p></p>
@@ -111,7 +111,7 @@ if(isset($_COOKIE["login"])){
         </div>
 
         <div class="carousel-item">
-          <img class="d-block w-70" src="img/special-offer-banner.jpg" alt="Second Slide">
+          <img class="d-block w-80" src="img/special-offer-banner.jpg" alt="Second Slide">
           <div class="carousel-caption">
             <h3></h3>
             <p></p>
@@ -121,7 +121,7 @@ if(isset($_COOKIE["login"])){
           <div class="carousel-item">
 
 
-            <img class="d-block w-70" src="img/rsz_untitled.jpg" alt="3th Slide">
+            <img class="d-block w-80" src="img/rsz_untitled.jpg" alt="3th Slide">
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -140,7 +140,6 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
   </div>
-</div>
   <!-- end of image slider-->
   <!--kategori-->
   <div class="laku">
