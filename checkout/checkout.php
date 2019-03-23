@@ -26,9 +26,6 @@ if(isset($_POST["Alamat"])){
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta charset="utf-8">
     <link rel="stylesheet" href="checkout.css">
@@ -187,7 +184,7 @@ if(isset($_POST["Alamat"])){
                 </select>
               </div>
             </div>
-             <button style="background:#3FC0B7;" type="button" onclick="beli()" name="bayar" class="btn btn-success col-12">Bayar</button>
+             <button style="background:#FF5722;font-size:14px;" type="button" data-toggle="modal" data-target="#myModal" name="bayar" class="btn btn-info btn-lg col-12">Pilih Pembayaran</button>
           </div>
         </div>
          </div>
@@ -209,6 +206,24 @@ if(isset($_POST["Alamat"])){
                  </div>
                </div>
              </div>
+             <!-- Modal -->
+             <div class="modal fade" id="myModal" role="dialog">
+               <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h4 class="modal-title text-left">Modal Header</h4>
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   </div>
+                   <div class="modal-body">
+                     <p>This is a large modal.</p>
+                   </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
            </div>
        <footer id="myFooter">
         <div class="kaki">
