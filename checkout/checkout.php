@@ -59,6 +59,7 @@ if(isset($_POST["Alamat"])){
    <body>
      <!--Navbar 1-->
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
+      <a class="nav-link" href="#"><img src="../login/kambing.png" style="width:10%" alt=""></a>
       <a class="nav-link" href="#">Jual Beli</a>
       <a class="nav-link" href="#">Tutorial</a>
       <div class="input-group md-form form-sm form-2 pl-0 w-50  ">
