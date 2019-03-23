@@ -36,7 +36,7 @@ function login($data){
 
             setcookie("login","ok", time()+60);
             echo "<script>alert('Login Berhasil');
-            document.location.href='/main/main.php'</script>";
+            document.location.href='/PT-01/main/main.php'</script>";
         }else{
             echo "<script>alert('Login gagal')</script>";
         }
