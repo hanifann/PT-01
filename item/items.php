@@ -114,8 +114,8 @@ if(isset($_COOKIE["login"])){
     </div>
 
     <div class="col-6">
-      <h4>Traktor Biasa</h4>
-      <h5 style="color:#E7362F;">Rp. 20.000.000</h5>
+      <h4>Pupuk Urea</h4>
+      <h5 style="color:#E7362F;">Rp. 2.000.000</h5>
       <br>
       <br>
       <ul class="list-group">
