@@ -6,6 +6,15 @@ a{
   color:#6E6E6E;
 }
 
+.textBayar{
+  color: #A5A5A5;
+}
+
+.infoBayar{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
 a:hover{
   color: #3FC0B7;
   text-decoration: none;

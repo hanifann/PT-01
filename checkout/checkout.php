@@ -54,6 +54,14 @@ if(isset($_POST["Alamat"])){
         }
       });
      }
+     $(document).ready(function(){
+       $("button").click(function(){
+         $("#div1").load("demo_test.txt");
+       });
+     });
+     $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
     </script>
    </head>
    <body>
@@ -207,18 +215,22 @@ if(isset($_POST["Alamat"])){
                </div>
              </div>
              <!-- Modal -->
-             <div class="modal fade" id="myModal" role="dialog">
-               <div class="modal-dialog modal-lg">
+             <div class="modal fade mt-12" id="myModal" role="dialog" style="background:">
+               <div class="modal-dialog modal-md mt-12">
                  <div class="modal-content">
                    <div class="modal-header">
                      <h4 class="modal-title text-left">Modal Header</h4>
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
                    </div>
                    <div class="modal-body">
-                     <p>This is a large modal.</p>
+                     <label for="bayar" class="textBayar">QuickPay <img class="infoBayar" src="rounded-info-button.png" alt=""></label>
+                     <div class="container shadow p-3 mb-5 bg-white border rounded" id="bayar">
+                       <b class="textBayar">Rp.500.000</b>
+
+                     </div>
                    </div>
                    <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-outline-success col-12" name="button">Pilih metode pembayaran lainnya</button>
                    </div>
                  </div>
                </div>
