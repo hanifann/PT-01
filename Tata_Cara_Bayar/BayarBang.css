@@ -74,3 +74,18 @@
   padding-left: 7rem;
   padding-top: 2rem;
 }
+
+a{
+  color:#6E6E6E;
+}
+
+a:hover{
+  color: #3FC0B7;
+  text-decoration: none;
+}
+nav{
+  color: #6E6E6E;
+}
+.navbar{
+  color: #6E6E6E;
+}
