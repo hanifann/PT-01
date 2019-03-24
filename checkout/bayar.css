@@ -6,22 +6,6 @@ a{
   color:#6E6E6E;
 }
 
-.kiri{
-  color: #A5A5A5A5;
-  text-align: right;
-  font-size: 10px;
-}
-
-a:hover{
-  color: #3FC0B7;
-  text-decoration: none;
-}
-
-.tombol{
-  background: #3FC0B7;
-  border: none;
-}
-
 #myFooter{
     padding-top:32px;
 }

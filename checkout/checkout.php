@@ -183,13 +183,13 @@ if(isset($_POST["Alamat"])){
                 <label for="katefori">Pilih Durasi Pengiriman</label>
                 <select id="kategori" name="kategori_barang" class="form-control">
                   <option selected>Pilih Durasi</option>
-                  <option>Express (1-2 hari)</option>
-                  <option>Regular (2-4 hari)</option>
-                  <option>Ekonomi (3-6 hari)</option>
+                  <option>Express (1-2 hari)<p class="kiri">Rp.20.0000</p></option>
+                  <option>Regular (2-4 hari)<p class="kiri">Rp.15.0000</p></option>
+                  <option>Ekonomi (3-6 hari)<p class="kiri">Rp.10.0000</p></option>
                 </select>
               </div>
             </div>
-             <button style="background:#FF5722;font-size:14px;" type="button" data-toggle="modal" data-target="#myModal" name="bayar" class="btn btn-info btn-lg col-12">Pilih Pembayaran</button>
+            <a href="bayar.php"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
           </div>
         </div>
          </div>
@@ -210,28 +210,6 @@ if(isset($_POST["Alamat"])){
                  </div>
                </div>
              </div>
-             <!-- Modal -->
-             <div class="modal fade mt-12" id="myModal" role="dialog" style="background:">
-               <div class="modal-dialog modal-md mt-12">
-                 <div class="modal-content">
-                   <div class="modal-header">
-                     <h4 class="modal-title text-left">Modal Header</h4>
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   </div>
-                   <div class="modal-body">
-                     <label for="bayar" class="textBayar">QuickPay <a href="#" title="Apa itu QuickPay?" data-toggle="popover" data-placement="right" data-content="Rrekomendasi pembayaran berdasatkan hasil transaksi"><img class="infoBayar" src="rounded-info-button.png" alt=""></a></label>
-                     <div class="container shadow p-3 mb-5 bg-white border rounded" id="bayar">
-                       <b style="color:#A5A5A5">Rp.500.000</b>
-                     </div>
-                   </div>
-                   <div class="modal-footer">
-                     <button type="button" id="opsi" class="btn btn-outline-success col-12" name="opsi">Pilih metode pembayaran lainnya</button>
-                   </div>
-                 </div>
-               </div>
-             </div>
-            </div>
-           </div>
        <footer id="myFooter">
         <div class="kaki">
             <ul>
