@@ -12,8 +12,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div class="container border">
-  
+<div class="container border mt-3">
+  <h5 class="text-center mt-4">Total Pembelian</h5>
+  <h5 class="text-center" style="color:#FF7300;">Rp. 500.000</h5>
 </div>
 </body>
 </html>

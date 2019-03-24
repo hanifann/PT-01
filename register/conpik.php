@@ -85,14 +85,6 @@ function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang
   }
 }
 
-function tampilkanBarang(){
-  global $connBarang;
-  $gambar = addslashes($_FILES['gambar']['tmp_name']);
-  $nama = addslashes($_FILES['gambar']['nama']);
-  $gambar = file_get_contents($gambar);
-  $gambar = base64_encode($gambar);
-}
-
 function alamat_jual($data){
   global $connJual;
 
