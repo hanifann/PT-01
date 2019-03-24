@@ -6,17 +6,24 @@ if(isset($_COOKIE["login"])){
     }
 }
 
-if(isset($_POST["jual_barang"])){
-  doJualBarang(
-    $_POST['nama_barang'],
-    $_POST['kondisi_barang'],
-    $_POST['kategori_barang'],
-    $_POST['alamat_barang'],
-    $_POST['harga_barang'],
-    $_POST['jml_barang'],
-    $_POST['deskripsi_barang'],
-    $_POST['poto_barang']
-  );
+if (isset($_POST["jual_barang"])) {
+  if (getimagesize($_FILES['poto_barang']['tmp_name']) == false) {
+    echo "image bang";
+  }else {
+    $image = addslashes($_FILES['poto_barang']['tmp_name']);
+    $name = addslashes($_FILES['poto_barang']['name']);
+    $image = file_get_contents($image);
+    $image = base64_encode($image);
+    $nama_barang = $_POST['nama_barang'];
+    $kondisi_barang = $_POST['kondisi_barang'];
+    $kategori_barang = $_POST['kategori_barang'];
+    $alamat_barang = $_POST['alamat_barang'];
+    $harga_barang = $_POST['harga_barang'];
+    $jml_barang = $_POST['jml_barang'];
+    $deskripsi_barang = $_POST['deskripsi_barang'];
+    saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang, $alamat_barang,
+      $harga_barang, $jml_barang, $deskripsi_barang);
+  }
 }
 
 ?>
@@ -109,7 +116,7 @@ if(isset($_POST["jual_barang"])){
         <div class="container" style="background:#ffffff; border:solid 1px #1DA89F; padding-bottom:1rem;">
 
           <!-- awal form -->
-        <form class="" method="post">
+        <form class="" enctype="multipart/form-data" method="post">
           <div class="form-row">
 
             <!-- nama_barang -->

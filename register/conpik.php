@@ -70,16 +70,19 @@ function tampilkan(){
   return mysqli_query($conn, "SELECT username from user");
 }
 
-function doJualBarang($nama_barang, $kondisi_barang, $kategori_barang, $alamat_barang,
-    $harga_barang, $jml_barang, $deskripsi_barang, $gambar){
-    global $connBarang;
-
-    $insertBarang = mysqli_query($connBarang, "INSERT INTO jual_barang(
-      nama_barang, kondisi_barang, kategori_barang, alamat_barang, harga_barang, jumlah_barang,
-      deskripsi_barang, poto_barang)
-    VALUES ('$nama_barang', '$kondisi_barang', '$kategori_barang', '$alamat_barang', '$harga_barang', '$jml_barang',
-    '$deskripsi_barang', '$gambar')");
-
+function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
+  $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
+  global $connBarang;
+  $query = "INSERT INTO jual_barang(name,nama_barang,kondisi_barang,kategori_barang,
+     alamat_barang,harga_barang,jumlah_barang,deskripsi_barang, poto_barang
+  ) VALUES ('$name','$nama_barang','$kondisi_barang','$kategori_barang','$alamat_barang',
+    '$harga_barang','$jml_barang','$deskripsi_barang','$image')";
+  $result = mysqli_query($connBarang,$query);
+  if($result){
+    echo "<br/>Mantul bang";
+  }else{
+    echo "<br/>gagal upload bang.";
+  }
 }
 
 function tampilkanBarang(){
