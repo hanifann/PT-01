@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/conpik.css">
+  </head>
+  <body>
+
+  </body>
+</html>
 <?php
 session_start();
 $conn = mysqli_connect("localhost","root","","Login_PT");
@@ -68,6 +79,41 @@ function login($data){
 function tampilkan(){
   global $conn;
   return mysqli_query($conn, "SELECT username from user");
+}
+
+function tampilkan_barang(){
+  global $connBarang;
+  $query = "SELECT * FROM jual_barang";
+  $result =mysqli_query($connBarang,$query);
+?>
+<div class="container mt-3">
+        <div class="row">
+  <?php
+  while($row = mysqli_fetch_array($result)){
+    ?>
+
+      <a href="">
+
+
+    <div class="col md-4 overflow-hidden">
+      <div class="card" style="width: 15rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">'; ?>
+          <div class="card-body">
+
+            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <div class="harga">
+              <?php echo "<p> Rp. $row[6] ,- </p>"; ?>
+            </div>
+          </div>
+      </div>
+    </div>
+  </a>
+  <?php
+}?>
+</div>
+</div>
+  <?php
 }
 
 function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,

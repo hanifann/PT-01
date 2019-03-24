@@ -1,0 +1,20 @@
+body{
+  background: #F7F7F7;
+}
+
+a{
+  color:#6E6E6E;
+}
+
+.img-card-top{
+  border-bottom: 1px solid #6E6E6E;
+}
+
+.harga{
+  color: #FF7100;
+}
+
+a:hover{
+  color: #3FC0B7;
+  text-decoration: none;
+}
