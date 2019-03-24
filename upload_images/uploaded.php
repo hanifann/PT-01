@@ -29,6 +29,7 @@
       include "koneksi.php";
 
       $query = "SELECT * From gambar";
+      https://www.youtube.com/watch?v=4ZpqQ3j1o2w
       $sql = mysqli_query($connect, $query);
 
       $row = mysqli_num_rows($sql);
