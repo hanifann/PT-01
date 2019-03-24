@@ -108,11 +108,29 @@ if(isset($_COOKIE["login"])){
       <div class="card">
         <img src="/PT-01/main/img/urea.jpg"class="img-fluid" alt="...">
       </div>
-      <a href="/PT-01/checkout/checkout.php">
-        <button type="button" class="btn btn-success mt-5 col-lg-12" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
-      </a>
+        <button type="button" class="btn btn-success mt-5 col-lg-12" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
     </div>
-
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Toko Pupuk</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
+              <a href="../checkout/checkout.php" class="col-6">
+                <button type="button" style="background:#FF710" class="btn btn-success">Lanjutkan ke Pembayaran</button>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
     <div class="col-6">
       <h4>Pupuk Urea</h4>
       <h5 style="color:#E7362F;">Rp. 2.000.000</h5>
