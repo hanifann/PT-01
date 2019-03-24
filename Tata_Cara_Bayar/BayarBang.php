@@ -88,179 +88,74 @@ if(isset($_COOKIE["login"])){
   <!--end of navbar 2-->
 
 <!-- PANEL -->
-<div class="container">
-
-  <div class="row">
-    <div class="col-4">
-      <div class="list-group" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-      </div>
-    </div>
-
-    <!-- ISI PANEL 1 -->
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...
-
-          <!-- MODAL BCA-->
-          <div class="container">
-            <h2>BANK BCA</h2>
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tata Cara Bayar</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Cara Pembayaran Melalui Bank BCA</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container">
-                      <img src="Bayar-BCA.jpg" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-
-              </div>
+<div class="container border mt-3">
+  <h5 class="text-center mt-4">Total Pembelian</h5>
+  <h5 class="text-center" style="color:#FF7300;">Rp. 500.000</h5>
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col-md-auto">
+              <img style="width:50%;" src="bni.png" alt="">
             </div>
-
-          </div>
-          <!-- END OF MODAL BCA -->
-        </div>
-        <!-- END OF PANEL 1 -->
-
-        <!-- ISI PANEL 2 -->
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...
-
-          <!-- MODAL BRI -->
-          <div class="container">
-            <h2>BANK BRI</h2>
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tata Cara Bayar</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Cara Pembayaran Melalui Bank BRI</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container">
-                      <img src="Bayar-BRI.jpg" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-
-              </div>
+            <div class="col mt-1">
+              <h6>BNI</h6>
             </div>
-
-          </div>
-          <!-- END OF MODAL BRI -->
-        </div>
-        <!-- END OF ISI PANEL 2 -->
-
-        <!-- ISI PANEL 3 -->
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...
-
-        <!-- MODAL MANDIRI -->
-        <div class="container">
-          <h2>BANK MANDIRI</h2>
-          <!-- Trigger the modal with a button -->
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tata Cara Bayar</button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Cara Pembayaran Melalui Bank MANDIRI</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <img src="Bayar-MANDIRI.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-
+            <div class="col-lg-1">
+              <img src="arrow.png" alt="">
             </div>
           </div>
-        </div>
-        <!-- END OF MODAL MANDIRI -->
-
-        </div>
-        <!-- END OF ISI PANEL 3 -->
-
-        <!-- ISI PANEL 4 -->
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...
-
-          <!-- MODAL BNI -->
-          <div class="container">
-            <h2>BANK BNI</h2>
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tata Cara Bayar</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Cara Pembayaran Melalui Bank BNI</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container">
-                      <img src="Bayar-BNI.jpg" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-
-              </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col-md-auto">
+              <img style="width:50%;" src="bri.png" alt="">
             </div>
-
+            <div class="col mt-1">
+              <h6>BRI</h6>
+            </div>
+            <div class="col-lg-1">
+              <img src="arrow.png" alt="">
+            </div>
           </div>
-          <!-- END OF MODAL BNI -->
-
-        </div>
-        <!-- END OF ISI PANEL 4 -->
-      </div>
-    </div>
-  </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col-md-auto">
+              <img style="width: 61.5px" src="bca.png" class="img-fluid" alt="">
+            </div>
+            <div class="col mt-1 ml-3">
+              <h6 class="ml-5">BCA</h6>
+            </div>
+            <div class="col-lg-1">
+              <img src="arrow.png" alt="">
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col-md-auto">
+              <img style="width:50%;" src="mandiri.png" alt="">
+            </div>
+            <div class="col mt-1">
+              <h6>MANDIRI</h6>
+            </div>
+            <div class="col-lg-1">
+              <img src="arrow.png" alt="">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<!-- END OF PANEL -->
-
-
-
-
-
-</body>
 <footer id="myFooter">
       <div class="kaki">
           <ul>
