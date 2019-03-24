@@ -28,32 +28,32 @@ if(isset($_COOKIE["login"])){
     <script>
       $(document).ready(function(){
         $("#bni").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("bni.php #bayar");
         });
       });
       $(document).ready(function(){
         $("#bri").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("bri.php #bayar");
         });
       });
       $(document).ready(function(){
         $("#bca").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("bca.php #bayar");
         });
       });
       $(document).ready(function(){
         $("#mandiri").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("mandiri.php #bayar");
         });
       });
       $(document).ready(function(){
         $("#hana").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("hana.php #bayar");
         });
       });
       $(document).ready(function(){
         $("#maybank").click(function(){
-          $("#tabelBayar").load("bca.php");
+          $("#tabelBayar").load("maybank.php #bayar");
         });
       });
       </script>
