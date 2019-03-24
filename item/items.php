@@ -123,9 +123,9 @@ if(isset($_COOKIE["login"])){
               <p>Some text in the modal.</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
+              <button type="button" style="" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
               <a href="../checkout/checkout.php" class="col-6">
-                <button type="button" style="background:#FF710" class="btn btn-success">Lanjutkan ke Pembayaran</button>
+                <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
               </a>
             </div>
         </div>
