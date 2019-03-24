@@ -7,6 +7,7 @@
   </head>
   <body>
 
+
   </body>
 </html>
 <?php
@@ -87,18 +88,31 @@ function tampilkan_barang(){
   $result =mysqli_query($connBarang,$query);
 ?>
 <div class="container mt-3">
-  <hr>
-        <div class="row">
+  <h1 class="text-center">Database Barang</h1>
+</div>
+<hr>
+
+<div class="container d-flex justify-content-center col-12">
+
+  <div class="row">
+
+
   <?php
   while($row = mysqli_fetch_array($result)){
     ?>
-      <a href="">
-    <div class="col md-4 overflow-hidden">
-      <div class="card" style="width: 15rem;">
-        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">'; ?>
+    <table>
+      <tr>
+        <td>
+
+    <!-- <div class="container mb-5 col mt-5"> -->
+      <a href="/PT-01/main/main.php">
+    <div class=" col mt-4 overflow-hidden">
+      <div class="card border border-primary" style="width: 14rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
           <div class="card-body">
 
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <?php $id=$row[1] ?>
             <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
             <div class="harga">
               <?php
@@ -106,22 +120,37 @@ function tampilkan_barang(){
               echo "<p><b> $rupiah </b></p>"; ?>
             </div>
 
+          </a>
+          <a>
+
             <div class="float-left mt-3">
-              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti">Ganti</button>
+              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti" method="POST" value="<<?php echo "$row[0]"; ?>"> Edit  </button>
             </div>
+          </a>
+
+          <a href="">
             <div class="float-right mt-3">
-              <button type="button" class="btn btn-outline-danger" name="button-hapus">Hapus</button>
+              <button type="button" method="POST" class="btn btn-outline-danger" name="button-hapus">
+              Hapus  </button>
             </div>
+          </a>
           </div>
       </div>
     </div>
-  </a>
+  </td>
+  </tr>
+</table>
   <?php
 }?>
 </div>
-<hr>
 </div>
+<hr>
   <?php
+}
+
+function delete_barang(){
+  global $connBarang;
+  $query = "DELETE FROM 'jual_barang' WHERE 'jual_barang'.'id_barang' = 2";
 }
 
 function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,

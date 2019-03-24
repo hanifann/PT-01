@@ -89,7 +89,7 @@ if(isset($_COOKIE["login"])){
    <!-- barang dagangan -->
    <?php tampilkan_barang(); ?>
 
-   <div class="container">
+   <div class="container d-flex justify-content-center">
 
    <button type="button" class="btn btn-success" name="button"> <a style="color:white" href="/PT-01/barang/barang.php">Tambah Barang</a> </button>
 
