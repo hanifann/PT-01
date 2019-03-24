@@ -32,7 +32,27 @@ if(isset($_COOKIE["login"])){
         });
       });
       $(document).ready(function(){
+        $("#bri").click(function(){
+          $("#karepmu").load("bca.php");
+        });
+      });
+      $(document).ready(function(){
         $("#bca").click(function(){
+          $("#karepmu").load("bca.php");
+        });
+      });
+      $(document).ready(function(){
+        $("#mandiri").click(function(){
+          $("#karepmu").load("bca.php");
+        });
+      });
+      $(document).ready(function(){
+        $("#hana").click(function(){
+          $("#karepmu").load("bca.php");
+        });
+      });
+      $(document).ready(function(){
+        $("#maybank").click(function(){
           $("#karepmu").load("bca.php");
         });
       });

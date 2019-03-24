@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2019 at 01:24 PM
+-- Generation Time: Mar 24, 2019 at 05:33 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `jual_barang` (
   `id_barang` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `nama_barang` varchar(30) NOT NULL,
   `kondisi_barang` varchar(10) NOT NULL,
   `kategori_barang` varchar(20) NOT NULL,
@@ -37,7 +38,7 @@ CREATE TABLE `jual_barang` (
   `harga_barang` int(11) NOT NULL,
   `jumlah_barang` int(11) NOT NULL,
   `deskripsi_barang` varchar(255) NOT NULL,
-  `poto_barang` blob NOT NULL
+  `poto_barang` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -2,6 +2,7 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script>
 $(document).ready(function(){
   $("#button").click(function(){
@@ -11,10 +12,8 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
-
-<button id="button">Get External Content</button>
-
+<div class="container border">
+  
+</div>
 </body>
 </html>
