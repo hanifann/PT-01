@@ -28,32 +28,32 @@ if(isset($_COOKIE["login"])){
     <script>
       $(document).ready(function(){
         $("#bni").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       $(document).ready(function(){
         $("#bri").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       $(document).ready(function(){
         $("#bca").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       $(document).ready(function(){
         $("#mandiri").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       $(document).ready(function(){
         $("#hana").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       $(document).ready(function(){
         $("#maybank").click(function(){
-          $("#karepmu").load("bca.php");
+          $("#tabelBayar").load("bca.php");
         });
       });
       </script>
@@ -120,7 +120,7 @@ if(isset($_COOKIE["login"])){
   <!--end of navbar 2-->
 
 <!-- PANEL -->
-<div id="karepmu" class="container border mt-3">
+<div class="container border mt-3">
   <h5 class="text-center mt-4">Total Pembelian</h5>
   <h5 class="text-center" style="color:#FF7300;">Rp. 500.000</h5>
   <table id="tabelBayar" class="table table-hover">
@@ -231,24 +231,4 @@ if(isset($_COOKIE["login"])){
     </tbody>
   </table>
 </div>
-<footer id="myFooter">
-      <div class="kaki">
-          <ul>
-              <li><a href="#">Company Information</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="#">Terms of service</a></li>
-          </ul>
-      <p class="footer-copyright">© 2019 Copyright KebunKu</p>
-      </div>
-      <div class="kaki2 style="font-size: 0.5rem;"">
-        <ul>
-          <li>Follow KebunKu on</li>
-          <li><a href="#"><img src="/PT-01/main/img/facebook.png"</src></a></li>
-          <li><a href="#"><img src="/PT-01/main/img/twitter.png"</src></a></li>
-          <li><a href="#"><img src="/PT-01/main/img/instagram.png"</src></a></li>
-          <li><a href="#"><img src="/PT-01/main/img/youtube.png"</src></a></li>
-        </ul>
-      </div>
-  </footer>
-</html>
+</body>
