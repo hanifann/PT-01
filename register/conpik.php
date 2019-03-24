@@ -101,7 +101,9 @@ function tampilkan_barang(){
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
             <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
             <div class="harga">
-              <?php echo "<p> Rp. $row[6] ,- </p>"; ?>
+              <?php
+              $rupiah = "Rp ".number_format($row[6],0,',','.');
+              echo "<p><b> $rupiah </b></p>"; ?>
             </div>
 
             <div class="float-left mt-3">
