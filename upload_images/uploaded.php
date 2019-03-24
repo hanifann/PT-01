@@ -22,13 +22,13 @@
       <?php
 
       // Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /opt/lampp/htdocs/PT-01/upload_images/uploaded.php on line 29
-      // 
+      //
 
 
 
       include "koneksi.php";
 
-      $query = "SELECT * FORM gambar";
+      $query = "SELECT * From gambar";
       $sql = mysqli_query($connect, $query);
 
       $row = mysqli_num_rows($sql);
