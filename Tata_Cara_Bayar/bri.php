@@ -37,7 +37,7 @@ $(document).ready(function(){
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <img class="img-fluid" src="Bayar-BRI.jpg" alt="">
+              <img class="img-fluid mx-auto d-block" src="Bayar-BRI.jpg" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -220,7 +220,7 @@ if(isset($_COOKIE["login"])){
               <h7 class="ml-5">Maybank</h7>
             </div>
             <div class="col-lg-1">
-              <button style="border:none;background:none;" type="maybank" name="button">
+              <button style="border:none;background:none;" id="maybank" name="button">
                 <img src="arrow.png" alt="">
               </button>
             </div>
