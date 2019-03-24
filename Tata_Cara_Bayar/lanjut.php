@@ -5,10 +5,55 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#kembali").click(function(){
+        $("#lanjut").load("bca.php #bayar");
+      });
+    });
+    </script>
   </head>
   <body>
-    <div class="container border mt-4 mb-4">
-      a;skd;askd;laksd;lksad
-    </div>
+    <div id="lanjut">
+      <p class="text-center">Mohon segera menyelesaikan pembayaran melalui transfer(ATM/Internet Bangking/Mobile Banking)<br>
+      jika tidak maka transaksi anda akan dianggap gagal</p>
+      <div class="row justify-content-center border mr-2 ml-2">
+       <div class="col-4 border-right">
+         <img class="img-fluid mx-auto d-block" src="bca.png" alt="">
+         <h6 class="text-center">BCA</h6>
+       </div>
+       <div class="col-8">
+         <p>Nomor Rekening Kebunku<br>
+         4455422335662129574<br></p>
+       </div>
+     </div>
+     <div class="row justify-content-center mt-4 mb-5">
+       <div class="col-4">
+         <button type="button" class="btn btn-outline-info col-lg-12" data-toggle="modal" data-target="#myModal">Tata Cara Pembayaran</button>
+       </div>
+       <div class="col-4">
+         <button type="button" class="btn btn-info col-lg-12">Detail Pembayaran</button>
+       </div>
+     </div>
+     <button class="btn btn-secondary" id="kembali" name="button">
+       <img class="mr-3" src="left.png" alt="">Kembali
+     </button>
+     <div class="modal fade" id="myModal" role="dialog">
+         <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h4 class="modal-title">Tata Cara Pembayaran</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             <div class="modal-body">
+               <img class="img-fluid" src="Bayar-BCA.jpg" alt="">
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
   </body>
 </html>
