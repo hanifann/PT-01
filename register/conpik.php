@@ -87,14 +87,12 @@ function tampilkan_barang(){
   $result =mysqli_query($connBarang,$query);
 ?>
 <div class="container mt-3">
+  <hr>
         <div class="row">
   <?php
   while($row = mysqli_fetch_array($result)){
     ?>
-
       <a href="">
-
-
     <div class="col md-4 overflow-hidden">
       <div class="card" style="width: 15rem;">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">'; ?>
@@ -105,6 +103,13 @@ function tampilkan_barang(){
             <div class="harga">
               <?php echo "<p> Rp. $row[6] ,- </p>"; ?>
             </div>
+
+            <div class="float-left mt-3">
+              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti">Ganti</button>
+            </div>
+            <div class="float-right mt-3">
+              <button type="button" class="btn btn-outline-danger" name="button-hapus">Hapus</button>
+            </div>
           </div>
       </div>
     </div>
@@ -112,6 +117,7 @@ function tampilkan_barang(){
   <?php
 }?>
 </div>
+<hr>
 </div>
   <?php
 }
