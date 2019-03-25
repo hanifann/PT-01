@@ -4,13 +4,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#kembali").click(function(){
-    $("#bayar").load("BayarBang.php #tabelBayar");
-  });
-});
-</script>
 </head>
 <body>
     <div id="bayar">
@@ -45,6 +38,13 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
+      <script>
+      $(document).ready(function(){
+        $("#kembali").click(function(){
+          $("#bayar").load("BayarBang.php #tabelBayar");
+        });
+      });
+      </script>
     </div>
 </body>
 </html>
