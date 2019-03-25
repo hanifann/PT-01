@@ -258,12 +258,13 @@ function tampilkan_admin(){
 }
 
 
-if (isset($_POST['delete'])) {
-  $id=$_POST['delete'];
+if (isset($_GET['delete'])) {
+  $id=$_GET['delete'];
   echo "$id";
   $qdel = "DELETE FROM jual_barang WHERE id_barang=$id";
   $q = mysqli_query($connBarang,$qdel);
   header('location:/PT-01/Admin_Toko/admin_toko.php');
+  echo "$id";
 }  else {
     mysqli_error($connBarang);
   }
