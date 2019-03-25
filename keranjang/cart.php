@@ -78,7 +78,8 @@
   <!-- end of navbar-->
   <div class="container mt-3">
     <h5 style="color:#6E6E6E;">Keranjang</h5>
-    <div class="container border mt-3 pt-3">
+    <?php Keranjang(); ?>
+    <!-- <div class="container border mt-3 pt-3">
       Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
       <div class="row">
         <div class="col-lg-7">
@@ -95,7 +96,7 @@
 
       </div>
 
-    </div>
+    </div> -->
   </div>
 </body>
 <footer id="myFooter">
