@@ -75,6 +75,28 @@
       </ul>
     </div>
   </nav>
+  <!-- end of navbar-->
+  <div class="container mt-3">
+    <h5 style="color:#6E6E6E;">Keranjang</h5>
+    <div class="container border mt-3 pt-3">
+      Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
+      <div class="row">
+        <div class="col-lg-7">
+          asdasdsa
+        </div>
+        <div class="col-lg-5 pb-3">
+          <div class="text-center">
+              Sub Total
+              <p style="font-size:10px;color:#B6B6B6;">Belum termasuk ongkir</p>
+              <h6>Rp. 200.000</h6>
+              <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </body>
 <footer id="myFooter">
       <div class="kaki">
@@ -89,10 +111,10 @@
       <div class="kaki2 style="font-size: 0.5rem;"">
         <ul>
           <li>Follow KebunKu on</li>
-          <li><a href="#"><img src="img/facebook.png"</src></a></li>
-          <li><a href="#"><img src="img/twitter.png"</src></a></li>
-          <li><a href="#"><img src="img/instagram.png"</src></a></li>
-          <li><a href="#"><img src="img/youtube.png"</src></a></li>
+          <li><a href="#"><img src="/main/img/facebook.png"</src></a></li>
+          <li><a href="#"><img src="/main/img/twitter.png"</src></a></li>
+          <li><a href="#"><img src="/main/img/instagram.png"</src></a></li>
+          <li><a href="#"><img src="/main/img/youtube.png"</src></a></li>
         </ul>
       </div>
   </footer>

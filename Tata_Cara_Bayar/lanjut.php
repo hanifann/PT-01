@@ -17,6 +17,7 @@
        <div class="col-8">
          <p>Nomor Rekening Kebunku<br>
          4455422335662129574<br></p>
+         <input type="file" class="form-control-file" id="foto_produk" name="poto_barang">
        </div>
      </div>
      <div class="row justify-content-center mt-4 mb-5">
@@ -24,7 +25,7 @@
          <button type="button" class="btn btn-outline-info col-lg-12" data-toggle="modal" data-target="#myModal">Tata Cara Pembayaran</button>
        </div>
        <div class="col-4">
-         <button type="button" class="btn btn-info col-lg-12">Detail Pembayaran</button>
+           <button type="button" id="bukti" class="btn btn-info col-lg-12">Upload bukti pembayaran</button>
        </div>
      </div>
      <button class="btn btn-secondary" id="kembali" name="button">
@@ -50,6 +51,11 @@
        $(document).ready(function(){
          $("#kembali").click(function(){
            $("#lanjut").load("bca.php #bayar");
+         });
+       });
+       $(document).ready(function(){
+         $("#bukti").click(function(){
+           $("#bayar").load("lunas.php #bayar");
          });
        });
        </script>
