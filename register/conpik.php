@@ -129,7 +129,7 @@ function tampil_item(){
 
              ?>
             <div class="modal-footer">
-              <a href="items.php?tambah= <?php $row[0] ?> ">
+              <a href="items.php?item= <?php echo $row[0]; ?> ">
               <button type="button" style="" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
             </a>
               <a href="../checkout/checkout.php" class="col-6">
