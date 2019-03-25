@@ -87,7 +87,7 @@ if(isset($_COOKIE["login"])){
    </nav>
 
    <!-- barang dagangan -->
-   <?php tampilkan_barang(); ?>
+   <?php tampilkan_admin(); ?>
 
    <div class="container d-flex justify-content-center">
 

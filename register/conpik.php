@@ -82,7 +82,64 @@ function tampilkan(){
   return mysqli_query($conn, "SELECT username from user");
 }
 
-function tampilkan_barang(){
+function tampilkan_satu(){
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+  global $connBarang;
+  $query = "SELECT * FROM jual_barang WHERE id_barang = $id";
+  $result =mysqli_query($connBarang,$query);
+}
+?>
+<div class="container mt-3">
+  <h1 class="text-center">Database Barang</h1>
+</div>
+<hr>
+
+<div class="container d-flex justify-content-center col-12">
+
+  <div class="row">
+
+
+  <?php
+  while($row = mysqli_fetch_array($result)){
+    ?>
+    <table>
+      <tr>
+        <td>
+
+    <!-- <div class="container mb-5 col mt-5"> -->
+      <a href="/PT-01/main/main.php">
+    <div class=" col mt-4 overflow-hidden">
+      <div class="card border border-primary" style="width: 14rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
+          <div class="card-body">
+
+            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <?php $id=$row[1] ?>
+            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <div class="harga">
+              <?php
+              $rupiah = "Rp ".number_format($row[6],0,',','.');
+              echo "<p><b> $rupiah </b></p>"; ?>
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </td>
+  </tr>
+</table>
+  <?php
+}?>
+</div>
+</div>
+<hr>
+  <?php
+}
+
+
+function tampilkan_biasa(){
   global $connBarang;
   $query = "SELECT * FROM jual_barang";
   $result =mysqli_query($connBarang,$query);
@@ -121,20 +178,7 @@ function tampilkan_barang(){
             </div>
 
           </a>
-          <a>
-
-            <div class="float-left mt-3">
-              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti" method="POST" value="<<?php echo "$row[0]"; ?>"> Edit  </button>
-            </div>
-          </a>
-
-          <a href="">
-            <div class="float-right mt-3">
-              <button type="button" method="POST" class="btn btn-outline-danger" name="button-hapus">
-              Hapus  </button>
-            </div>
-          </a>
-          </div>
+        </div>
       </div>
     </div>
   </td>
@@ -148,10 +192,115 @@ function tampilkan_barang(){
   <?php
 }
 
-function delete_barang(){
+function tampilkan_admin(){
   global $connBarang;
-  $query = "DELETE FROM 'jual_barang' WHERE 'jual_barang'.'id_barang' = 2";
+  $query = "SELECT * FROM jual_barang";
+  $result =mysqli_query($connBarang,$query);
+?>
+<div class="container mt-3">
+  <h1 class="text-center">Database Barang</h1>
+</div>
+<hr>
+
+<div class="container d-flex justify-content-center col-12">
+
+  <div class="row">
+
+
+  <?php
+  while($row = mysqli_fetch_array($result)){
+    ?>
+    <table>
+      <tr>
+        <td>
+
+    <!-- <div class="container mb-5 col mt-5"> -->
+      <a href="/PT-01/main/main.php">
+    <div class=" col mt-4 overflow-hidden">
+      <div class="card border border-primary" style="width: 14rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
+          <div class="card-body">
+
+            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <?php $id=$row[1] ?>
+            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <div class="harga">
+              <?php
+              $rupiah = "Rp ".number_format($row[6],0,',','.');
+              echo "<p><b> $rupiah </b></p>"; ?>
+            </div>
+
+          </a>
+          <a href="/PT-01/register/conpik.php?edit=<?php echo $row[0]; ?>">
+            <div class="float-left mt-3">
+              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti" method="POST" > Edit  </button>
+            </div>
+          </a>
+
+          <a href="/PT-01/register/conpik.php?delete=<?php echo $row[0]; ?>">
+            <div class="float-right mt-3">
+              <button type="button" method="POST" class="btn btn-outline-danger" name="button-hapus">
+              Hapus  </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </td>
+  </tr>
+</table>
+  <?php
+}?>
+</div>
+</div>
+<hr>
+  <?php
 }
+
+
+if (isset($_POST['delete'])) {
+  $id=$_POST['delete'];
+  echo "$id";
+  $qdel = "DELETE FROM jual_barang WHERE id_barang=$id";
+  $q = mysqli_query($connBarang,$qdel);
+  header('location:/PT-01/Admin_Toko/admin_toko.php');
+}  else {
+    mysqli_error($connBarang);
+  }
+
+  if (isset($_GET['edit'])) {
+    $id2=$_GET['edit'];
+    header("location:/PT-01/barang/UpdateBarang.php?id=$id2");
+  }else{
+    mysqli_error($connBarang);
+  }
+
+  function update($id,$name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
+    $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
+    global $connBarang;
+
+    echo $id.'<br>'.$name.'<br>'.$nama_barang;
+
+    $query = "UPDATE jual_barang SET
+    name = $name,
+    nama_barang = $nama_barang,
+    kondisi_barang = $kondisi_barang,
+    kategori_barang = $kategori_barang,
+    alamat_barang = $alamat_barang,
+    harga_barang = $harga_barang,
+    jumlah_barang = $jml_barang,
+    deskripsi_barang = $deskripsi_barang,
+    poto_barang = $image WHERE id_barang = $id" ;
+
+    $result = mysqli_query($connBarang,$query);
+    if($result){
+      echo "<br/>Mantul bang";
+    }else{
+      echo "<br/>gagal update bang.";
+    }
+  }
+
+
 
 function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
   $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
