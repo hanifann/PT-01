@@ -7,6 +7,12 @@ if(isset($_COOKIE["login"])){
     }
 }
 
+if (isset($_GET['tambah'])) {
+  $tambah = $_GET['tambah'];
+  keranjang($tambah);
+}
+
+
 ?>
 
  <!DOCTYPE html>
@@ -103,47 +109,9 @@ if(isset($_COOKIE["login"])){
    <div class="container bg-light">
      <div class="row">
        <div class="col-8">
-  <div class="row mt-3">
-    <div class="col-6">
-      <div class="card">
-        <img src="/PT-01/main/img/urea.jpg"class="img-fluid" alt="...">
-      </div>
-        <button type="button" class="btn btn-success mt-5 col-lg-12" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Toko Pupuk</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" style="" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
-              <a href="../checkout/checkout.php" class="col-6">
-                <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
-              </a>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6">
-      <h4>Pupuk Urea</h4>
-      <h5 style="color:#E7362F;">Rp. 2.000.000</h5>
-      <br>
-      <br>
-      <ul class="list-group">
-      <li class="list-group-item">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </li>
-      </ul>
-    </div>
-  </div>
-
+         <?php
+tampil_item();
+?>
 <div class="row mt-5">
   <div class="col-bg-1">
 

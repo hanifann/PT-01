@@ -77,6 +77,136 @@ function login($data){
     }
 }
 
+function keranjang($tambah){
+  $tambah;
+  $stack = array();
+  array_push($stack,"$tambah");
+  print_r($stack);
+  $itung = count($stack);
+  global $connBarang;
+  for ($i=0; $i <$itung ; $i++) {
+  $query = "SELECT * FROM jual_barang WHERE id_barang = $stack[$i]";
+}
+  $result = mysqli_query($connBarang,$query);
+
+  while ($row = mysqli_fetch_array($result)) {
+    echo $row[0];
+  }
+
+}
+function tampil_item(){
+  if (isset($_GET['item'])) {
+    $id = $_GET['item'];
+  }
+
+  global $connBarang;
+  $query = "SELECT * FROM jual_barang WHERE id_barang=$id";
+  $result= mysqli_query($connBarang,$query);
+
+  while ($row = mysqli_fetch_array($result)) {
+    // code...
+?>
+  <div class="row mt-3">
+    <div class="col-6">
+      <div class="card">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
+      </div>
+        <button type="button" class="btn btn-success mt-5 col-lg-12" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Toko Pupuk</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <?php
+
+             ?>
+            <div class="modal-footer">
+              <a href="items.php?tambah= <?php $row[0] ?> ">
+              <button type="button" style="" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
+            </a>
+              <a href="../checkout/checkout.php" class="col-6">
+                <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <h4>Pupuk Urea</h4>
+      <h5 style="color:#E7362F;">Rp. 2.000.000</h5>
+      <br>
+      <br>
+      <ul class="list-group">
+      <li class="list-group-item">
+      <?php echo '<p> '.$row[8].' </p>'; ?>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <?php
+}
+}
+
+function tampil_biasa(){
+  global $connBarang;
+  $query = "SELECT * FROM jual_barang";
+  $result =mysqli_query($connBarang,$query);
+?>
+<hr>
+
+<div class="container d-flex justify-content-center col-12">
+
+  <div class="row">
+
+
+  <?php
+  while($row = mysqli_fetch_array($result)){
+    ?>
+    <table>
+      <tr>
+        <td>
+
+    <!-- <div class="container mb-5 col mt-5"> -->
+      <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
+    <div class=" col mt-4 overflow-hidden">
+      <div class="card border border-primary" style="width: 14rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
+          <div class="card-body">
+
+            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <?php $id=$row[1] ?>
+            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <div class="harga">
+              <?php
+              $rupiah = "Rp ".number_format($row[6],0,',','.');
+              echo "<p><b> $rupiah </b></p>"; ?>
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </td>
+  </tr>
+</table>
+  <?php
+}?>
+</div>
+</div>
+<hr>
+  <?php
+
+}
+
 function tampilkan(){
   global $conn;
   return mysqli_query($conn, "SELECT username from user");
@@ -139,58 +269,6 @@ function tampilkan_satu(){
 }
 
 
-function tampilkan_biasa(){
-  global $connBarang;
-  $query = "SELECT * FROM jual_barang";
-  $result =mysqli_query($connBarang,$query);
-?>
-<div class="container mt-3">
-  <h1 class="text-center">Database Barang</h1>
-</div>
-<hr>
-
-<div class="container d-flex justify-content-center col-12">
-
-  <div class="row">
-
-
-  <?php
-  while($row = mysqli_fetch_array($result)){
-    ?>
-    <table>
-      <tr>
-        <td>
-
-    <!-- <div class="container mb-5 col mt-5"> -->
-      <a href="/PT-01/main/main.php">
-    <div class=" col mt-4 overflow-hidden">
-      <div class="card border border-primary" style="width: 14rem;">
-        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
-          <div class="card-body">
-
-            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
-            <?php $id=$row[1] ?>
-            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
-            <div class="harga">
-              <?php
-              $rupiah = "Rp ".number_format($row[6],0,',','.');
-              echo "<p><b> $rupiah </b></p>"; ?>
-            </div>
-
-          </a>
-        </div>
-      </div>
-    </div>
-  </td>
-  </tr>
-</table>
-  <?php
-}?>
-</div>
-</div>
-<hr>
-  <?php
-}
 
 function tampilkan_admin(){
   global $connBarang;

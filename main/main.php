@@ -267,7 +267,10 @@ if(isset($_COOKIE["login"])){
     <h6><i class="fab fa-hotjar"></i> Paling Laku<hr></h6>
   </div>
     <div class="container">
-      <div class="row justify-content-center">
+      <?php
+      tampil_biasa();
+      ?>
+      <!-- <div class="row justify-content-center">
         <a href="">
           <div class="col md-4 overflow-hidden">
             <div class="card" style="width: 15rem;">
@@ -324,7 +327,7 @@ if(isset($_COOKIE["login"])){
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
     <div class="container">
       <img class="agraris" src="Asset/Agraris.png" alt="">

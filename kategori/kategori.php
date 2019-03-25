@@ -124,6 +124,9 @@ if(isset($_COOKIE["login"])){
          </div>
      </div>
 
+     <?php
+       
+     ?>
      <div class="col md-4 overflow-hidden mt-3">
        <div class="card" style="width: 15rem;">
          <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
