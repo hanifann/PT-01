@@ -52,7 +52,7 @@ if(isset($_POST["login"])){
             </div>
             <button class="btn btn-info" type="submit" name="login">Login</button>
           </form>
-          <p>Belum Punya akun? silahkan <a href="/register/register.php">daftar</a></p>
+          <p>Belum Punya akun? silahkan <a href="/PT-01/register/register.php">daftar</a></p>
         </div>
       </div>
       </div>

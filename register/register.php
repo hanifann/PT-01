@@ -56,7 +56,7 @@ if(isset($_POST["daftar"])){
             </div>
             <button class="btn btn-info" type="submit" name="daftar">Daftar</button>
           </form>
-          <p>Sudah Punya akun? silahkan <a href="/login/login.php">login</a></p>
+          <p>Sudah Punya akun? silahkan <a href="/PT-01/login/login.php">login</a></p>
         </div>
       </div>
       </div>

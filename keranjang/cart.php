@@ -1,3 +1,4 @@
+<?php require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -38,6 +39,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
         <?php
+
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else{
@@ -78,7 +80,7 @@
   <!-- end of navbar-->
   <div class="container mt-3">
     <h5 style="color:#6E6E6E;">Keranjang</h5>
-    <?php Keranjang(); ?>
+    <?php keranjang(); ?>
     <!-- <div class="container border mt-3 pt-3">
       Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
       <div class="row">

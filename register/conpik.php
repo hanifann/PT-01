@@ -11,6 +11,7 @@
   </body>
 </html>
 <?php
+
 session_start();
 $conn = mysqli_connect("localhost","root","","Login_PT");
 
@@ -34,6 +35,13 @@ if(!$connBarang){
   die("Gagal terhubung ke database");
 }
 
+$connKeranjang = mysqli_connect(
+  "localhost",
+  "root",
+  "",
+  "db_barang_PT");
+
+
 function register($data){
     global $conn;
 
@@ -49,7 +57,7 @@ function register($data){
         mysqli_query($conn, $quer);
 
         echo "<script>alert('Data Berhasil di simpan');
-        location.assign('/login/login.php')</script>";
+        location.assign('/PT-01/login/login.php')</script>";
     }else{
         echo "<script>alert('Password tidak sama !!!')</alert>";
     }
@@ -70,7 +78,7 @@ function login($data){
 
             setcookie("login","ok", time()+3600);
             echo "<script>alert('Login Berhasil');
-            document.location.href='/main/main.php'</script>";
+            document.location.href='/PT-01/main/main.php'</script>";
         }else{
             echo "<script>alert('Login gagal')</script>";
         }
@@ -85,14 +93,20 @@ function keranjang(){
     // code...
   }
 
-  $stack = array();
-  array_push($stack,"$tambah");
-  print_r($stack);
-  $itung = count($stack);
+  global $connKeranjang;
   global $connBarang;
-  for ($i=0; $i <$itung ; $i++) {
-  $query = "SELECT * FROM jual_barang WHERE id_barang = $stack[$i]";
-}
+  $queryKi = "INSERT INTO keranjang('id_jual') VALUES($tambah)";
+  $queryK = "SELECT id_jual FROM keranjang";
+  mysqli_query($connBarang,$queryK);
+
+  $resultK = mysqli_query($connBarang,$queryK);
+  while ($row = mysqli_fetch_array($resultK)) {
+    $id = $row[1];
+    echo $row[1];
+    echo "string";
+
+  $query = "SELECT * FROM jual_barang WHERE id_barang = $id";
+
   $result = mysqli_query($connBarang,$query);
   ?>
   <div class="container d-flex justify-content-center col-12">
@@ -136,6 +150,7 @@ function keranjang(){
   </div>
   <hr>
     <?php
+  }
 
   }
 
@@ -257,7 +272,14 @@ function tampil_biasa(){
 
 function tampilkan(){
   global $conn;
-  return mysqli_query($conn, "SELECT username from user");
+  $query = "SELECT username FROM user WHERE username='$username'";
+  $result = mysqli_query($conn,$query);
+
+  while ($row = mysqli_fetch_array($result)) {
+
+
+
+  }
 }
 
 function tampilkan_satu(){
