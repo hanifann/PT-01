@@ -403,23 +403,26 @@ if (isset($_GET['delete'])) {
   }
 
   function update($id,$name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
-    $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
+  $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
     global $connBarang;
 
     echo $id.'<br>'.$name.'<br>'.$nama_barang;
 
-    $query = "UPDATE jual_barang SET
-    name = $name,
-    nama_barang = $nama_barang,
-    kondisi_barang = $kondisi_barang,
-    kategori_barang = $kategori_barang,
-    alamat_barang = $alamat_barang,
-    harga_barang = $harga_barang,
-    jumlah_barang = $jml_barang,
-    deskripsi_barang = $deskripsi_barang,
-    poto_barang = $image WHERE id_barang = $id" ;
+    $query =
+    "UPDATE jual_barang SET
+    name = '$name',
+    nama_barang = '$nama_barang',
+    kondisi_barang = '$kondisi_barang',
+    kategori_barang = '$kategori_barang',
+    alamat_barang = '$alamat_barang',
+    harga_barang = '$harga_barang',
+    jumlah_barang = '$jml_barang',
+    deskripsi_barang = '$deskripsi_barang',
+    poto_barang = '$image'
+    WHERE id_barang = '$id'" ;
 
     $result = mysqli_query($connBarang,$query);
+
     if($result){
       echo "<br/>Mantul bang";
     }else{
