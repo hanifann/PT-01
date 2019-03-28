@@ -85,8 +85,17 @@
     $queryk = "SELECT * FROM keranjang";
     $resultk = mysqli_query($connBarang,$queryk);
     if (mysqli_num_rows($resultk)==0) {
-      echo "DATA KOSONG";
-    }?>
+      ?>
+      <div class="row">
+
+      <div class="container col-6">
+        <img class="col mb-5" src="zero.png" alt="">
+        <a href="" class="col btn btn-success" name="button">Tambah Barang</a>
+      </div>
+    </div>
+      <?php
+    }
+    ?>
     <!-- <div class="container border mt-3 pt-3">
       Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
       <div class="row">

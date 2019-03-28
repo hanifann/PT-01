@@ -184,16 +184,15 @@ if(isset($_COOKIE["login"])){
             <div id="maybank" class="col-md-auto">
               <img style="width: 61.5px" src="maybank.png" class="img-fluid" alt="">
             </div>
-            <div id="maybank" class="col mt-1 ml-3">
+            <div id="" class="col mt-1 ml-3">
               <h7 class="ml-5">Maybank</h7>
             </div>
             <div class="col-lg-1">
-              <button style="border:none;background:none;" id="maybank" name="button">
+              <button style="border:none;background:none;" id="mayban" name="button">
                 <img src="arrow.png" alt="">
               </button>
             </div>
           </div>
-          <hr>
         </td>
       </tr>
     </tbody>

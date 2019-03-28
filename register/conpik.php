@@ -110,7 +110,7 @@ function keranjang(){
   ?>
   <div class="container d-flex justify-content-center col-12">
     <div class="row">
-      
+
     <?php
     while($row1 = mysqli_fetch_array($result)){
       ?>
@@ -194,9 +194,9 @@ function tampil_item(){
 
              ?>
             <div class="modal-footer">
-              <a href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
-              <button type="button" style="" class="btn btn-outline-success col-6">Tambah ke keranjang</button>
-            </a>
+              <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
+                  Tambah ke keranjang
+        </a>
               <a href="../checkout/checkout.php" class="col-6">
                 <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
               </a>
