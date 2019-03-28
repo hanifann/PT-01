@@ -8,6 +8,7 @@
     <div id="bayar">
     <hr>
     <h1 class="text-center">Pembayaran Berhasil</h1>
+    <button type="button" class="btn btn-secondary" id="kembali" name="button"><img class="mr-3" src="left.png" alt="">Kembali</button>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
   $(document).ready(function(){
