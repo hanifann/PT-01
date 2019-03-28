@@ -120,10 +120,10 @@
       <div class="kaki2 style="font-size: 0.5rem;"">
         <ul>
           <li>Follow KebunKu on</li>
-          <li><a href="#"><img src="/main/img/facebook.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/twitter.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/instagram.png"</src></a></li>
-          <li><a href="#"><img src="/main/img/youtube.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/facebook.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/twitter.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/instagram.png"</src></a></li>
+          <li><a href="#"><img src="/PT-01/main/img/youtube.png"</src></a></li>
         </ul>
       </div>
   </footer>
