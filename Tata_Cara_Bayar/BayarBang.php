@@ -198,36 +198,37 @@ if(isset($_COOKIE["login"])){
       </tr>
     </tbody>
     <script>
-      $(document).ready(function(){
-        $("#bni").click(function(){
-          $("#tabelBayar").load("bni.php");
-        });
+      // PRASASTI JAVASCRIPT
+      // $(document).ready(function(){
+      //   $("#bni").click(function(){
+      //     $("#tabelBayar").load("bni.php");
+      //   });
+      // });
+
+      $(document).on("click","#bni",function() {
+        $("#tabelBayar").load("bni.php");
       });
-      $(document).ready(function(){
-        $("#bri").click(function(){
-          $("#tabelBayar").load("bri.php");
-        });
+
+      $(document).on("click","#bri",function() {
+        $("#tabelBayar").load("bri.php");
       });
-      $(document).ready(function(){
-        $("#bca").click(function(){
-          $("#tabelBayar").load("bca.php");
-        });
+
+      $(document).on("click","#bca",function() {
+        $("#tabelBayar").load("bca.php");
       });
-      $(document).ready(function(){
-        $("#mandiri").click(function(){
-          $("#tabelBayar").load("mandiri.php");
-        });
+
+      $(document).on("click","#mandiri",function() {
+        $("#tabelBayar").load("mandiri.php");
       });
-      $(document).ready(function(){
-        $("#hana").click(function(){
-          $("#tabelBayar").load("hana.php");
-        });
+
+      $(document).on("click","#hana",function() {
+        $("#tabelBayar").load("hana.php");
       });
-      $(document).ready(function(){
-        $("#maybank").click(function(){
-          $("#tabelBayar").load("maybank.php");
-        });
+
+      $(document).on("click","#maybank",function() {
+        $("#tabelBayar").load("maybank.php");
       });
+
       </script>
   </table>
 </div>

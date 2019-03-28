@@ -40,11 +40,17 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
-  $(document).ready(function(){
-    $("#kembali").click(function(){
-      $("#bayar").load("BayarBang.php #tabelBayar");
-    });
+  // PRASASTI JAVASCRIPT
+  // $(document).ready(function(){
+  //   $("#kembali").click(function(){
+  //     $("#bayar").load("BayarBang.php #tabelBayar");
+  //   });
+  // });
+
+  $(document).on("click","#kembali",function() {
+    $("#bayar").load("BayarBang.php #tabelBayar");
   });
+
   $(document).ready(function(){
     $("#lanjut").click(function(){
       $("#bayar").load("lanjut.php");
