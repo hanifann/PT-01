@@ -80,21 +80,25 @@ function login($data){
 }
 
 function keranjang(){
+  global $connBarang;
+
   if (isset($_GET['tambah'])) {
     $tambah = $_GET['tambah'];
+    $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
+    $resultKi = mysqli_query($connBarang,$queryKi);
+    if ($resultKi) {
+      echo "Data masuk Keranjang";
+    }else{
+      echo "Data gagal masuk keranjang";
+    }
   }
   else {
+    echo "tambah = null";
   }
 
-  global $connBarang;
-  $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
+
   $queryK = "SELECT * FROM keranjang";
-  $resultKi = mysqli_query($connBarang,$queryKi);
-  if ($resultKi) {
-    echo "Data masuk Keranjang";
-  }else{
-    echo "Data gagal masuk keranjang";
-  }
+
 
   $resultK = mysqli_query($connBarang,$queryK);
   while ($row = mysqli_fetch_array($resultK)) {
@@ -105,10 +109,8 @@ function keranjang(){
   $result = mysqli_query($connBarang,$query);
   ?>
   <div class="container d-flex justify-content-center col-12">
-
     <div class="row">
-
-
+      
     <?php
     while($row1 = mysqli_fetch_array($result)){
       ?>
@@ -134,8 +136,13 @@ function keranjang(){
             </a>
           </div>
         </div>
+        <div class="container">
+          <a href="/PT-01/register/conpik.php?delK= <?php echo $row[1]; ?>">
+        <button type="number" class="btn" name="button">Hapus</button>
+      </a>
       </div>
-    </td>
+      </div>
+          </td>
     </tr>
   </table>
     <?php
@@ -400,6 +407,15 @@ function tampilkan_admin(){
   <?php
 }
 
+if (isset($_GET['delK'])) {
+  $id3=$_GET['delK'];
+  echo "$id3";
+  $qdelk = "DELETE FROM keranjang WHERE id_jual=$id3";
+  $q2 = mysqli_query($connBarang,$qdelk);
+  header('location:/PT-01/keranjang/cart.php');
+}else {
+  mysqli_error($connBarang);
+}
 
 if (isset($_GET['delete'])) {
   $id=$_GET['delete'];
