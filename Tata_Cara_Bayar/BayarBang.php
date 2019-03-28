@@ -95,7 +95,7 @@ if(isset($_COOKIE["login"])){
     <tbody>
       <tr>
         <td>
-          <div class="row">
+          <div id="bni" class="row">
             <div class="col-md-auto">
               <img style="width:50%;" src="bni.png" alt="">
             </div>
@@ -112,7 +112,7 @@ if(isset($_COOKIE["login"])){
       </tr>
       <tr>
         <td>
-          <div class="row">
+          <div id="bri" class="row">
             <div class="col-md-auto">
               <img style="width:50%;" src="bri.png" alt="">
             </div>
@@ -129,7 +129,7 @@ if(isset($_COOKIE["login"])){
       </tr>
       <tr>
         <td>
-          <div class="row">
+          <div id="bca" class="row">
             <div class="col-md-auto">
               <img style="width: 61.5px" src="bca.png" class="img-fluid" alt="">
             </div>
@@ -146,7 +146,7 @@ if(isset($_COOKIE["login"])){
       </tr>
       <tr>
         <td>
-          <div class="row">
+          <div id="mandiri" class="row">
             <div class="col-md-auto">
               <img style="width:50%;" src="mandiri.png" alt="">
             </div>
@@ -163,14 +163,14 @@ if(isset($_COOKIE["login"])){
       </tr>
       <tr>
         <td>
-          <div class="row">
+          <div id="hana" class="row">
             <div class="col-md-auto">
               <img style="width: 61.5px" src="hana.png" class="img-fluid" alt="">
             </div>
-            <div class="col mt-1 ml-3">
+            <div id="" class="col mt-1 ml-3">
               <h7 class="ml-5">Hana bank</h7>
             </div>
-            <div class="col-lg-1">
+            <div id="" class="col-lg-1">
               <button style="border:none;background:none;" id="hana" name="button">
                 <img src="arrow.png" alt="">
               </button>
@@ -180,11 +180,11 @@ if(isset($_COOKIE["login"])){
       </tr>
       <tr>
         <td>
-          <div class="row">
-            <div class="col-md-auto">
+          <div id="maybank" class="row">
+            <div id="maybank" class="col-md-auto">
               <img style="width: 61.5px" src="maybank.png" class="img-fluid" alt="">
             </div>
-            <div class="col mt-1 ml-3">
+            <div id="maybank" class="col mt-1 ml-3">
               <h7 class="ml-5">Maybank</h7>
             </div>
             <div class="col-lg-1">
