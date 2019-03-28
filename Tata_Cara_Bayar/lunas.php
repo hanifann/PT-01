@@ -21,6 +21,7 @@
       $("#bayar").load("lanjut.php");
     });
   });
+  //HOHO
   </script>
 </div>
 </body>
