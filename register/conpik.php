@@ -35,12 +35,6 @@ if(!$connBarang){
   die("Gagal terhubung ke database");
 }
 
-$connKeranjang = mysqli_connect(
-  "localhost",
-  "root",
-  "",
-  "db_barang_PT");
-
 
 function register($data){
     global $conn;
@@ -87,25 +81,26 @@ function login($data){
 
 function keranjang(){
   if (isset($_GET['tambah'])) {
-    // code...
     $tambah = $_GET['tambah'];
-  } else {
-    // code...
+  }
+  else {
   }
 
-  global $connKeranjang;
   global $connBarang;
-  $queryKi = "INSERT INTO keranjang('id_jual') VALUES($tambah)";
-  $queryK = "SELECT id_jual FROM keranjang";
-  mysqli_query($connBarang,$queryK);
+  $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
+  $queryK = "SELECT * FROM keranjang";
+  $resultKi = mysqli_query($connBarang,$queryKi);
+  if ($resultKi) {
+    echo "Data masuk Keranjang";
+  }else{
+    echo "Data gagal masuk keranjang";
+  }
 
   $resultK = mysqli_query($connBarang,$queryK);
   while ($row = mysqli_fetch_array($resultK)) {
-    $id = $row[1];
-    echo $row[1];
-    echo "string";
 
-  $query = "SELECT * FROM jual_barang WHERE id_barang = $id";
+
+  $query = "SELECT * FROM jual_barang WHERE id_barang = '$row[1]'";
 
   $result = mysqli_query($connBarang,$query);
   ?>
@@ -115,28 +110,27 @@ function keranjang(){
 
 
     <?php
-    while($row = mysqli_fetch_array($result)){
+    while($row1 = mysqli_fetch_array($result)){
       ?>
       <table>
         <tr>
           <td>
 
       <!-- <div class="container mb-5 col mt-5"> -->
-        <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
+        <a href="/PT-01/item/items.php?item=<?php echo $row1[0]; ?>">
       <div class=" col mt-4 overflow-hidden">
         <div class="card border border-primary" style="width: 14rem;">
-          <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
+          <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
             <div class="card-body">
 
-              <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
-              <?php $id=$row[1] ?>
+              <?php echo '<h5 class="card-title"> '.$row1[2].' </h5>'; ?>
+              <?php $id=$row1[1] ?>
               <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
               <div class="harga">
                 <?php
-                $rupiah = "Rp ".number_format($row[6],0,',','.');
+                $rupiah = "Rp ".number_format($row1[6],0,',','.');
                 echo "<p><b> $rupiah </b></p>"; ?>
               </div>
-
             </a>
           </div>
         </div>
@@ -150,6 +144,7 @@ function keranjang(){
   </div>
   <hr>
     <?php
+
   }
 
   }
@@ -427,8 +422,6 @@ if (isset($_GET['delete'])) {
   function update($id,$name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
   $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
     global $connBarang;
-
-    echo $id.'<br>'.$name.'<br>'.$nama_barang;
 
     $query =
     "UPDATE jual_barang SET
