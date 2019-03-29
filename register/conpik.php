@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="/conpik.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
 
@@ -87,13 +88,22 @@ function keranjang(){
     $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
     $resultKi = mysqli_query($connBarang,$queryKi);
     if ($resultKi) {
-      echo "Data masuk Keranjang";
+      ?>
+      <script type="text/javascript">
+
+      swal({
+        title: "Good job!",
+        text: "Berhasil Ditambahkan ke keranjang",
+        icon: "success",
+        button: "Aww yiss!",
+      });
+      </script>
+      <?php
     }else{
       echo "Data gagal masuk keranjang";
     }
   }
   else {
-    echo "tambah = null";
   }
 
 
@@ -194,7 +204,7 @@ function tampil_item(){
 
              ?>
             <div class="modal-footer">
-              <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
+              <a class="btn btn-outline-success col-6" href="/PT-01/item/cart.php?tambah= <?php echo $row[0]; ?> ">
                   Tambah ke keranjang
         </a>
               <a href="../checkout/checkout.php" class="col-6">

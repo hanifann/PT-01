@@ -23,7 +23,6 @@
   });
   //HOHO
   </script>
-  //HOHO
 </div>
 </body>
 </html>
