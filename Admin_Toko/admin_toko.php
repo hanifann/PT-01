@@ -88,8 +88,42 @@ if(isset($_COOKIE["login"])){
    <!-- end of navbar-->
 
    <!-- barang dagangan -->
-  
+ <div class="container mt-3">
+   <div class="row">
+     <div class="col-sm-2">
+       <img src="asset/online.png" class="img-thumbnail" alt="">
+     </div>
+     <div class="col mt-1">
+      <a href="#"><h4>Nama_Toko</h4></a><hr>
+      <table style="color:#606060">
+        <tr>
+          <td>
+            <img src="asset/map.png" data-toggle="tooltip" title="dikirm dari" alt="">
+            bojong soang
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="asset/open.png" data-toggle="tooltip" title="buka sejak" alt="">
+            januari 2019
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="asset/home.png" data-toggle="tooltip" title="lokasi" alt="">
+            hanya onlen
+          </td>
+        </tr>
+      </table>
+      <hr>
+     </div>
+   </div>
  </div>
+ <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 </body>
 
    <!-- Footer -->
