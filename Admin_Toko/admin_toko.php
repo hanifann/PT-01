@@ -85,14 +85,10 @@ if(isset($_COOKIE["login"])){
        </ul>
      </div>
    </nav>
+   <!-- end of navbar-->
 
    <!-- barang dagangan -->
-   <?php tampilkan_admin(); ?>
-
-   <div class="container d-flex justify-content-center">
-
-   <button type="button" class="btn btn-success" name="button"> <a style="color:white" href="/PT-01/barang/barang.php">Tambah Barang</a> </button>
-
+  
  </div>
 </body>
 
