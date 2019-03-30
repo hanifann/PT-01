@@ -117,6 +117,41 @@ if(isset($_COOKIE["login"])){
       </table>
       <hr>
      </div>
+     <div class="container-fluid">
+       <nav class="navbar navbar-expand-lg navbar-dark border" style="background-color:#F7F7F7;">
+        <form class="form-inline" action="">
+          <input class="form-control gagal" type="text" placeholder="Search">
+          <button class="btn btn-success gagal" style="background:#EDEDED"type="submit"> <img src="asset/magnifier.png" alt=""> </button>
+        </form>
+      </nav>
+     </div>
+     <div class="container ml-3 mt-3">
+       <div class="row">
+         <div class="col-sm-2 border table-active">
+           <table clas="table table-hover" style="color:#606060">
+             <thead>
+               <tr>
+                 <th class="pt-2 pb-2" scope="col">
+                   <img src="asset/cabinet.png" alt="">
+                   Etalase
+                 </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>
+
+                 </td>
+               </tr>
+
+             </tbody>
+           </table>
+         </div>
+         <div class="col border ml-3 mr-2 pt-3 pb-5" style="background:#F7F7F7;">
+           <h4 class="text-center" style="color:#4A4A4A;">Tidak ada produk</h4>
+         </div>
+       </div>
+     </div>
    </div>
  </div>
  <script>
