@@ -127,8 +127,8 @@ if(isset($_COOKIE["login"])){
      </div>
      <div class="container ml-3 mt-3">
        <div class="row">
-         <div class="col-sm-2 border table-active">
-           <table clas="table table-hover" style="color:#606060">
+         <div class="col-sm-2 table-active">
+           <table clas="table table-hover table-border" style="color:#606060">
              <thead>
                <tr>
                  <th class="pt-2 pb-2" scope="col">
@@ -140,10 +140,8 @@ if(isset($_COOKIE["login"])){
              <tbody>
                <tr>
                  <td>
-
                  </td>
                </tr>
-
              </tbody>
            </table>
          </div>
