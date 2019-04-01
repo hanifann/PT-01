@@ -96,25 +96,9 @@
     </div>
       <?php
     }
+    keranjang();
     ?>
-    <div class="container border mt-3 pt-3">
-      <img class="avatar" src="asset/online-store.png" alt=""> Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
-      <div class="row">
-        <div class="col-lg-7">
-          <?php
-          keranjang();
-          ?>
-        </div>
-        <div class="col-lg-5 pb-3">
-          <div class="text-center">
-              Sub Total
-              <p style="font-size:10px;color:#B6B6B6;">Belum termasuk ongkir</p>
-              <h6>Rp. 200.000</h6>
-              <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </body>
 <footer id="myFooter">

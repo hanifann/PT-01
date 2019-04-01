@@ -79,7 +79,7 @@ function login($data){
 function keranjang(){
   global $connBarang;
 
-  if (isset($_GET['tambah'])) {
+    if (isset($_GET['tambah'])) {
     $tambah = $_GET['tambah'];
     $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
     $resultKi = mysqli_query($connBarang,$queryKi);
@@ -113,49 +113,45 @@ function keranjang(){
 
   $result = mysqli_query($connBarang,$query);
   ?>
-  <div class="container d-flex justify-content-center col-12">
-    <div class="row">
+  <!-- <div class="container d-flex justify-content-center col-12">
+    <div class="row"> -->
 
     <?php
     while($row1 = mysqli_fetch_array($result)){
       ?>
-      <table>
-        <tr>
-          <td>
+      <div class="container border mt-3 pt-3">
 
-      <!-- <div class="container mb-5 col mt-5"> -->
-        <a href="/PT-01/item/items.php?item=<?php echo $row1[0]; ?>">
-      <!-- <div class=" col mt-4 overflow-hidden"> -->
-        <!-- <div class="card border border-primary" style="width: 14rem;"> -->
-          <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
-            <!-- <div class="card-body"> -->
-
-              <?php echo '<h5 class="mt-2 text-center"> '.$row1[2].' </h5>'; ?>
-              <?php $id=$row1[1] ?>
-
-            </a>
-          <!-- </div> -->
-        </div>
+        <img class="avatar" src="asset/online-store.png" alt=""> Toko Traktor <a id="delk" href="/PT-01/register/conpik.php?delk=<?php echo $row1[0] ?>"><img class="float-right" src="garbage.png" alt=""></a><hr>
         <div class="container">
-          <a href="/PT-01/register/conpik.php?delK= <?php echo $row[1]; ?>">
-        <button type="number" class="btn btn-danger ml-5" name="button">Hapus</button>
-      </a>
+        <div class="row">
+          <div class="col">
+              <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px; width:300px;" alt="...">'; ?>
+          </div>
+          <div class="col" style="background-color:blue">
+
+            <h3><?php echo $row1[2] ?></h3>
+          </div>
+
+          <div class="col pb-3">
+            <div class="text-center">
+                Sub Total
+                <p style="font-size:10px;color:#B6B6B6;">Belum termasuk ongkir</p>
+                <?php
+                $rupiah = "Rp ".number_format($row1[6],0,',','.');
+                echo "<h5><b> $rupiah </b></h5>"; ?>
+                <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
+            </div>
+          </div>
+        </div>
       </div>
       </div>
-          </td>
-    </tr>
-  </table>
     <?php
   }?>
-  </div>
-  </div>
-  <hr>
     <?php
 
   }
 
   }
-
 
 
 function tampil_item(){
@@ -406,8 +402,8 @@ function tampilkan_admin(){
   <?php
 }
 
-if (isset($_GET['delK'])) {
-  $id3=$_GET['delK'];
+if (isset($_GET['delk'])) {
+  $id3=$_GET['delk'];
   echo "$id3";
   $qdelk = "DELETE FROM keranjang WHERE id_jual=$id3";
   $q2 = mysqli_query($connBarang,$qdelk);
