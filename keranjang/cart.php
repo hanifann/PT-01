@@ -80,7 +80,7 @@
   <!-- end of navbar-->
   <div class="container mt-3">
     <h5 style="color:#6E6E6E;">Keranjang</h5>
-    <?php keranjang();
+    <?php
     global $connBarang;
     $queryk = "SELECT * FROM keranjang";
     $resultk = mysqli_query($connBarang,$queryk);
@@ -101,7 +101,9 @@
       <img class="avatar" src="asset/online-store.png" alt=""> Toko Traktor <a href="#"><img class="float-right" src="garbage.png" alt=""></a><hr>
       <div class="row">
         <div class="col-lg-7">
-          <img class="col-3" src="/main/img/versatile.jpg" alt="">
+          <?php
+          keranjang();
+          ?>
         </div>
         <div class="col-lg-5 pb-3">
           <div class="text-center">

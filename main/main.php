@@ -28,6 +28,7 @@ if(isset($_COOKIE["login"])){
   </head>
 
   <body>
+
     <!--Navbar 1-->
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
       <a class="nav-link" href="#">Jual Beli</a>
@@ -397,7 +398,14 @@ if(isset($_COOKIE["login"])){
           </a>
         </div>
       </div>
+    </div>
       <!-- end of sewa alat-->
+      <script type="text/javascript">
+      $(document).ready(function(){
+          $("#coba").load("main.php #coba");
+        });
+      });
+      </script>
   </body>
   <footer id="myFooter">
         <div class="kaki">

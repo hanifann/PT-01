@@ -68,6 +68,10 @@ if (isset($_POST["jual_barang"])) {
         <?php
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
+        ?>
+        <a href="/PT-01/Admin_Toko/admin_toko.php" class="btn btn-success">
+          Halaman admin</a>
+          <?php
       }else{
         $getUser = tampilkan();
         $tampil = mysqli_fetch_assoc($getUser);
@@ -77,6 +81,7 @@ if (isset($_POST["jual_barang"])) {
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
     <a class="navbar-brand" href="/PT-01/main/main.php">Home</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -198,6 +203,7 @@ if (isset($_POST["jual_barang"])) {
             <a href="/PT-01/Admin_Toko/admin_toko.php">
               <button  "type="submit" class="btn btn-primary btn-lg btn-block" style="background:#3FC0B7;" name="jual_barang">Jual Barang</button>
             </a>
+
             <hr>
           </div>
 

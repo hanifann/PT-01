@@ -145,8 +145,21 @@ if(isset($_COOKIE["login"])){
              </tbody>
            </table>
          </div>
-         <div class="col border ml-3 mr-2 pt-3 pb-5" style="background:#F7F7F7;">
-           <h4 class="text-center" style="color:#4A4A4A;">Tidak ada produk</h4>
+         <div class="col border ml-3 mr-2 pt-3 pb-5"
+          style="background:#F7F7F7;">
+          <?php
+
+          tampilkan_admin();
+          global $connBarang;
+          $query = "SELECT * FROM jual_barang";
+          $result = mysqli_query($connBarang,$query);
+          if (mysqli_num_rows($result)==0) {
+            // code...
+            ?>
+            <h4 class="text-center" style="color:#4A4A4A;">Tidak ada produk</h4>
+            <?php
+          }
+          ?>
          </div>
        </div>
      </div>

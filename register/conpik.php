@@ -22,16 +22,12 @@ $connBarang = mysqli_connect(
   "",
   "db_barang_PT"
 );
+
 if(!$connBarang){
   die("Gagal terhubung ke database");
 }
 
-$connJual = mysqli_connect(
-  "localhost",
-  "root",
-  "",
-  "db_jual"
-);
+
 if(!$connBarang){
   die("Gagal terhubung ke database");
 }
@@ -100,7 +96,6 @@ function keranjang(){
       </script>
       <?php
     }else{
-      echo "Data gagal masuk keranjang";
     }
   }
   else {
@@ -130,25 +125,20 @@ function keranjang(){
 
       <!-- <div class="container mb-5 col mt-5"> -->
         <a href="/PT-01/item/items.php?item=<?php echo $row1[0]; ?>">
-      <div class=" col mt-4 overflow-hidden">
-        <div class="card border border-primary" style="width: 14rem;">
+      <!-- <div class=" col mt-4 overflow-hidden"> -->
+        <!-- <div class="card border border-primary" style="width: 14rem;"> -->
           <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
-            <div class="card-body">
+            <!-- <div class="card-body"> -->
 
-              <?php echo '<h5 class="card-title"> '.$row1[2].' </h5>'; ?>
+              <?php echo '<h5 class="mt-2 text-center"> '.$row1[2].' </h5>'; ?>
               <?php $id=$row1[1] ?>
-              <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
-              <div class="harga">
-                <?php
-                $rupiah = "Rp ".number_format($row1[6],0,',','.');
-                echo "<p><b> $rupiah </b></p>"; ?>
-              </div>
+
             </a>
-          </div>
+          <!-- </div> -->
         </div>
         <div class="container">
           <a href="/PT-01/register/conpik.php?delK= <?php echo $row[1]; ?>">
-        <button type="number" class="btn" name="button">Hapus</button>
+        <button type="number" class="btn btn-danger ml-5" name="button">Hapus</button>
       </a>
       </div>
       </div>
@@ -204,7 +194,7 @@ function tampil_item(){
 
              ?>
             <div class="modal-footer">
-              <a class="btn btn-outline-success col-6" href="/PT-01/item/cart.php?tambah= <?php echo $row[0]; ?> ">
+              <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
                   Tambah ke keranjang
         </a>
               <a href="../checkout/checkout.php" class="col-6">
@@ -236,7 +226,6 @@ function tampil_biasa(){
   $query = "SELECT * FROM jual_barang";
   $result =mysqli_query($connBarang,$query);
 ?>
-<hr>
 
 <div class="container d-flex justify-content-center col-12">
 
