@@ -5,5 +5,5 @@ session_unset();
 setcookie("login","",-61);
 
 echo "<script>alert('Log out Berhasil');
-    document.location.href='/main/main.php'</script>";
+    document.location.href='/PT-01/main/main.php'</script>";
 ?>

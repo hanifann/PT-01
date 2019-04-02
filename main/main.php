@@ -51,11 +51,11 @@ if(isset($_COOKIE["login"])){
         <?php
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
-      }else{
+      }else if (isset($_SESSION['login'])){
         echo "Selamat Datang";
         ?>
-        <a class="btn btn-success ml-4" href='/PT-01/materi/logut.php'><?php tampilkan();?></a>
-        <a class="btn" href="#">Keluar</a>
+        <a class="btn btn-success ml-4" href='/PT-01/materi/logut.php'><?php echo $_SESSION["username"];?></a>
+        <a class="btn" href="">Keluar</a>
         <?php
       }
         ?>

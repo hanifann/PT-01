@@ -63,6 +63,7 @@ function login($data){
 
         if(password_verify($password, $passwordhash)){
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $username;
             setcookie("login","ok", time()+3600);
             echo "<script>alert('Login Berhasil');
             document.location.href='/PT-01/main/main.php'</script>";
@@ -72,17 +73,19 @@ function login($data){
     }
 }
 
-function tampilkan(){
+function tampilkan($data){
   global $conn;
-  if (isset($_POST['username'])) {
-    $username = $_POST['username'];
+  if (isset($data['username'])) {
+    $username = $data['username'];
   }
+  $
   $query = "SELECT * FROM user WHERE username='$username'";
   $result =  mysqli_query($conn,$query);
 
   while( $row = mysqli_fetch_array($result)){
     echo $row[1];
   }
+
 }
 
 function keranjang(){
