@@ -84,21 +84,41 @@
     global $connBarang;
     $queryk = "SELECT * FROM keranjang";
     $resultk = mysqli_query($connBarang,$queryk);
-    if (mysqli_num_rows($resultk)==0) {
+
+    if (mysqli_num_rows($resultk)) {
+    ada();
+  }else if(mysqli_num_rows($resultk)==0){
+    if (isset($_GET['tambah'])) {
+      ada();
+    }else{
+      kosong();
+    }
+  }
+
+
+    function ada(){
+        keranjang();
+    }
+
+        function kosong(){
+
       ?>
+
       <div class="row">
 
       <div class="container col-6">
-        <img class="col mb-5" src="zero.png" alt="">
-        <h4 class="text-monospace text-center">Keranjang Kosong</h4>
-        <a href="" class="col btn btn-success" name="button">Tambah Barang</a>
+      <img class="col mb-5" src="zero.png" alt="">
+      <h4 class="text-monospace text-center">Keranjang Kosong</h4>
+      <a href="" class="col btn btn-success" name="button">Tambah Barang</a>
       </div>
-    </div>
+      </div>
       <?php
-    }
-    keranjang();
-    ?>
 
+    }
+
+
+  ?>
+  <a href="#" class="btn btn-success float-right">Bayar Semua</a>
   </div>
 </body>
 <footer id="myFooter">

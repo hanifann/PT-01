@@ -125,7 +125,7 @@ function keranjang(){
         <div class="container">
         <div class="row">
           <div class="col">
-              <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px; width:300px;" alt="...">'; ?>
+              <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
           </div>
           <div class="col" style="background-color:blue">
 
