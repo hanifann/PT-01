@@ -127,7 +127,7 @@ function keranjang(){
           <div class="col">
               <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
           </div>
-          <div class="col" style="background-color:blue">
+          <div class="col">
 
             <h3><?php echo $row1[2] ?></h3>
           </div>
@@ -135,7 +135,7 @@ function keranjang(){
           <div class="col pb-3">
             <div class="text-center">
                 Sub Total
-                <p style="font-size:10px;color:#B6B6B6;">Belum termasuk ongkir</p>
+                <p style="color:#B6B6B6;">Belum termasuk ongkir</p>
                 <?php
                 $rupiah = "Rp ".number_format($row1[6],0,',','.');
                 echo "<h5><b> $rupiah </b></h5>"; ?>
@@ -168,12 +168,13 @@ function tampil_item(){
     // code...
 ?>
   <div class="row mt-3">
-    <div class="col-6">
-      <div class="card">
-        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
+    <div class="container col">
+
+      <div class="container d-flex justify-content-cent">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
       </div>
-        <button type="button" class="btn btn-success mt-5 col-lg-12" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
-    </div>
+        <button type="button" class="btn btn-success mt-5 col-8" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
+  </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -206,9 +207,7 @@ function tampil_item(){
       <br>
       <br>
       <ul class="list-group">
-      <li class="list-group-item">
-      <?php echo '<p> '.$row[8].' </p>'; ?>
-      </li>
+
       </ul>
     </div>
   </div>
