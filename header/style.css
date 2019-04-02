@@ -1,0 +1,16 @@
+.separator{
+  border-left: 1px solid #7C7C7D;
+  height: 10vh;
+}
+
+.nav-link{
+  color: #1F1F27;
+}
+
+.dropdown:hover>.dropdown-toggle{
+  display: block;
+}
+
+.h3{
+  font-size: 40px;
+}
