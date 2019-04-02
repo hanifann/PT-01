@@ -41,7 +41,7 @@ if(isset($_POST["login"])){
       <div class="col-md-6 text-center">
         <div class="g">
           <h3 class="head">Login </h3>
-          <form class="login" action="" method="post">
+          <form class="login" action="/PT-01/main/main.php" method="post">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
               <input type="text" class="form-control" name="username" placeholder="username" autofocus required>

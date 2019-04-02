@@ -52,9 +52,11 @@ if(isset($_COOKIE["login"])){
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else{
-        $getUser = tampilkan();
-        $tampil = mysqli_fetch_assoc($getUser);
-        echo "Selamat Datang <a class='nav-link dropdown' href='/PT-01/materi/logut.php'>".$tampil['username']."</a>";
+        echo "Selamat Datang";
+        ?>
+        <a class="btn btn-success ml-4" href='/PT-01/materi/logut.php'><?php tampilkan();?></a>
+        <a class="btn" href="#">Keluar</a>
+        <?php
       }
         ?>
     </nav>

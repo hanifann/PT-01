@@ -7,8 +7,6 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
-
-
   </body>
 </html>
 <?php
@@ -56,17 +54,15 @@ function register($data){
 
 function login($data){
     global $conn;
-    $username = $data["username"];
-    $password = $data["password"];
+    $username = $data['username'];
+    $password = $data['password'];
     $cek = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
     if(mysqli_num_rows($cek) > 0){
         $hasil = mysqli_fetch_assoc($cek);
         $passwordhash =  $hasil["password"];
 
         if(password_verify($password, $passwordhash)){
-
             $_SESSION["login"] = true;
-
             setcookie("login","ok", time()+3600);
             echo "<script>alert('Login Berhasil');
             document.location.href='/PT-01/main/main.php'</script>";
@@ -74,6 +70,19 @@ function login($data){
             echo "<script>alert('Login gagal')</script>";
         }
     }
+}
+
+function tampilkan(){
+  global $conn;
+  if (isset($_POST['username'])) {
+    $username = $_POST['username'];
+  }
+  $query = "SELECT * FROM user WHERE username='$username'";
+  $result =  mysqli_query($conn,$query);
+
+  while( $row = mysqli_fetch_array($result)){
+    echo $row[1];
+  }
 }
 
 function keranjang(){
@@ -103,20 +112,12 @@ function keranjang(){
 
 
   $queryK = "SELECT * FROM keranjang";
-
-
   $resultK = mysqli_query($connBarang,$queryK);
+
   while ($row = mysqli_fetch_array($resultK)) {
-
-
   $query = "SELECT * FROM jual_barang WHERE id_barang = '$row[1]'";
-
   $result = mysqli_query($connBarang,$query);
-  ?>
-  <!-- <div class="container d-flex justify-content-center col-12">
-    <div class="row"> -->
 
-    <?php
     while($row1 = mysqli_fetch_array($result)){
       ?>
       <div class="container border mt-3 pt-3">
@@ -128,10 +129,8 @@ function keranjang(){
               <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
           </div>
           <div class="col">
-
             <h3><?php echo $row1[2] ?></h3>
           </div>
-
           <div class="col pb-3">
             <div class="text-center">
                 Sub Total
@@ -144,13 +143,12 @@ function keranjang(){
           </div>
         </div>
       </div>
+
       </div>
     <?php
   }?>
     <?php
-
   }
-
   }
 
 
@@ -158,18 +156,14 @@ function tampil_item(){
   if (isset($_GET['item'])) {
     $id = $_GET['item'];
   }
-
   global $connBarang;
   $query = "SELECT * FROM jual_barang WHERE id_barang=$id";
   $result= mysqli_query($connBarang,$query);
 
   while ($row = mysqli_fetch_array($result)) {
-
-    // code...
 ?>
   <div class="row mt-3">
     <div class="container col">
-
       <div class="container d-flex justify-content-cent">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
       </div>
@@ -187,9 +181,6 @@ function tampil_item(){
             <div class="modal-body">
               <p>Some text in the modal.</p>
             </div>
-            <?php
-
-             ?>
             <div class="modal-footer">
               <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
                   Tambah ke keranjang
@@ -211,7 +202,6 @@ function tampil_item(){
       </ul>
     </div>
   </div>
-
   <?php
 }
 }
@@ -223,24 +213,19 @@ function tampil_biasa(){
 ?>
 
 <div class="container d-flex justify-content-center col-12">
-
   <div class="row">
-
-
   <?php
   while($row = mysqli_fetch_array($result)){
     ?>
     <table>
       <tr>
         <td>
-
     <!-- <div class="container mb-5 col mt-5"> -->
       <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border border-primary" style="width: 14rem;">
-        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px;" alt="...">'; ?>
+      <div class="card border border-primary" style="width: 11rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
           <div class="card-body">
-
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
             <?php $id=$row[1] ?>
             <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
@@ -249,7 +234,6 @@ function tampil_biasa(){
               $rupiah = "Rp ".number_format($row[6],0,',','.');
               echo "<p><b> $rupiah </b></p>"; ?>
             </div>
-
           </a>
         </div>
       </div>
@@ -266,17 +250,6 @@ function tampil_biasa(){
 
 }
 
-function tampilkan(){
-  global $conn;
-  $query = "SELECT username FROM user WHERE username='$username'";
-  $result = mysqli_query($conn,$query);
-
-  while ($row = mysqli_fetch_array($result)) {
-
-
-
-  }
-}
 
 function tampilkan_satu(){
   if (isset($_GET['id'])) {
@@ -342,7 +315,7 @@ function tampilkan_admin(){
   $result =mysqli_query($connBarang,$query);
 ?>
 <div class="container mt-3">
-  <h1 class="text-center">Database Barang</h1>
+  <h1 class="text-center">Semua Etalase</h1>
 </div>
 <hr>
 
@@ -361,8 +334,8 @@ function tampilkan_admin(){
     <!-- <div class="container mb-5 col mt-5"> -->
       <a href="/PT-01/main/main.php">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border border-primary" style="width: 14rem;">
-        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:200px;" alt="...">'; ?>
+      <div class="card border border-primary" style="width: 11rem;">
+        <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:120px;" alt="...">'; ?>
           <div class="card-body">
 
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
@@ -377,7 +350,7 @@ function tampilkan_admin(){
           </a>
           <a href="/PT-01/register/conpik.php?edit=<?php echo $row[0]; ?>">
             <div class="float-left mt-3">
-              <button type="button" style="width:190%" class="btn btn-outline-info" name="button-ganti" method="POST" > Edit  </button>
+              <button type="button"  class="btn btn-outline-info" name="button-ganti" method="POST" > Edit  </button>
             </div>
           </a>
 
