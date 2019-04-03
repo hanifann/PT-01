@@ -34,9 +34,12 @@ crossorigin="anonymous"></script>
             aria-hidden="true"></i></span>
       </div>
       </div>
-        <a class="btn" href="#" id="navbarDropdown" role="button">
-          Keranjang
+      <div class="" style="border-right:#d2d2d2 solid 1px">
+
+        <a class="btn btn-light" style="background:none; border:none;" data-toggle="tooltip" data-placement="bottom" title="Keranjang"    href="/PT-01/keranjang/cart.php" id="navbarDropdown" role="button">
+          <img src="/PT-01/header/asset/vegetables.png" class="img-thumbnail rounded-circle"  alt="">
         </a>
+      </div>
         <?php
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
