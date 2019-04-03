@@ -74,6 +74,17 @@ if(isset($_COOKIE["login"])){
              <tbody>
                <tr>
                  <td>
+                   Semua Etalase
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   Alat Pertanian
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   Bibit
                  </td>
                </tr>
              </tbody>

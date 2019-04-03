@@ -311,10 +311,6 @@ function tampilkan_admin(){
   $query = "SELECT * FROM jual_barang";
   $result =mysqli_query($connBarang,$query);
 ?>
-<div class="container mt-3">
-  <h1 class="text-center">Semua Etalase</h1>
-</div>
-<hr>
 
 <div class="container d-flex justify-content-center col-12">
 
