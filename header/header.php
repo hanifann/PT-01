@@ -54,13 +54,18 @@ crossorigin="anonymous"></script>
           <div class="dropdown-menu" style="background:#Fdff5; color:#6E6E6E;" aria-labelledby="dropdownMenuButton">
             <img src="/PT-01/header/asset/up.png" alt="" style="position:absolute; margin-top:-26px; margin-left:20px;">
           <a class="dropdown-item dropdown-link" href="/PT-01/Admin_Toko/admin_toko.php">
-          <?php echo $_SESSION['username']; ?>
+          <div class="" style="color:#7A7A78;">Halo</div>
+          <b style="font-size:15pt;">
+            <?= $_SESSION['username']; ?>
+          </b>
           </a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="/PT-01/materi/logut.php">Keluar</a>
         </div>
 </div>
-        <a class="btn" href="/PT-01/materi/logut.php">Keluar</a>
+
         <?php
       }
         ?>
