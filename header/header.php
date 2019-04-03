@@ -48,16 +48,14 @@ crossorigin="anonymous"></script>
       }else {
         ?>
         <div class="dropdown">
-    <img class="img-thumbnail rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="/PT-01/header/asset/farmer.png" alt="">
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-    <a class="dropdown-item btn btn-outline-success" href="/PT-01/Admin_Toko/admin_toko.php">
-      <?php echo $_SESSION['username']; ?>
-
-    </a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
+          <img class="img-thumbnail rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="/PT-01/header/asset/farmer.png" alt="">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item btn btn-outline-success" href="/PT-01/Admin_Toko/admin_toko.php">
+          <?php echo $_SESSION['username']; ?>
+          </a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
 </div>
         <a class="btn" href="/PT-01/materi/logut.php">Keluar</a>
         <?php
