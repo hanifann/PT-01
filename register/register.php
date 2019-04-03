@@ -26,7 +26,9 @@ if(isset($_POST["daftar"])){
   </head>
   <body>
     <h1>
+      <a href="/PT-01/main/main.php">  
       <img style="width:15%;" src="/PT-01/login/kambing.png" alt="">
+    </a>
     </h1>
     </nav>
     <hr>

@@ -32,7 +32,9 @@ if(isset($_POST["login"])){
   </head>
   <body>
     <h1>
+      <a href="/PT-01/main/main.php">  
       <img style="width:15%" src="kambing.png" alt="">
+    </a>
     </h1>
     <hr>
     <div class="container">

@@ -61,7 +61,7 @@ if(isset($_COOKIE["login"])){
      </div>
      <div class="container ml-3 mt-3">
        <div class="row">
-         <div class="col-sm-2 table-active">
+         <div class="col-sm-2 table-active" style="height:12rem">
            <table class="table table-hover table-border" style="color:#606060">
              <thead>
                <tr>

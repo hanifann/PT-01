@@ -60,7 +60,7 @@ crossorigin="anonymous"></script>
           </b>
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Lacak Pesanan</a>
           <a class="dropdown-item" href="#">Something else here</a>
           <a class="dropdown-item" href="/PT-01/materi/logut.php">Keluar</a>
         </div>
@@ -93,7 +93,13 @@ crossorigin="anonymous"></script>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item d-flex align-items-end">
-          <a class="nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+            <?php if (!isset($_SESSION['login'])) {
+              belumlogin();
+            }else{
+              sudahlogin();
+            }
+            ?>
+          </button>
         </li>
       </ul>
     </div>
@@ -104,4 +110,40 @@ crossorigin="anonymous"></script>
   </body>
 
 </html>
-<!-- bukan haris bang -->
+
+<?php function belumlogin(){?>
+<!-- Button trigger modal -->
+<a type="button" class="btn btn-outline-light nav-link" style="background:none; border:none;" data-toggle="modal" data-target="#exampleModalLong">
+  <i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Anda belum login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Silahkan login atau daftar
+      </div>
+      <div class="modal-footer">
+        <a href="/PT-01/login/login.php" type="button" class="btn btn-secondary">Login</a>
+        <a href="/PT-01/register/register.php" type="button" class="btn btn-primary">Daftar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<?php
+}
+?>
+
+<?php
+function sudahlogin(){?>
+              <a type="button" style="background:none; border:none;" class="btn btn-outline-light nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+<?php
+}
+?>
