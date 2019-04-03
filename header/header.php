@@ -34,35 +34,28 @@ crossorigin="anonymous"></script>
             aria-hidden="true"></i></span>
       </div>
       </div>
-        <a class="nav-link dropdown-toggle dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Our Partner
+        <a class="btn" href="#" id="navbarDropdown" role="button">
+          Keranjang
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
         <?php
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else {
         ?>
-        <div class="dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <button type="button" class="btn btn-light rounded-circle" name="button" aria-disabled="true" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:none; border:none;">
+        <div class="dropdown" >
+          <button type="button" class="btn btn-light rounded-circle" name="button"  id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:none; border:none;">
 
           <img class="img-thumbnail rounded-circle"
-           id="dropdownMenuButton" data-toggle="tooltip" data-plaacement="bottom" title="profil"  src="/PT-01/header/asset/farmer.png" alt="">
+           id="dropdownMenuButton" data-toggle="tooltip" data-placement="bottom" title="profil"  src="/PT-01/header/asset/farmer.png" alt="">
          </button>
-         <div class="container" >
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <img src="/PT-01/header/asset/up.png" alt="" style="position:absolute; margin-top:-20px; margin-left:20px;">
-          <a class="dropdown-item btn btn-outline-success" href="/PT-01/Admin_Toko/admin_toko.php">
+          <div class="dropdown-menu" style="background:#Fdff5; color:#6E6E6E;" aria-labelledby="dropdownMenuButton">
+            <img src="/PT-01/header/asset/up.png" alt="" style="position:absolute; margin-top:-26px; margin-left:20px;">
+          <a class="dropdown-item dropdown-link" href="/PT-01/Admin_Toko/admin_toko.php">
           <?php echo $_SESSION['username']; ?>
           </a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </div>
 </div>
         <a class="btn" href="/PT-01/materi/logut.php">Keluar</a>
         <?php
