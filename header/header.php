@@ -46,25 +46,18 @@ crossorigin="anonymous"></script>
         if(!isset($_SESSION['login'])){
         echo "<a class='nav-link' href='/PT-01/login/login.php'>Login </a>";
       }else {
-<<<<<<< HEAD
         ?>
         <div class="dropdown">
   <button class="btn btn-dark btn-lg " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <?php echo $_SESSION['username']; ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item btn btn-outline-success" href="/PT-01/Admin_Toko/admin_toko.php">Halaman admin</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
   </div>
 </div>
         <a class="btn" href="/PT-01/materi/logut.php">Keluar</a>
-=======
-        echo "Selamat Datang";
-        ?>
-        <a class="btn btn-success ml-4" href='/PT-01/materi/logut.php'><?php echo $_SESSION["username"];?></a>
-        <a class="btn" href="">Keluar</a>
->>>>>>> 67a552af8f00d74e2697b9364ec666a57a1ea438
         <?php
       }
         ?>
@@ -102,3 +95,4 @@ crossorigin="anonymous"></script>
 
   </body>
 </html>
+<!-- bukan haris bang -->

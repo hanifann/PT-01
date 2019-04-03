@@ -97,22 +97,16 @@ function keranjang(){
     $resultKi = mysqli_query($connBarang,$queryKi);
     if ($resultKi) {
       ?>
-      <script type="text/javascript">
-
-      swal({
-        title: "Good job!",
-        text: "Berhasil Ditambahkan ke keranjang",
-        icon: "success",
-        button: "Aww yiss!",
-      });
-      </script>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
       <?php
     }else{
     }
   }
-  else {
-  }
-
 
   $queryK = "SELECT * FROM keranjang";
   $resultK = mysqli_query($connBarang,$queryK);
