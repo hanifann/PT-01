@@ -52,6 +52,14 @@ crossorigin="anonymous"></script>
     <?php echo $_SESSION['username']; ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-item">
+      <div class="row">
+        <div class="col-12 border">
+          
+
+        </div>
+      </div>
+    </div>
     <a class="dropdown-item btn btn-outline-success" href="/PT-01/Admin_Toko/admin_toko.php">Halaman admin</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
