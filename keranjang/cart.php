@@ -29,6 +29,9 @@
 
     function ada(){
         keranjang();
+        ?>
+        <a href="#" class="btn btn-success float-right mt-2">Bayar Semua</a>
+        <?php
     }
 
         function kosong(){
@@ -49,11 +52,10 @@
 
 
   ?>
-  <a href="#" class="btn btn-success float-right">Bayar Semua</a>
   </div>
 </body>
 <footer id="myFooter">
-      <div class="kaki">
+      <div class="kaki mt-5">
           <ul>
               <li><a href="#">Company Information</a></li>
               <li><a href="#">Contact us</a></li>

@@ -73,20 +73,6 @@ function login($data){
     }
 }
 
-function tampilkan($data){
-  global $conn;
-  if (isset($data['username'])) {
-    $username = $data['username'];
-  }
-  $
-  $query = "SELECT * FROM user WHERE username='$username'";
-  $result =  mysqli_query($conn,$query);
-
-  while( $row = mysqli_fetch_array($result)){
-    echo $row[1];
-  }
-
-}
 
 function keranjang(){
   global $connBarang;
@@ -159,12 +145,11 @@ function tampil_item(){
 
   while ($row = mysqli_fetch_array($result)) {
 ?>
-  <div class="row mt-3">
-    <div class="container col">
-      <div class="container d-flex justify-content-cent">
+  <div class="d-flex justify-content-center row mt-3">
+    <div class="col-sm-5 d-flex justify-content-center">
+      <div class="container d-flex justify-content-center">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
       </div>
-        <button type="button" class="btn btn-success mt-5 col-8" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
   </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -189,9 +174,16 @@ function tampil_item(){
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <h4>Pupuk Urea</h4>
-      <h5 style="color:#E7362F;">Rp. 2.000.000</h5>
+    <div class="col-sm-6">
+      <div class="container">
+
+      <h4 class="justify-content-center d-flex">Pupuk Urea</h4>
+      <h5 class="d-flex justify-content-center" style="color:#E7362F;">Rp. 2.000.000</h5>
+      <div class="d-flex justify-content-center">
+
+      <button type="button" class="d-flex justify-content-center btn btn-success mt-2 col-8" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
+    </div>
+    </div>
       <br>
       <br>
       <ul class="list-group">
