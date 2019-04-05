@@ -28,7 +28,7 @@ if(isset($_COOKIE["login"])){
        <img src="asset/online.png" class="img-thumbnail" alt="">
      </div>
      <div class="col mt-1">
-      <a href="#"><h4>Nama_Toko</h4></a><hr>
+      <a href="#"><h4>Toko <?= $_SESSION['username'] ?></h4></a><hr>
       <table style="color:#606060">
         <tr>
           <td>
