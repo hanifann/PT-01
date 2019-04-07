@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 22, 2019 at 10:15 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Apr 07, 2019 at 08:01 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
 (1, 'hanifan', '$2y$10$aYGmAm4IEXLgvUAB7bXmjezosx9.c586Ra9mD5gBS7Ha9FUAjGRxi', 'hanifannurulhaq@outlook.com'),
 (2, 'budi', '$2y$10$eKcfrltR8iU.MFJyIMAaKO8qU1hwlh5aKvAZ8I.zjS5jN.myTQwFm', 'budi@gmail.com'),
-(3, 'hasbi', '$2y$10$OiaMy6965APxY9LTbGj7Y.IVTCYWWMjXneITy6vbVwK4GTJVvUCgq', 'hsabi@gmail.com');
+(5, 'hasbi', '$2y$10$ZJAmgyYcQ66AhLNbNGE0F.t9OW4va1ldzt6.j79mdNk9ZTbuV0k7K', 'hasbifhasbi@gmail.com'),
+(6, 'ali', '$2y$10$hNWPBlhoSaxrSAriWLTcDOCi0yWEQMjOPhzNEc9aIM6PAAFMmOM1y', 'ali@manjaro.com');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +64,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
