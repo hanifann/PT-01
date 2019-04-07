@@ -167,7 +167,7 @@ function tampil_item(){
               <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
                   Tambah ke keranjang
         </a>
-              <a href="../checkout/checkout.php" class="col-6">
+              <a href="../checkout/checkout.php?bayar= <?= $row[0] ?>" class="col-6">
                 <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
               </a>
             </div>

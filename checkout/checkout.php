@@ -56,22 +56,38 @@ if(isset($_POST["Alamat"])){
       </div>
 
        <div class="row">
+
+         <?php
+         bayar();
+         function bayar(){
+           if (isset($_GET['bayar'])) {
+             $bayar = $_GET['bayar'];
+           }
+           global $connBarang;
+           $query = "SELECT * FROM jual_barang
+           -- WHERE id_barang=$bayar";
+           $result = mysqli_query($connBarang,$query);
+           while($row = mysqli_fetch_array($result)){
+           ?>
          <div class="col-8">
 
            <ul class="list-group">
+
              <li class="list-group-item">
 
                <div class="container">
                  <div class="row">
                    <div class="col">
                      <p>Barang</p><hr>
-                     <img src="/PT-01/main/img/urea.jpg" class="img-fluid" alt="">
+                     <?=
+                     '<img src="data:image;base64,'.$row[9].'" class="img-fluid" alt="">';
+                     ?>
                    </div>
 
                    <div class="col-5">
                      <p>Deskripsi</p><hr>
                      <div class="container">
-                       <h5>Pupuk Urea</h5>
+                       <h5><?= $row[2] ?></h5>
                        <p>Kualitas Super</p>
                      </div>
                    </div>
@@ -79,7 +95,10 @@ if(isset($_POST["Alamat"])){
                    <div class="col">
                      <p>Harga</p><hr>
                      <div class="text-center">
-                       <h6 style="color:#d50000">Rp 500.000</h6>
+                       <h6 style="color:#d50000">
+                         <?php $rupiah = "Rp ". number_format($row[6],0,',','.');
+                         echo "<p><b> $rupiah </b></p>"; ?>
+                       </h6>
                        <button type="button" onclick="hapus()" onclick="pindah()" name="button" class="btn btn-danger">Hapus</button>
 
                      </div>
@@ -94,7 +113,10 @@ if(isset($_POST["Alamat"])){
                  </div>
 
                  <div class="col-3 ml-5">
-                   <h6 style="color:#d50000"><b>Rp 500.000</b></h6>
+                   <h6 style="color:#d50000"><b><?php $sub = $row[6];
+                   $subtotal = $subtotal + $sub;
+                   $rupiah = "Rp ". number_format($subtotal,0,',','.');
+                   echo "<p><b> $rupiah </b></p>";?></b></h6>
                  </div>
                </div>
 
@@ -102,6 +124,11 @@ if(isset($_POST["Alamat"])){
            </ul>
 
          </div>
+
+       <?php
+     }
+     }
+       ?>
 
 
 <!--Aside-->
