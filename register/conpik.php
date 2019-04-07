@@ -212,7 +212,7 @@ function tampil_biasa(){
     <!-- <div class="container mb-5 col mt-5"> -->
       <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border border-primary" style="width: 11rem;">
+      <div class="card border" style="width: 11rem;">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
           <div class="card-body">
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
@@ -319,7 +319,7 @@ function tampilkan_admin(){
     <!-- <div class="container mb-5 col mt-5"> -->
       <a href="/PT-01/main/main.php">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border border-primary" style="width: 11rem;">
+      <div class="card border" style="width: 11rem;">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:120px;" alt="...">'; ?>
           <div class="card-body">
 

@@ -193,64 +193,6 @@ if(isset($_COOKIE["login"])){
       <?php
       tampil_biasa();
       ?>
-      <!-- <div class="row justify-content-center">
-        <a href="">
-          <div class="col md-4 overflow-hidden">
-            <div class="card" style="width: 15rem;">
-              <img src="img/traktor.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Traktor Yanmar</h5>
-                  <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
-                  <div class="harga">
-                    Rp. 200.000
-                  </div>
-                </div>
-            </div>
-          </div>
-        </a>
-        <a href="">
-          <div class="col md-4 ">
-            <div class="card" style="width: 15rem;">
-              <img src="img/harves.png" class="card-img-top overflow-hidden" style="border-bottom:1px solid #E5E5E5;" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Harvester</h5>
-                  <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
-                  <div class="harga">
-                    Rp. 500.000
-                  </div>
-                </div>
-            </div>
-          </div>
-        </a>
-        <a href="/PT-01/item/items.php">
-          <div class="col md-4 overflow-hidden">
-            <div class="card" style="width: 14rem;">
-              <img src="img/pupuksaja.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Pupuk Urea</h5>
-                  <p><i class="fas fa-store-alt"></i> Toko Bibit</p>
-                  <div class="harga">
-                    Rp. 5.000
-                  </div>
-                </div>
-            </div>
-          </div>
-        </a>
-        <a href="">
-          <div class="col md-4">
-            <div class="card" style="width: 15rem;">
-              <img src="img/zyklon.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Gas Anti Hama</h5>
-                  <p class="card-text"><i class="fas fa-store-alt"></i> Toko gas</p>
-                  <div class="harga">
-                    Rp. 20.000
-                  </div>
-                </div>
-            </div>
-          </div>
-        </a>
-      </div> -->
     </div>
     <div class="container">
       <img class="agraris" src="Asset/Agraris.png" alt="">
