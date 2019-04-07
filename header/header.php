@@ -113,9 +113,9 @@ crossorigin="anonymous"></script>
 
 <?php function belumlogin(){?>
 <!-- Button trigger modal -->
-<a type="button" class="btn btn-outline-light nav-link" style="background:none; border:none;" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-outline-light nav-link" style="border:none;background:none;" data-toggle="modal" data-target="#exampleModalLong">
   <i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak
-</a>
+</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -143,7 +143,7 @@ crossorigin="anonymous"></script>
 
 <?php
 function sudahlogin(){?>
-              <a type="button" style="background:none; border:none;" class="btn btn-outline-light nav-link" href="/PT-01/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
+              <a href="/PT-01/barang/barang.php"><button type="button" style="background:none; border:none;" class="btn btn-outline-light nav-link"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</button></a>
 <?php
 }
 ?>

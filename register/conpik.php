@@ -178,7 +178,11 @@ function tampil_item(){
       <div class="container">
 
       <h4 class="justify-content-center d-flex">Pupuk Urea</h4>
-      <h5 class="d-flex justify-content-center" style="color:#E7362F;">Rp. 2.000.000</h5>
+      <h5 class="d-flex justify-content-center" style="color:#E7362F;"><div class="harga">
+        <?php
+        $rupiah = "Rp ".number_format($row[6],0,',','.');
+        echo "<p><b> $rupiah </b></p>"; ?>
+      </div></h5>
       <div class="d-flex justify-content-center">
 
       <button type="button" class="d-flex justify-content-center btn btn-success mt-2 col-8" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
