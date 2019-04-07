@@ -134,6 +134,62 @@ function keranjang(){
   }
   }
 
+  function tunggu(){
+    global $connBarang;
+
+      if (isset($_GET['tambah'])) {
+      $tambah = $_GET['tambah'];
+      $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
+      $resultKi = mysqli_query($connBarang,$queryKi);
+      if ($resultKi) {
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Berhasil !</strong> barang berhasil ditambahkan ke keranjang.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+        <?php
+      }else{
+      }
+    }
+
+    $queryK = "SELECT * FROM keranjang";
+    $resultK = mysqli_query($connBarang,$queryK);
+
+    while ($row = mysqli_fetch_array($resultK)) {
+    $query = "SELECT * FROM jual_barang WHERE id_barang = '$row[1]'";
+    $result = mysqli_query($connBarang,$query);
+
+      while($row1 = mysqli_fetch_array($result)){
+        ?>
+        <div class="container border mt-3 mb-4 pb-3 pt-3">
+          <div class="container">
+          <div class="row">
+            <div class="col">
+                <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
+            </div>
+            <div class="col">
+              <h3><?php echo $row1[2] ?></h3>
+            </div>
+            <div class="col pb-3">
+              <div class="text-center">
+                  Sub Total
+                  <p style="color:#B6B6B6;">Belum termasuk ongkir</p>
+                  <?php
+                  $rupiah = "Rp ".number_format($row1[6],0,',','.');
+                  echo "<h5><b> $rupiah </b></h5>"; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      <?php
+    }?>
+      <?php
+    }
+    }
 
 function tampil_item(){
   if (isset($_GET['item'])) {

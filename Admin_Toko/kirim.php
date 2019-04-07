@@ -20,7 +20,7 @@ if(isset($_COOKIE["login"])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class="container border mt-4" id="proses">
+    <div class="container mt-4" id="kirim">
       <div class="container mt-2">
         <h6 style="color:#3FC0B7;">Daftar belanja</h6><hr>
       </div>
@@ -45,66 +45,32 @@ if(isset($_COOKIE["login"])){
             <span class="align-middle">Filter status</span>
           </div>
           <div class="col-3">
-            <a href="#" style="border-bottom:3px solid #3FC0B7;" id="diproses">Pesanan Diproses</a>
+            <a href="#" style="border-bottom:3px solid #777777;" id="diproses">Pesanan Diproses</a>
           </div>
           <div class="col-3">
-            <a href="#" style="border-bottom:3px solid #777777;" id="dikirim">Pesanan Dikirim</a>
+            <a href="#" style="border-bottom:3px solid #3FC0B7;" id="dikirim">Pesanan Dikirim</a>
           </div>
           <div class="col-3">
             <a href="#" style="border-bottom:3px solid #777777;" id="tibaa">Pesanan Tiba</a>
           </div>
         </div>
       </div>
-      <?php
-      global $connBarang;
-      $queryk = "SELECT * FROM keranjang";
-      $resultk = mysqli_query($connBarang,$queryk);
-
-      if (mysqli_num_rows($resultk)) {
-      ada();
-    }else if(mysqli_num_rows($resultk)==0){
-      if (isset($_GET['tambah'])) {
-        ada();
-      }else{
-        kosong();
-      }
-    }
-
-
-      function ada(){
-          tunggu();
-          ?>
-
-          <?php
-      }
-
-          function kosong(){
-
-        ?>
-
           <img class="mx-auto d-block mt-5" src="asset/box.png" alt="">
           <p class="text-center">Belum ada pesanan</p>
           <div class="text-center pb-4">
             <a href="/PT-01/main/main.php"><button type="button" class="btn btn-info rounded" name="button">Belanja sekarang</button></a>
           </div>
         </div>
-        <?php
-
-      }
-      ?>
-
-      </div>
-    </div>
-    <script type="text/javascript">
-      $(document).on("click","#dikirim",function() {
-        $("#proses").load("kirim.php #kirim");
-      });
-
-      $(document).on("click","#tibaa",function() {
-        $("#proses").load("tiba.php #tiba");
-      });
-    </script>
   </body>
+  <script type="text/javascript">
+    $(document).on("click","#diproses",function() {
+      $("#kirim").load("tunggu.php");
+    });
+
+    $(document).on("click","#tibaa",function() {
+      $("#kirim").load("tiba.php #tiba");
+    });
+  </script>
   <!-- Footer -->
   <footer id="myFooter">
         <div class="kaki">
