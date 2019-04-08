@@ -131,8 +131,8 @@ crossorigin="anonymous"></script>
         Silahkan login atau daftar
       </div>
       <div class="modal-footer">
-        <a href="/PT-01/login/login.php" type="button" class="btn btn-secondary">Login</a>
-        <a href="/PT-01/register/register.php" type="button" class="btn btn-primary">Daftar</a>
+        <a href="/PT-01/login/login.php"><button type="button" class="btn btn-secondary">Login</button></a>
+        <a href="/PT-01/register/register.php"><button type="button" class="btn btn-primary">Daftar</button></a>
       </div>
     </div>
   </div>
