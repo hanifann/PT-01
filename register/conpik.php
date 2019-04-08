@@ -207,6 +207,29 @@ function tampil_item(){
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
       </div>
   </div>
+
+  <!-- Modal Belum Login -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Anda belum login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Silahkan login atau daftar
+        </div>
+        <div class="modal-footer">
+          <a href="/PT-01/login/login.php" type="button" class="btn btn-secondary">Login</a>
+          <a href="/PT-01/register/register.php" type="button" class="btn btn-primary">Daftar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -233,15 +256,25 @@ function tampil_item(){
     <div class="col-sm-6">
       <div class="container">
 
-      <h4 class="justify-content-center d-flex">Pupuk Urea</h4>
+      <h4 class="justify-content-center d-flex"><?= $row[2] ?></h4>
       <h5 class="d-flex justify-content-center" style="color:#E7362F;"><div class="harga">
         <?php
         $rupiah = "Rp ".number_format($row[6],0,',','.');
         echo "<p><b> $rupiah </b></p>"; ?>
       </div></h5>
-      <div class="d-flex justify-content-center">
+      <?php
+    }
+    ?>
 
-      <button type="button" class="d-flex justify-content-center btn btn-success mt-2 col-8" data-toggle="modal" data-target="#myModal" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
+      <div class="d-flex justify-content-center">
+      <button type="button" class="d-flex justify-content-center btn btn-success mt-2 col-8" data-toggle="modal" data-target="
+      <?php if (isset($_SESSION['login'])) {
+        echo "#myModal";
+      }else {
+        echo "#exampleModalLong";
+      }
+      ?>" style="background:#FF7100;"><i class="fas fa-shopping-cart"></i>&nbsp; Beli</button>
+
     </div>
     </div>
       <br>
@@ -253,7 +286,7 @@ function tampil_item(){
   </div>
   <?php
 }
-}
+
 
 function tampil_biasa(){
   global $connBarang;

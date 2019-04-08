@@ -133,10 +133,25 @@ if(isset($_POST["Alamat"])){
 
 <!--Aside-->
          <div class="col-4">
+           <?php
+           Lanjutkan();
+           function Lanjutkan(){
+             if (isset($_GET['bayar'])) {
+               $id = $_GET['bayar'];
+             }
+             global $connBarang;
+             $query = "SELECT * FROM jual_barang WHERE id_barang ='$id'";
+             $result = mysqli_query($connBarang,$query);
+             while($row = mysqli_fetch_array($result)){
+               ?>
            <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
              <p>Ringkasan Belanja</p><hr>
              <p>Total Barang : (30 Barang)</p>
-             <p style="color:#d50000">Rp 500.000</p>
+
+               <?php
+             $rupiah = "Rp ". number_format($row[6],0,',','.');
+             echo "<p style='color:#d50000'><b> $rupiah </b></p>";?>
+
              <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="katefori">Pilih Durasi Pengiriman</label>
@@ -150,6 +165,10 @@ if(isset($_POST["Alamat"])){
             </div>
             <a href="../Tata_Cara_Bayar/BayarBang.php"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
           </div>
+          <?php
+        }
+        }
+        ?>
         </div>
          </div>
 
