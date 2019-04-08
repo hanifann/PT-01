@@ -65,7 +65,7 @@ if(isset($_POST["Alamat"])){
            }
            global $connBarang;
            $query = "SELECT * FROM jual_barang
-           -- WHERE id_barang=$bayar";
+           WHERE id_barang=$bayar";
            $result = mysqli_query($connBarang,$query);
            while($row = mysqli_fetch_array($result)){
            ?>
@@ -114,8 +114,8 @@ if(isset($_POST["Alamat"])){
 
                  <div class="col-3 ml-5">
                    <h6 style="color:#d50000"><b><?php $sub = $row[6];
-                   $subtotal = $subtotal + $sub;
-                   $rupiah = "Rp ". number_format($subtotal,0,',','.');
+                   $sub =+ $sub;
+                   $rupiah = "Rp ". number_format($sub,0,',','.');
                    echo "<p><b> $rupiah </b></p>";?></b></h6>
                  </div>
                </div>
