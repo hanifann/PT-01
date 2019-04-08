@@ -163,7 +163,8 @@ if(isset($_POST["Alamat"])){
                 </select>
               </div>
             </div>
-            <a href="../Tata_Cara_Bayar/BayarBang.php"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
+
+            <a href="../Tata_Cara_Bayar/BayarBang.php?bayarkau= <?= $row[0];?>"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
           </div>
           <?php
         }

@@ -32,9 +32,29 @@ if(isset($_COOKIE["login"])){
   <!--end of navbar 2-->
 
 <!-- PANEL -->
+<?php
+bayar();
+function bayar(){
+  if (isset($_GET['bayarkau'])) {
+    $id = $_GET['bayarkau'];
+  }
+  global $connBarang;
+  $query = "SELECT * FROM jual_barang WHERE id_barang = '$id'";
+  $result = mysqli_query($connBarang,$query);
+  while ($row = mysqli_fetch_array($result)) {
+    // code...
+ ?>
 <div class="container border mt-3">
   <h5 class="text-center mt-4">Total Pembelian</h5>
-  <h5 class="text-center" style="color:#FF7300;">Rp. 500.000</h5>
+  <h5 class="text-center" style="color:#FF7300;">
+    <?php
+    $rupiah = "Rp ".number_format($row[6],0,',','.');
+    echo "<p><b> $rupiah </b></p>"; ?>
+  </h5>
+  <?php
+}
+}
+?>
   <table id="tabelBayar" class="table table-hover">
     <tbody>
       <tr>
