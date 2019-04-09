@@ -1,3 +1,7 @@
+<?php
+require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +12,20 @@
     <div id="bayar">
     <hr>
     <h1 class="text-center">Pembayaran Berhasil</h1>
+    <?php
+    Pembelian($_SESSION);
+      function Pembelian($data){
+        $id = $data['bayarkau'];
+        global $connBarang;
+        $query = "SELECT * FROM jual_barang WHERE id_barang = '$id'";
+        $result = mysqli_query($connBarang,$query);
+        while ($row = mysqli_fetch_array($result)){
+
+          $query1 = "INSERT INTO penjualan(id_barang,nama_barang,jumlah_barang) values($row[0],'$row[2]',+1)";
+          $result1 = mysqli_query($connBarang,$query1);
+        }
+      }
+     ?>
     <button type="button" class="btn btn-secondary" id="kembali" name="button"><img class="mr-3" src="left.png" alt="">Kembali</button>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>

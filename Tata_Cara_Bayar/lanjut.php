@@ -1,3 +1,6 @@
+<?php
+require_once '/opt/lampp/htdocs/PT-01/register/conpik.php'; 
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -25,7 +28,7 @@
          <button type="button" class="btn btn-outline-info col-lg-12" data-toggle="modal" data-target="#myModal">Tata Cara Pembayaran</button>
        </div>
        <div class="col-4">
-           <button type="button" id="bukti" class="btn btn-info col-lg-12">Upload bukti pembayaran</button>
+           <button type="button" id="bukti" name="upload" class="btn btn-info col-lg-12">Upload bukti pembayaran</button>
        </div>
      </div>
      <button class="btn btn-secondary" id="kembali" name="button">

@@ -425,6 +425,12 @@ function tampilkan_admin(){
               echo "<p><b> $rupiah </b></p>"; ?>
             </div>
 
+            <div class="row">
+              <p class="col">Stock</p>
+                <p class="text-center col-5 mr-3 rounded border border-primary"><?= $row[7]  ?></p>
+                <button type="tambah" class="col btn" name="button">Oh God!!</button>
+                </div>
+
           </a>
           <a href="/PT-01/register/conpik.php?edit=<?php echo $row[0]; ?>">
             <div class="float-left mt-3">

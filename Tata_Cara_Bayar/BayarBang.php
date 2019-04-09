@@ -37,6 +37,7 @@ bayar();
 function bayar(){
   if (isset($_GET['bayarkau'])) {
     $id = $_GET['bayarkau'];
+    $_SESSION['bayarkau'] = $id;
   }
   global $connBarang;
   $query = "SELECT * FROM jual_barang WHERE id_barang = '$id'";
