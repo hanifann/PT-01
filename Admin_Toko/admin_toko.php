@@ -9,6 +9,17 @@ if(isset($_COOKIE["login"])){
     }
 }
 
+
+$dataPoints = array(
+	array("y" => 25, "label" => "Sunday"),
+	array("y" => 15, "label" => "Monday"),
+	array("y" => 25, "label" => "Tuesday"),
+	array("y" => 5, "label" => "Wednesday"),
+	array("y" => 10, "label" => "Thursday"),
+	array("y" => 0, "label" => "Friday"),
+	array("y" => 20, "label" => "Saturday")
+);
+
  ?>
 
      <link rel="stylesheet" href="admin_toko.css">
@@ -28,29 +39,47 @@ if(isset($_COOKIE["login"])){
        <img src="asset/online.png" class="img-thumbnail" alt="">
      </div>
      <div class="col mt-1">
-      <a href="#"><h4>Toko <?= $_SESSION['username'] ?></h4></a><hr>
-      <table style="color:#606060">
-        <tr>
-          <td>
-            <img src="asset/map.png" data-toggle="tooltip" title="dikirm dari" alt="">
-            bojong soang
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="asset/open.png" data-toggle="tooltip" title="buka sejak" alt="">
-            januari 2019
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="asset/home.png" data-toggle="tooltip" title="lokasi" alt="">
-            hanya onlen
-          </td>
-        </tr>
-      </table>
+       <a href="#"><h4>Toko <?= $_SESSION['username'] ?></h4></a>
+       <hr>
+       <div class="row">
+        <div class="col-4">
+          <table style="color:#606060">
+            <tr>
+              <td>
+                <img src="asset/map.png" data-toggle="tooltip" title="dikirm dari" alt="">
+                bojong soang
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="asset/open.png" data-toggle="tooltip" title="buka sejak" alt="">
+                januari 2019
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="asset/home.png" data-toggle="tooltip" title="lokasi" alt="">
+                hanya onlen
+              </td>
+            </tr>
+          </table>
+        </div>
+       <div class="col-8">
+         <div class="text-right mt-4">
+           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Button with data-target
+           </button>
+         </div>
+      </div>
+     </div>
       <hr>
      </div>
+     <div class="collapse border" id="collapseExample">
+      <div class="card card-body">
+        <div id="chartContainer" style="height: 10px; width: 5%;"></div>
+      </div>
+     </div>
+
      <div class="container-fluid">
        <nav class="navbar navbar-expand-lg navbar-dark border" style="background-color:#F7F7F7;">
         <form class="form-inline" action="">
@@ -114,7 +143,26 @@ if(isset($_COOKIE["login"])){
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "Push-ups Over a Week"
+	},
+	axisY: {
+		title: "Number of Push-ups"
+	},
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+
+}
 </script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
    <!-- Footer -->
