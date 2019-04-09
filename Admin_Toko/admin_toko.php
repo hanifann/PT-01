@@ -72,13 +72,14 @@ $dataPoints = array(
          </div>
       </div>
      </div>
+   </div>
       <hr>
      </div>
      <div class="collapse border" id="collapseExample">
-      <div class="card card-body">
-        <div id="chartContainer" style="height: 10px; width: 5%;"></div>
+      <div id="chartContainer" style="height: 10px; width: 5%;">
       </div>
      </div>
+     <div class="row mt-4">
 
      <div class="container-fluid">
        <nav class="navbar navbar-expand-lg navbar-dark border" style="background-color:#F7F7F7;">
