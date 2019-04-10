@@ -1,13 +1,15 @@
 <?php
-require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
+require '/opt/lampp/htdocs/PT-01/register/conpik.php';
 require '/opt/lampp/htdocs/PT-01/header/header.php';
-
+require_once 'carifun.php';
 
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
         $_SESSION["login"] = true;
     }
 }
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -19,10 +21,14 @@ if(isset($_COOKIE["login"])){
   <body>
     <div class="container">
       <div class="row">
-        <div class="col mt-4 pt-2 pb-2" style="color:white;background:#3FC0B7;">
-          Menampilkan produk untuk
+        
+        <?php
+        if (isset($_POST['cari'])) {
+          $cariaja = $_POST['cari'];
+          caribang($cariaja);
+        }
 
-        </div>
+        ?>
       </div>
     </div>
 

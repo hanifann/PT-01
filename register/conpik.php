@@ -236,19 +236,33 @@ function tampil_item(){
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Toko Pupuk</h4>
+              <h4 class="modal-title">Tambah <?= $row[2] ?></h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <p>Some text in the modal.</p>
+              <div class="row">
+                <div class="col">
+              <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:100px; width:150px;" alt="...">'; ?>
+            </div>
+              <!-- <div class="col"> -->
+                <div class="text-center col" id="app">
+              <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
+                <h5><b> <?= $rupiah ?> </b></h5>
+                <form class="" action="index.html" method="post">
+
+                    <v-minusplusfield :value="1" :min="1" :max="55"></v-minusplusfield>
+
+                </div>
+            </div>
             </div>
             <div class="modal-footer">
-              <a class="btn btn-outline-success col-6" href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> ">
+              <a href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> >  <button type="button" name="tkk" class="btn btn-outline-success col-6">
                   Tambah ke keranjang
-        </a>
+                </button></a>
               <a href="../checkout/checkout.php?bayar= <?= $row[0] ?>" class="col-6">
-                <button type="button" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
+                <button type="button" name="lkp" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
               </a>
+            </form>
             </div>
         </div>
       </div>

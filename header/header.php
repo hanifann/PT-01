@@ -19,23 +19,37 @@ crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/PT-01/Admin_Toko/admin_toko.css">
 </head>
 
 
   <body>
+
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
+    <div class="header sticky-top">
+
+    <nav class=" border navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#EBEBEB;">
       <a class="nav-link" href="#">Jual Beli</a>
       <a class="nav-link" href="/PT-01/turorial/tutorial.php">Tutorial</a>
-      <div class="input-group md-form form-sm form-2 pl-0 w-50  ">
-      <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
-      <div class="input-group-append">
-        <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fas fa-search text-grey"
-            aria-hidden="true"></i></span>
-      </div>
-      </div>
-      <div class="" style="border-right:#d2d2d2 solid 1px">
+    <form class="col-5 form-inline needs-validation" method="post" action="/PT-01/cari/cari.php" >
 
+
+      <label for="validationCustom01"></label>
+      <input id="validationCustom01" class="form-control gagal col" type="text" placeholder="Search" name="cari" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+
+      <button class="btn btn-success gagal" style="background:#EDEDED" type="submit" nama="caribang" id="carisadja"> <img src="/PT-01/Admin_Toko/asset/magnifier.png" alt=""> </button>
+
+    </form>
+    <p>
+  <button class="btn btn-light ml-2" style="margin-top:15px;" type="button" data-toggle="collapse" data-target="#filter" aria-expanded="false" aria-controls="collapseExample">
+    <img src="/PT-01/header/asset/filter.png" alt="">
+    Filter
+  </button>
+</p>
+<div class="" style="border-right:#d2d2d2 solid 1px">
         <a class="btn btn-light" style="background:none; border:none;" data-toggle="tooltip" data-placement="bottom" title="Keranjang"    href="/PT-01/keranjang/cart.php" id="navbarDropdown" role="button">
           <img src="/PT-01/header/asset/vegetables.png" class="img-thumbnail rounded-circle"  alt="">
         </a>
@@ -70,7 +84,47 @@ crossorigin="anonymous"></script>
       }
         ?>
     </nav>
+    <div class="collapse" id="filter">
+      <div class="card card-body">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <label for="katefori">Kategori</label>
+              <select id="kategori" name="kategori_barang" class="form-control">
+                <option disabled value="">Pilih Kategori</option>
+                <option>Pupuk</option>
+                <option>Alat-alat pertanian</option>
+                <option>Bibit</option>
+                <option>Sewakan Alat</option>
+                <option>Hasil Pertanian</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="Kondisi">Kondisi Barang</label>
+              <select id="Kondisi" name="kondisi_barang" class="form-control">
+                <option value="" disabled>Pilih Kondisi</option>
+                <option>Baru</option>
+                <option>Bekas</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="Harga">Harga Minimum</label>
+              <input id="harga" type="text" class="form-control" placeholder="Zip">
+            </div>
+            <div class="col">
+              <label for="Harga">Harga Maksimal</label>
+              <input id="harga" type="text" class="form-control" placeholder="Zip">
+            </div>
+            <div class="col mt-2">
+              <br>
+              <input  type="submit" value="filter" name="filter" class="btn btn-success form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <!--end of navbar 1-->
+  </div>
     <!--navbar 2-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
     <a class="navbar-brand" href="/PT-01/main/main.php">Home</a>
@@ -147,3 +201,7 @@ function sudahlogin(){?>
 <?php
 }
 ?>
+<script type="text/javascript">
+
+</script>
+<!-- Make something Powerful?? -->

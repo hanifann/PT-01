@@ -12,6 +12,9 @@ if(isset($_COOKIE["login"])){
   <body>
 
 <!--image-slider-->
+<div class="" id="carr">
+
+</div>
 <div class="container col-7">
 
   <div class="carousel slide" style="padding-top:1rem;"data-ride="carousel" id="MagicCarousel">
@@ -264,12 +267,12 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
       <!-- end of sewa alat-->
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
       $(document).ready(function(){
           $("#coba").load("main.php #coba");
         });
       });
-      </script>
+      </script> -->
   </body>
   <footer id="myFooter">
         <div class="kaki">

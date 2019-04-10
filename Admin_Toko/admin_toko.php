@@ -75,9 +75,9 @@ $dataPoints = array(
    </div>
       <hr>
      </div>
-     <div class="collapse border" id="collapseExample">
-      <div id="chartContainer" style="height: 10px; width: 5%;">
-      </div>
+     <div class="col collapse border" id="collapseExample" >
+      <div id="chartContainer" style="height:400px; width:100%;" class="container">
+    </div>
      </div>
      <div class="row mt-4">
 
