@@ -245,12 +245,16 @@ function tampil_item(){
               <?php echo '<img src=" data:image;base64,'.$row[9].'" class="img-thumbnail" style="border-bottom:1px solid #E5E5E5; height:100px; width:150px;" alt="...">'; ?>
             </div>
               <!-- <div class="col"> -->
-                <div class="text-center col" id="app">
+                <div class="text-center col">
               <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
                 <h5><b> <?= $rupiah ?> </b></h5>
                 <form class="" action="index.html" method="post">
 
-                  <input type="number" min="1" max="1000"/>
+                  <div id="app">
+
+                    <v-minusplusfield :value="50" :min="1" :max="100"></v-minusplusfield>
+
+                  </div>
                 </div>
             </div>
             </div>
