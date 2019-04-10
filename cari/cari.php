@@ -2,6 +2,7 @@
 require '/opt/lampp/htdocs/PT-01/register/conpik.php';
 require '/opt/lampp/htdocs/PT-01/header/header.php';
 require_once 'carifun.php';
+require_once 'filterfun.php';
 
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
@@ -21,16 +22,20 @@ if(isset($_COOKIE["login"])){
   <body>
     <div class="container">
       <div class="row">
-        
+
         <?php
         if (isset($_POST['cari'])) {
           $cariaja = $_POST['cari'];
           caribang($cariaja);
+        }else if (isset($_GET['filter'])) {
+          filter($_GET);
         }
 
         ?>
       </div>
     </div>
+
+
 
   </body>
   <footer id="myFooter">

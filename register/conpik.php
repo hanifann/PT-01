@@ -247,12 +247,12 @@ function tampil_item(){
               <!-- <div class="col"> -->
                 <div class="text-center col">
               <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
-                <h5><b> <?= $rupiah ?> </b></h5>
+                <h5 style="color:#FF7100;"><b> <?= $rupiah ?> </b></h5>
                 <form class="" action="index.html" method="post">
 
                   <div id="app">
 
-                    <v-minusplusfield :value="50" :min="1" :max="100"></v-minusplusfield>
+                    <v-minusplusfield :value="1" :min="1" :max="100"></v-minusplusfield>
 
                   </div>
                 </div>

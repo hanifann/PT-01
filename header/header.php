@@ -26,9 +26,9 @@ crossorigin="anonymous"></script>
   <body>
 
     <!-- navbar -->
-    <div class="header sticky-top">
+    <div class="header border-bottom border-info sticky-top">
 
-    <nav class=" border navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#EBEBEB;">
+    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#f7f7f7">
       <a class="nav-link" href="#">Jual Beli</a>
       <a class="nav-link" href="/PT-01/turorial/tutorial.php">Tutorial</a>
     <form class="col-5 form-inline needs-validation" method="post" action="/PT-01/cari/cari.php" >
@@ -38,7 +38,7 @@ crossorigin="anonymous"></script>
       <input id="validationCustom01" class="form-control gagal col" type="text" placeholder="Search" name="cari" required>
 
 
-      <button class="btn btn-success gagal" style="background:#EDEDED" type="submit" nama="caribang" id="carisadja"> <img src="/PT-01/Admin_Toko/asset/magnifier.png" alt=""> </button>
+      <button class="btn btn-success gagal" style="background:#EDEDED" type="submit" nama="caribang" value="submit" id="carisadja"> <img src="/PT-01/Admin_Toko/asset/magnifier.png" alt=""> </button>
 
     </form>
     <p>
@@ -84,11 +84,11 @@ crossorigin="anonymous"></script>
     </nav>
     <div class="collapse" id="filter">
       <div class="card card-body">
-        <form>
+        <form class="" action="/PT-01/cari/cari.php" method="get">
           <div class="form-row">
             <div class="col">
               <label for="katefori">Kategori</label>
-              <select id="kategori" name="kategori_barang" class="form-control">
+              <select id="kategori" name="katbarang" class="form-control">
                 <option disabled value="">Pilih Kategori</option>
                 <option>Pupuk</option>
                 <option>Alat-alat pertanian</option>
@@ -99,19 +99,19 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
               <label for="Kondisi">Kondisi Barang</label>
-              <select id="Kondisi" name="kondisi_barang" class="form-control">
+              <select id="Kondisi" name="konbarang" class="form-control">
                 <option value="" disabled>Pilih Kondisi</option>
                 <option>Baru</option>
                 <option>Bekas</option>
               </select>
             </div>
             <div class="col-2">
-              <h5 class="col">Harga Minimum </h5> <h5 class="col"> <input type="text" id="textInput" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput(this.value);">
+              <h5 class="col">Harga Minimum </h5> <h5 class="col"> <input type="text" id="textInput" name="Hmin" value="0" disabled style="border:none;background:none;"> </h5>
+              <input id="harga" min="0" value="0" name="Hmin" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput(this.value);">
             </div>
             <div class="col-2">
-              <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga2" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
+              <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" name="Hmax" value="0" disabled style="border:none;background:none;"> </h5>
+              <input id="harga2" min="0" value="0"  name="Hmax" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
             </div>
             <div class="col mt-2">
               <br>

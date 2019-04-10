@@ -28,11 +28,10 @@ $query ="SELECT * FROM jual_barang WHERE nama_barang LIKE '%".$cari."%' || kateg
 
 $result = mysqli_query($connBarang,$query);
 $x = mysqli_num_rows($result);
-$_SESSION['jcari'] = $x;
 ?>
 
 <div class="col mt-4 pt-2 pb-2" style="color:white;background:#3FC0B7;">
-   Menampilkan <b><?= $_SESSION['jcari'] ?></b> produk untuk <b><?= $cari ?></b>
+   Menampilkan <b style="color:#482D3D;"><?= $x ?></b> produk untuk <b style="color:#482D3D;"><?= $cari ?></b>
 </div>
 
 <div class="container d-flex justify-content-center col-12">
@@ -69,6 +68,9 @@ $_SESSION['jcari'] = $x;
 </div>
 </div>
 <hr>
+<div class="col mt-4 pt-2 pb-2" style="color:white;background:#3FC0B7;">
+   Menampilkan <b style="color:#482D3D;"><?= $x ?></b> produk untuk <b style="color:#482D3D;"><?= $cari ?></b>
+</div>
   <?php
 }
  ?>
