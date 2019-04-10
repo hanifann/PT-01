@@ -251,13 +251,6 @@ function tampil_item(){
                 <form class="" action="index.html" method="post">
 
                   <input type="number" min="1" max="1000"/>
-                </script>
-                <script src="./src/bootstrap-input-spinner.js"></script>
-                <script>
-                    $("input[type='number']").inputSpinner()
-                </script>
-
-
                 </div>
             </div>
             </div>

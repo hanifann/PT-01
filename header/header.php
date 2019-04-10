@@ -34,11 +34,9 @@ crossorigin="anonymous"></script>
     <form class="col-5 form-inline needs-validation" method="post" action="/PT-01/cari/cari.php" >
 
 
-      <label for="validationCustom01"></label>
+
       <input id="validationCustom01" class="form-control gagal col" type="text" placeholder="Search" name="cari" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+
 
       <button class="btn btn-success gagal" style="background:#EDEDED" type="submit" nama="caribang" id="carisadja"> <img src="/PT-01/Admin_Toko/asset/magnifier.png" alt=""> </button>
 
@@ -113,7 +111,7 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col-2">
               <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
+              <input id="harga2" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
             </div>
             <div class="col mt-2">
               <br>
@@ -204,7 +202,8 @@ function sudahlogin(){?>
 <script type="text/javascript">
 
 function updateTextInput(x) {
-          document.getElementById('textInput').value=x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+          document.getElementById('harga2').min=x;
+          document.getElementById('textInput').value=x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
 function updateTextInput2(x) {
@@ -213,3 +212,4 @@ function updateTextInput2(x) {
 
 </script>
 <!-- Make something Powerful?? -->
+<!-- bacot kau bang -->
