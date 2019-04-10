@@ -107,13 +107,13 @@ crossorigin="anonymous"></script>
                 <option>Bekas</option>
               </select>
             </div>
-            <div class="col">
-              <label for="Harga">Harga Minimum</label>
-              <input id="harga" type="text" class="form-control" placeholder="Zip">
+            <div class="col-2">
+              <h5 class="col">Harga Minimum </h5> <h5 class="col"> <input type="text" id="textInput" value="0" disabled style="border:none;background:none;"> </h5>
+              <input id="harga" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput(this.value);">
             </div>
-            <div class="col">
-              <label for="Harga">Harga Maksimal</label>
-              <input id="harga" type="text" class="form-control" placeholder="Zip">
+            <div class="col-2">
+              <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" value="0" disabled style="border:none;background:none;"> </h5>
+              <input id="harga" min="0" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
             </div>
             <div class="col mt-2">
               <br>
@@ -202,6 +202,14 @@ function sudahlogin(){?>
 }
 ?>
 <script type="text/javascript">
+
+function updateTextInput(x) {
+          document.getElementById('textInput').value=x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        }
+
+function updateTextInput2(x) {
+          document.getElementById('textInput2').value=x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
 
 </script>
 <!-- Make something Powerful?? -->

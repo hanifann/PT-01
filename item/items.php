@@ -193,5 +193,5 @@ el: '#app',
     data: {
     }
 })
-</script>
+
  </html>

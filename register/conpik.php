@@ -250,13 +250,19 @@ function tampil_item(){
                 <h5><b> <?= $rupiah ?> </b></h5>
                 <form class="" action="index.html" method="post">
 
-                    <v-minusplusfield :value="1" :min="1" :max="55"></v-minusplusfield>
+                  <input type="number" min="1" max="1000"/>
+                </script>
+                <script src="./src/bootstrap-input-spinner.js"></script>
+                <script>
+                    $("input[type='number']").inputSpinner()
+                </script>
+
 
                 </div>
             </div>
             </div>
             <div class="modal-footer">
-              <a href="/PT-01/keranjang/cart.php?tambah= <?php echo $row[0]; ?> >  <button type="button" name="tkk" class="btn btn-outline-success col-6">
+              <a href="/PT-01/keranjang/cart.php?tambah=<?php echo $row[0];?>"> <button type="button" name="tkk" class="btn btn-outline-success">
                   Tambah ke keranjang
                 </button></a>
               <a href="../checkout/checkout.php?bayar= <?= $row[0] ?>" class="col-6">
