@@ -9,7 +9,10 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -27,8 +30,7 @@ crossorigin="anonymous"></script>
 
     <!-- navbar -->
     <div class="header border-bottom border-info sticky-top">
-
-    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#f7f7f7">
+    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#f7f7f7;height:4rem">
       <a class="nav-link" href="#">Jual Beli</a>
       <a class="nav-link" href="/PT-01/turorial/tutorial.php">Tutorial</a>
     <form class="col-5 form-inline needs-validation" method="post" action="/PT-01/cari/cari.php" >
@@ -72,7 +74,7 @@ crossorigin="anonymous"></script>
           </b>
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Lacak Pesanan</a>
+          <a class="dropdown-item" href="../Admin_Toko/tunggu.php">Lacak Pesanan</a>
           <a class="dropdown-item" href="#">Something else here</a>
           <a class="dropdown-item" href="/PT-01/materi/logut.php">Keluar</a>
         </div>

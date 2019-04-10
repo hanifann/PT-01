@@ -3,14 +3,14 @@
         <title>Belajarphp.net - ChartJS</title>
         <script src="Chart.bundle.js"></script>
         <style type="text/css">
-            .container {
+            .lel {
                 width: 30%;
                 margin: 15px auto;
             }
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="lel">
             <canvas id="myChart"></canvas>
         </div>
         <script>

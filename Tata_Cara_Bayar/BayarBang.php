@@ -11,9 +11,6 @@ if(isset($_COOKIE["login"])){
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  
-    <link rel="stylesheet" href="BayarBang.css">
-  </head>
 
   <body>
   <!--end of navbar 2-->
@@ -140,7 +137,7 @@ function bayar(){
               <h7 class="ml-5">Maybank</h7>
             </div>
             <div class="col-lg-1">
-              <button style="border:none;background:none;" id="mayban" name="button">
+              <button style="border:none;background:none;" id="maybank" name="button">
                 <img src="arrow.png" alt="">
               </button>
             </div>

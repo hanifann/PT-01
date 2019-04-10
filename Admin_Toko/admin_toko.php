@@ -9,21 +9,18 @@ if(isset($_COOKIE["login"])){
     }
 }
 
-
-$dataPoints = array(
-	array("y" => 25, "label" => "Sunday"),
-	array("y" => 15, "label" => "Monday"),
-	array("y" => 25, "label" => "Tuesday"),
-	array("y" => 5, "label" => "Wednesday"),
-	array("y" => 10, "label" => "Thursday"),
-	array("y" => 0, "label" => "Friday"),
-	array("y" => 20, "label" => "Saturday")
-);
-
  ?>
 
      <link rel="stylesheet" href="admin_toko.css">
      <title></title>
+     <title>Belajarphp.net - ChartJS</title>
+     <script src="Chart.bundle.js"></script>
+     <style type="text/css">
+         .lel {
+             width: 30%;
+             margin: 15px auto;
+         }
+     </style>
    </head>
 
 
@@ -76,9 +73,46 @@ $dataPoints = array(
       <hr>
      </div>
      <div class="col collapse border" id="collapseExample" >
-      <div id="chartContainer" style="height:400px; width:100%;" class="container">
-    </div>
+       <div class="row d-flex justify-content-center">
+        <div class="col-4">
+          <canvas  id="myChart"></canvas>
+        </div>
+        <div class="col-4">
+          <table class="table table-sm table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>Bulan</th>
+                <th>Pemasukan</th>
+                <th>Barang Terjual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>januari</td>
+                <td>bapak kau</td>
+                <td>ngebug</td>
+              </tr>
+              <tr>
+                <td>januari</td>
+                <td>bapak kau</td>
+                <td>ngebug</td>
+              </tr>
+              <tr>
+                <td>januari</td>
+                <td>bapak kau</td>
+                <td>ngebug</td>
+              </tr>
+              <tr>
+                <td>januari</td>
+                <td>bapak kau</td>
+                <td>ngebug</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+       </div>
      </div>
+
      <div class="row mt-4">
 
      <div class="container-fluid">
@@ -145,25 +179,43 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	title: {
-		text: "Push-ups Over a Week"
-	},
-	axisY: {
-		title: "Number of Push-ups"
-	},
-	data: [{
-		type: "line",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
-
-}
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Pupuk", "alat pertanian", "Bibit", "Sewa Alat", "Hasil Pertanian"],
+            datasets: [{
+                    label: 'Kategori Barang',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+            }
+        }
+    });
 </script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
    <!-- Footer -->
