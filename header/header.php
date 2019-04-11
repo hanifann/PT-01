@@ -91,7 +91,7 @@ crossorigin="anonymous"></script>
             <div class="col">
               <label for="katefori">Kategori</label>
               <select id="kategori" name="katbarang" class="form-control">
-                <option disabled value="">Pilih Kategori</option>
+                <option  value="">Pilih Kategori</option>
                 <option>Pupuk</option>
                 <option>Alat-alat pertanian</option>
                 <option>Bibit</option>
@@ -102,18 +102,18 @@ crossorigin="anonymous"></script>
             <div class="col">
               <label for="Kondisi">Kondisi Barang</label>
               <select id="Kondisi" name="konbarang" class="form-control">
-                <option value="" disabled>Pilih Kondisi</option>
+                <option value="" >Pilih Kondisi</option>
                 <option>Baru</option>
                 <option>Bekas</option>
               </select>
             </div>
             <div class="col-2">
               <h5 class="col">Harga Minimum </h5> <h5 class="col"> <input type="text" id="textInput" name="Hmin" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga" min="0" value="0" name="Hmin" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput(this.value);">
+              <input id="harga" min="0" value="0" name="Hmin" max="100000000" step="10000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput(this.value);">
             </div>
             <div class="col-2">
               <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" name="Hmax" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga2" min="0" value="0"  name="Hmax" max="100000000" step="1000000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
+              <input id="harga2" min="0" value="0"  name="Hmax" max="100000000" step="10000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
             </div>
             <div class="col mt-2">
               <br>

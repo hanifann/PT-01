@@ -33,7 +33,8 @@ function bayar(){
   <h5 class="text-center mt-4">Total Pembelian</h5>
   <h5 class="text-center" style="color:#FF7300;">
     <?php
-    $rupiah = "Rp ".number_format($row[6],0,',','.');
+    $r = $_SESSION['udahlah']*$row[6];
+    $rupiah = "Rp ".number_format($r,0,',','.');
     echo "<p><b> $rupiah </b></p>"; ?>
   </h5>
   <?php

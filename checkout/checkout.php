@@ -13,6 +13,11 @@ if(isset($_POST["Alamat"])){
   alamat_jual($_POST);
 }
 
+if (isset($_GET['lkp'])) {
+  $x = $_GET['udahlah'];
+  $_SESSION['udahlah']= $x;
+}
+
 ?>
 
     <link rel="stylesheet" href="checkout.css">
@@ -79,9 +84,8 @@ if(isset($_POST["Alamat"])){
                  <div class="row">
                    <div class="col">
                      <p>Barang</p><hr>
-                     <?=
-                     '<img src="data:image;base64,'.$row[9].'" class="img-fluid" alt="">';
-                     ?>
+
+                     <img src="data:image;base64,<?=$row[9]?>" class="img-thumbnail" alt="" style="height:150px;width:200px;">
                    </div>
 
                    <div class="col-5">
@@ -108,15 +112,16 @@ if(isset($_POST["Alamat"])){
 
                <hr>
                <div class="row">
-                 <div class="col-8">
-                   <h5>Subtotal</h5>
+                 <div class="col">
+                   <h5>Subtotal : <?= $_SESSION['udahlah'] ?> Barang</h5>
                  </div>
 
                  <div class="col-3 ml-5">
                    <h6 style="color:#d50000"><b><?php $sub = $row[6];
-                   $sub =+ $sub;
+                   $sub = $row[6]*$_SESSION['udahlah'];
                    $rupiah = "Rp ". number_format($sub,0,',','.');
-                   echo "<p><b> $rupiah </b></p>";?></b></h6>
+                   ?>
+                   <p><b> <?= $rupiah?> </b></p></b></h6>
                  </div>
                </div>
 
@@ -146,11 +151,15 @@ if(isset($_POST["Alamat"])){
                ?>
            <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
              <p>Ringkasan Belanja</p><hr>
-             <p>Total Barang : (30 Barang)</p>
+             <p>Total Barang : (<?= $_SESSION['udahlah'] ?> Barang)</p>
 
                <?php
-             $rupiah = "Rp ". number_format($row[6],0,',','.');
-             echo "<p style='color:#d50000'><b> $rupiah </b></p>";?>
+               $r = $row[6]*$_SESSION['udahlah'];
+             $rupiah1 = "Rp ". number_format($r,0,',','.');
+             echo "<p style='color:#d50000'><b> $rupiah1 </b></p>";
+
+             $_SESSION['total']=$rupiah1;
+             ?>
 
              <div class="form-row">
               <div class="form-group col-md-12">

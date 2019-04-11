@@ -248,13 +248,12 @@ function tampil_item(){
                 <div class="text-center col">
               <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
                 <h5 style="color:#FF7100;"><b> <?= $rupiah ?> </b></h5>
-                <form class="" action="index.html" method="post">
+                <form class="" action="/PT-01/checkout/checkout.php" method="get">
 
-                  <div id="app">
+                  <input type="hidden" name="bayar" value="<?= $row[0]   ?>">
+                  <input type="number" name="udahlah" min="1" value="1">
+                  </script>
 
-                    <v-minusplusfield :value="1" :min="1" :max="100"></v-minusplusfield>
-
-                  </div>
                 </div>
             </div>
             </div>
@@ -263,7 +262,7 @@ function tampil_item(){
                   Tambah ke keranjang
                 </button></a>
               <a href="../checkout/checkout.php?bayar= <?= $row[0] ?>" class="col-6">
-                <button type="button" name="lkp" style="background:#FF7100;color:white;"class="btn btn-success">Lanjutkan ke Pembayaran</button>
+                <input type="submit" name="lkp" value="Lanjutkan ke Pembayaran" style="background:#FF7100;color:white;"class="btn btn-success"></textInput>
               </a>
             </form>
             </div>

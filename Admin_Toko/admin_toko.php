@@ -9,6 +9,28 @@ if(isset($_COOKIE["login"])){
     }
 }
 
+function kat(){
+  global $connBarang;
+  $q1 = "SELECT * FROM jual_barang WHERE kategori_barang = 'Alat-alat pertanian'";
+  $q2 = "SELECT * FROM jual_barang WHERE kategori_barang = 'Pupuk'";
+  $q3 = "SELECT * FROM jual_barang WHERE kategori_barang = 'Bibit'";
+  $q4 = "SELECT * FROM jual_barang WHERE kategori_barang = 'Sewakan Alat'";
+  $q5 = "SELECT * FROM jual_barang WHERE kategori_barang = 'Hasil Pertanian'";
+
+  $r1 = mysqli_num_rows($connBarang,$q1);
+  $r2 = mysqli_num_rows($connBarang,$q2);
+  $r3 = mysqli_num_rows($connBarang,$q3);
+  $r4 = mysqli_num_rows($connBarang,$q4);
+  $r5 = mysqli_num_rows($connBarang,$q5);
+
+  $_SESSION['aap'] = r1;
+  $_SESSION['p'] = r2;
+  $_SESSION['b'] = r3;
+  $_SESSION['sa'] = r4;
+  $_SESSION['hp'] = r5;
+}
+
+
  ?>
 
      <link rel="stylesheet" href="admin_toko.css">
