@@ -15,7 +15,7 @@ if(isset($_COOKIE["login"])){
 <div class="" id="carr">
 
 </div>
-<div class="col-7 container-fluid">
+<div class="col-6 container-fluid">
 
   <div class="carousel slide" style="padding-top:1rem;"data-ride="carousel" id="MagicCarousel">
     <ol class="carousel-indicators">
