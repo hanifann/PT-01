@@ -113,7 +113,7 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col-2">
               <h5 class="col">Harga Maksimum </h5> <h5 class="col"> <input type="text" id="textInput2" name="Hmax" value="0" disabled style="border:none;background:none;"> </h5>
-              <input id="harga2" min="0" value="0"  name="Hmax" max="100000000" step="10000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
+              <input id="harga2" min="" value="10000"  name="Hmax" max="100000000" step="10000" type="range" class="form-control" placeholder="Zip" onchange="updateTextInput2(this.value);">
             </div>
             <div class="col mt-2">
               <br>

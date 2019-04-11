@@ -31,7 +31,7 @@ function filter($data){
     ?>
     <div class="col mt-4 pt-2 pb-2" style="color:white;background:#3FC0B7;">
        Menampilkan  <b style="color:#482D3D;"><?= $y ?></b> produk untuk kondisi barang <b style="color:#482D3D;"><?= $konbarang ?></b> kategori <b style="color:#482D3D;"><?= $katbarang ?></b> Harga Antara <b style="color:#482D3D;"><?php $rupiah = "Rp ".number_format($Hmin,0,',','.');
-       echo "$rupiah"; ?></b> Sampai <b style="color:#482D3D;"><?php $rupiah2 = "Rp ".number_format($Hmin,0,',','.');
+       echo "$rupiah"; ?></b> Sampai <b style="color:#482D3D;"><?php $rupiah2 = "Rp ".number_format($Hmax,0,',','.');
        echo "$rupiah2"; ?> </b>
     </div>
 
