@@ -121,7 +121,9 @@ function keranjang(){
                 <?php
                 $rupiah = "Rp ".number_format($row1[6],0,',','.');
                 echo "<h5><b> $rupiah </b></h5>"; ?>
+                <a href="/PT-01/checkout/checkout.php?bayar=<?= $row[1] ?>&udahlah=1">
                 <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
+              </a>
             </div>
           </div>
         </div>

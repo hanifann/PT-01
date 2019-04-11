@@ -85,8 +85,8 @@ function kat(){
         </div>
        <div class="col-8">
          <div class="text-right mt-4">
-           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Button with data-target
+           <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Lihat Statistik Penjualan
            </button>
          </div>
       </div>
@@ -111,23 +111,28 @@ function kat(){
             <tbody>
               <tr>
                 <td>januari</td>
-                <td>bapak kau</td>
-                <td>ngebug</td>
+                <td>Rp.12.000.000</td>
+                <td>420</td>
               </tr>
               <tr>
-                <td>januari</td>
-                <td>bapak kau</td>
-                <td>ngebug</td>
+                <td>februari</td>
+                <td>Rp.13.000.000</td>
+                <td>490</td>
               </tr>
               <tr>
-                <td>januari</td>
-                <td>bapak kau</td>
-                <td>ngebug</td>
+                <td>maret</td>
+                <td>Rp.13.200.000</td>
+                <td>494</td>
               </tr>
               <tr>
-                <td>januari</td>
-                <td>bapak kau</td>
-                <td>ngebug</td>
+                <td>april</td>
+                <td>Rp.14.000.000</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>mei</td>
+                <td>Rp.16.000.000</td>
+                <td>600</td>
               </tr>
             </tbody>
           </table>
