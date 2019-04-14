@@ -45,13 +45,15 @@ if (isset($_POST['simpan'])) {
       <div class="container border pt-2 pb-3" style="background:#ffffff;">
         <div id="edit_toko">
         <ul class="list-group list-group-horizontal-sm mb-3" style="border-radius:none;">
-          <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a href="#">Informasi</a></li>
+          <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a id="info" href="#">Informasi</a></li>
           <li class="list-group-item flex-fill no_border" id="etalase"><a href="#">Etalase</a></li>
           <li class="list-group-item flex-fill no_border" id="pengiriman"><a href="#">Pengiriman</a></li>
           <li class="list-group-item flex-fill no_border" id="punggulan"><a href="#">Produk Unggulan</a></li>
         </ul>
-        <h6 class="pb-4">Informasi Toko</h6>
-        <form method="post" enctype="multipart/form-data" style="font-size:15px;">
+        <div id="infot" class="">
+
+        <h6 id="" class="pb-4">Informasi Toko</h6>
+        <form  method="post" enctype="multipart/form-data" style="font-size:15px;">
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nama Toko</label>
             <div class="col-sm-10">
@@ -110,8 +112,15 @@ if (isset($_POST['simpan'])) {
         </form>
       </div>
       </div>
+      </div>
     </div>
     <script type="text/javascript">
+
+      $(document).on("click","#info",function() {
+        $("#edit_toko").load("edit_toko.php #edit_toko");
+      });
+
+
       $(document).on("click","#etalase",function() {
         $("#edit_toko").load("etalase_toko.php #etalaset");
       });
@@ -120,7 +129,7 @@ if (isset($_POST['simpan'])) {
         $("#edit_toko").load("pengiriman.php #pengirimant");
       });
 
-      $(document).on("click","#unggulan",function() {
+      $(document).on("click","#punggulan",function() {
         $("#edit_toko").load("unggulan.php #punggulan");
       });
     </script>
