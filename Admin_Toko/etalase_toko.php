@@ -21,7 +21,7 @@ if(isset($_COOKIE["login"])){
       <h6><img src="asset/shop.png" alt=""> &nbsp;Nama_Tokonya_Bang</h6>
       <div id="etalaset">
         <ul class="list-group list-group-horizontal-sm mb-3" style="border-radius:none;">
-          <li class="list-group-item flex-fill no_border" id="informasi"><a href="#">Informasi</a></li>
+          <li class="list-group-item flex-fill no_border" id="info"><a href="#">Informasi</a></li>
           <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a href="#">Etalase</a></li>
           <li class="list-group-item flex-fill no_border" id="pengiriman"><a href="#">Pengiriman</a></li>
           <li class="list-group-item flex-fill no_border" id="unggulan"><a href="#">Produk Unggulan</a></li>
@@ -74,15 +74,16 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
     <script type="text/javascript">
-      $(document).on("click","#informasi",function() {
-        $("#etalaset").load("edit_toko.php #edit_toko");
+
+      $(document).on("click","#info",function() {
+        $("#edit_toko").load("edit_toko.php #edit_toko");
       });
 
       $(document).on("click","#pengiriman",function() {
         $("#etalaset").load("pengiriman.php #pengirimant");
       });
 
-      $(document).on("click","#unggulan",function() {
+      $(document).on("click","#punggulan",function() {
         $("#etalaset").load("unggulan.php #punggulan");
       });
     </script>
