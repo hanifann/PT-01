@@ -23,9 +23,15 @@ function filter($data){
   $konbarang = $data['konbarang'];
   $Hmin = $data['Hmin'];
   $Hmax = $data['Hmax'];
+  $x = $_SESSION['username'];
   global $connBarang;
 
   $query = "SELECT * FROM jual_barang WHERE kondisi_barang LIKE '%".$konbarang."%' && kategori_barang LIKE '%".$katbarang."%' && harga_barang BETWEEN '$Hmin' AND '$Hmax'";
+
+  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+
+  $result2=mysqli_query($connBarang,$query2);
+
   $result = mysqli_query($connBarang,$query);
   $y = mysqli_num_rows($result);
     ?>
@@ -38,6 +44,8 @@ function filter($data){
     <div class="container d-flex justify-content-center col-12">
       <div class="row ">
       <?php
+        while ($roz = mysqli_fetch_array($result2)) {
+
       while($row = mysqli_fetch_array($result)){
         ?>
         <table>
@@ -49,9 +57,11 @@ function filter($data){
           <div class="card border" style="width: 11rem;">
             <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style=" height:100px;" alt="...">'; ?>
               <div class="card-body">
+                <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
                 <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
                 <?php $id=$row[1] ?>
-                <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+                <p><i class="fas fa-store-alt"></i> <?=$roz[2]?></p>
+                <p><?= $row[4] ?></p>
                 <div class="harga">
                   <?php
                   $rupiah = "Rp ".number_format($row[6],0,',','.');
@@ -65,6 +75,7 @@ function filter($data){
       </tr>
     </table>
       <?php
+    }
     }?>
     </div>
     </div>
