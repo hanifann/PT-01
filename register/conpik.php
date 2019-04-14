@@ -45,6 +45,14 @@ function register($data){
         $quer = "INSERT INTO user(username, email, password) VALUES('$username','$email','$password')";
         mysqli_query($conn, $quer);
 
+        $x = $_SESSION['username'];
+        $quer = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+        $result = mysqli_query($connBarang,$quer);
+
+        while ($row = mysqli_fetch_array($result)) {
+          $_SESSION['idtoko']= $row[1];
+        }
+
         echo "<script>alert('Data Berhasil di simpan');
         location.assign('/PT-01/login/login.php')</script>";
     }else{
@@ -411,7 +419,8 @@ function tampilkan_satu(){
 
 function tampilkan_admin(){
   global $connBarang;
-  $query = "SELECT * FROM jual_barang";
+  $x = $_SESSION['idtoko'];
+  $query = "SELECT * FROM jual_barang WHERE id_toko='$x'";
   $result =mysqli_query($connBarang,$query);
 ?>
 
@@ -534,10 +543,11 @@ if (isset($_GET['delete'])) {
 function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
   $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
   global $connBarang;
+  $x =$_SESSION['idtoko'];
   $query = "INSERT INTO jual_barang(name,nama_barang,kondisi_barang,kategori_barang,
-     alamat_barang,harga_barang,jumlah_barang,deskripsi_barang, poto_barang
+     alamat_barang,harga_barang,jumlah_barang,deskripsi_barang, poto_barang,id_toko
   ) VALUES ('$name','$nama_barang','$kondisi_barang','$kategori_barang','$alamat_barang',
-    '$harga_barang','$jml_barang','$deskripsi_barang','$image')";
+    '$harga_barang','$jml_barang','$deskripsi_barang','$image','$x')";
   $result = mysqli_query($connBarang,$query);
   if($result){
     echo "<br/>Mantul bang";

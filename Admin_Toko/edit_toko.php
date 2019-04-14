@@ -3,6 +3,17 @@
 require '/opt/lampp/htdocs/PT-01/Admin_Toko/editfun.php';
 require '/opt/lampp/htdocs/PT-01/header/header.php';
 
+global $connBarang;
+$x = $_SESSION['username'];
+$quer = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+$result = mysqli_query($connBarang,$quer);
+while ($row = mysqli_fetch_array($result)) {
+  $_SESSION['ntok']= $row[2];
+  $_SESSION['atok']= $row[3];
+  $_SESSION['slotok']= $row[4];
+  $_SESSION['destok']=$row[5];
+}
+
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
         $_SESSION["login"] = true;
@@ -43,13 +54,19 @@ if (isset($_POST['simpan'])) {
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nama Toko</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" placeholder="Toko <?= $_SESSION['username'] ?>" name="ntoko">
+              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['ntok'] ?>" name="ntoko">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Alamat Toko</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['atok'] ?>" name="atoko">
             </div>
           </div>
           <div class="form-group row">
             <label for="slogan" class="col-sm-2 col-form-label">Slogan</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="slogan" maxlength="48" name="slogan">
+              <input type="text" class="form-control" id="slogan" maxlength="48" name="slogan" placeholder="<?= $_SESSION['slotok'] ?>">
               <small id="passwordHelpBlock" class="form-text text-muted text-right">
                 Maksimum 48 karakter
               </small>
@@ -58,7 +75,7 @@ if (isset($_POST['simpan'])) {
           <div class="form-group row">
             <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="deskripsi" maxlength="148" name="deskripsi"></textarea>
+              <textarea class="form-control" id="deskripsi" maxlength="148" name="deskripsi" placeholder="<?= $_SESSION['destok'] ?>"></textarea>
               <small id="deskripsi" class="form-text text-muted text-right">
                 Maksimum 148 karakter
               </small>
