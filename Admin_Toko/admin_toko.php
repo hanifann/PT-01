@@ -8,6 +8,7 @@ if(isset($_COOKIE["login"])){
         $_SESSION["login"] = true;
     }
 }
+$x = $_SESSION['username'];
 
 function kat(){
   global $connBarang;
@@ -58,7 +59,7 @@ function kat(){
        <img src="asset/online.png" class="img-thumbnail" alt="">
      </div>
      <div class="col mt-1">
-       <a href="#"><h4>Toko <?= $_SESSION['username'] ?></h4></a>
+       <a href="edit_toko.php"><h4><?= $_SESSION['username'] ?> <span><img src="asset/pencil.png" alt=""></span> </h4>  </a>
        <hr>
        <div class="row">
         <div class="col-4">
@@ -66,7 +67,13 @@ function kat(){
             <tr>
               <td>
                 <img src="asset/map.png" data-toggle="tooltip" title="dikirm dari" alt="">
-                bojong soang
+                <?php global $connBarang;
+                $sqlq = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+                $result = mysqli_query($connBarang,$sqlq);
+                $ala = mysqli_fetch_array($result);
+                echo "$ala[3]";
+                ?>
+
               </td>
             </tr>
             <tr>
@@ -99,21 +106,37 @@ function kat(){
         <div class="col-4">
           <canvas  id="myChart"></canvas>
         </div>
-        <div class="col-4">
+        <div class="col-8">
+          <?php
+          global $connBarang;
+          $Asql="SELECT * FROM penjualan WHERE user_toko='$x'";
+          $Aresult=mysqli_query($connBarang,$Asql);
+          ?>
           <table class="table table-sm table-bordered table-hover table-striped">
             <thead class="thead-dark">
               <tr>
-                <th>Bulan</th>
-                <th>Pemasukan</th>
+                <th>Nama Barang</th>
+                <th>Harga Barang</th>
                 <th>Barang Terjual</th>
+                <th>Pemasukan</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>januari</td>
-                <td>Rp.12.000.000</td>
-                <td>420</td>
-              </tr>
+              <?php
+              while($roA=mysqli_fetch_array($Aresult)){
+                  ?>
+                <tr>
+                  <td><?= $roA[2] ?></td>
+                  <td><?php $rupiah = "Rp ".number_format($roA[4],0,',','.');
+                  echo $rupiah;?></td>
+                  <td><?=$roA[3]?></td>
+                  <td><?php $jum = $roA[4]*$roA[3];
+                  $rupiah2 = "Rp ".number_format($jum,0,',','.');
+                  echo $rupiah2;?></td>
+                </tr>
+                <?php
+              }?>
+<!--
               <tr>
                 <td>februari</td>
                 <td>Rp.13.000.000</td>
@@ -133,7 +156,7 @@ function kat(){
                 <td>mei</td>
                 <td>Rp.16.000.000</td>
                 <td>600</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
