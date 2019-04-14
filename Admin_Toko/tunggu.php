@@ -96,6 +96,10 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
     <script type="text/javascript">
+      $(document).on("click","#info",function() {
+        $("#edit_toko").load("edit_toko.php #edit_toko");
+      });
+
       $(document).on("click","#dikirim",function() {
         $("#proses").load("kirim.php #kirim");
       });

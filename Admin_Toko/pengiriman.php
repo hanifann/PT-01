@@ -22,10 +22,10 @@ if(isset($_COOKIE["login"])){
       <h6 class="pb-3 pt-3"><img src="asset/shop.png" alt=""> &nbsp;Nama_Tokonya_Bang</h6>
       <div id="pengirimant">
         <ul class="list-group list-group-horizontal-sm mb-3" style="border-radius:none;">
-          <li class="list-group-item flex-fill no_border" id="informasi"><a href="#">Informasi</a></li>
+          <li class="list-group-item flex-fill no_border" id="info"><a href="#">Informasi</a></li>
           <li class="list-group-item flex-fill no_border" id="etalase"><a href="#">Etalase</a></li>
           <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a href="#">Pengiriman</a></li>
-          <li class="list-group-item flex-fill no_border" id="unggulan"><a href="#">Produk Unggulan</a></li>
+          <li class="list-group-item flex-fill no_border" id="punggulan"><a href="#">Produk Unggulan</a></li>
         </ul>
         <h6 class="pt-5">Informasi Pengiriman Wilayah Asal</h6>
           <div class="row justify-content-md-center pb-5">
@@ -93,15 +93,15 @@ if(isset($_COOKIE["login"])){
       </div>
     </div>
     <script type="text/javascript">
-      $(document).on("click","#informasi",function() {
-        $("#pengirimant").load("edit_toko.php #edit_toko");
-      });
+    $(document).on("click","#info",function() {
+      $("#edit_toko").load("edit_toko.php #edit_toko");
+    });
 
       $(document).on("click","#etalase",function() {
         $("#pengirimant").load("etalase.php #etalaset");
       });
 
-      $(document).on("click","#unggulan",function() {
+      $(document).on("click","#punggulan",function() {
         $("#pengirimant").load("unggulan.php #punggulan");
       });
     </script>

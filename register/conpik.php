@@ -45,13 +45,7 @@ function register($data){
         $quer = "INSERT INTO user(username, email, password) VALUES('$username','$email','$password')";
         mysqli_query($conn, $quer);
 
-        $x = $_SESSION['username'];
-        $quer = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
-        $result = mysqli_query($connBarang,$quer);
 
-        while ($row = mysqli_fetch_array($result)) {
-          $_SESSION['idtoko']= $row[1];
-        }
 
         echo "<script>alert('Data Berhasil di simpan');
         location.assign('/PT-01/login/login.php')</script>";
@@ -65,6 +59,10 @@ function login($data){
     $username = $data['username'];
     $password = $data['password'];
     $cek = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+
+
+
     if(mysqli_num_rows($cek) > 0){
         $hasil = mysqli_fetch_assoc($cek);
         $passwordhash =  $hasil["password"];
@@ -72,6 +70,7 @@ function login($data){
         if(password_verify($password, $passwordhash)){
             $_SESSION["login"] = true;
             $_SESSION["username"] = $username;
+
             setcookie("login","ok", time()+3600);
             echo "<script>alert('Login Berhasil');
             document.location.href='/PT-01/main/main.php'</script>";
@@ -206,9 +205,12 @@ function tampil_item(){
     $id = $_GET['item'];
   }
   global $connBarang;
+  $x = $_SESSION['username'];
   $query = "SELECT * FROM jual_barang WHERE id_barang=$id";
+  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
   $result= mysqli_query($connBarang,$query);
-
+  $result2=mysqli_query($connBarang,$query2);
+while ($roz = mysqli_fetch_array($result2)) {
   while ($row = mysqli_fetch_array($result)) {
 ?>
   <div class="d-flex justify-content-center row mt-3">
@@ -290,6 +292,7 @@ function tampil_item(){
       </div></h5>
       <?php
     }
+    }
     ?>
 
       <div class="d-flex justify-content-center">
@@ -316,13 +319,21 @@ function tampil_item(){
 
 function tampil_biasa(){
   global $connBarang;
+  $x = $_SESSION['username'];
+
   $query = "SELECT * FROM jual_barang";
+
+  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+
   $result =mysqli_query($connBarang,$query);
+  $result2=mysqli_query($connBarang,$query2);
 ?>
 
 <div class="container d-flex justify-content-center col-12">
   <div class="row">
   <?php
+    while ($roz = mysqli_fetch_array($result2)) {
+
   while($row = mysqli_fetch_array($result)){
     ?>
     <table>
@@ -334,9 +345,11 @@ function tampil_biasa(){
       <div class="card border" style="width: 11rem;">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
           <div class="card-body">
+            <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
             <?php $id=$row[1] ?>
-            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <p><i class="fas fa-store-alt"></i> <?= $roz[2] ?></p>
+            <p><?= $row[4] ?></p>
             <div class="harga">
               <?php
               $rupiah = "Rp ".number_format($row[6],0,',','.');
@@ -350,6 +363,7 @@ function tampil_biasa(){
   </tr>
 </table>
   <?php
+}
 }?>
 </div>
 </div>
@@ -419,9 +433,12 @@ function tampilkan_satu(){
 
 function tampilkan_admin(){
   global $connBarang;
-  $x = $_SESSION['idtoko'];
-  $query = "SELECT * FROM jual_barang WHERE id_toko='$x'";
+  $x = $_SESSION['username'];
+  $query = "SELECT * FROM jual_barang WHERE user_toko='$x'";
+  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
   $result =mysqli_query($connBarang,$query);
+  $result2=mysqli_query($connBarang,$query2);
+
 ?>
 
 <div class="container d-flex justify-content-center col-12">
@@ -430,6 +447,8 @@ function tampilkan_admin(){
 
 
   <?php
+  while ($roz = mysqli_fetch_array($result2)) {
+    // code...
   while($row = mysqli_fetch_array($result)){
     ?>
     <table>
@@ -442,10 +461,10 @@ function tampilkan_admin(){
       <div class="card border" style="width: 11rem;">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:120px;" alt="...">'; ?>
           <div class="card-body">
-
-            <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+            <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
+            <h5 class="card-title"> <?=$row[2]?>  </h5>
             <?php $id=$row[1] ?>
-            <p><i class="fas fa-store-alt"></i> Toko Traktor</p>
+            <p><i class="fas fa-store-alt"></i> <?= $roz[2] ?> </p>
             <div class="harga">
               <?php
               $rupiah = "Rp ".number_format($row[6],0,',','.');
@@ -477,6 +496,7 @@ function tampilkan_admin(){
   </tr>
 </table>
   <?php
+}
 }?>
 </div>
 </div>
@@ -543,9 +563,9 @@ if (isset($_GET['delete'])) {
 function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang,
   $alamat_barang, $harga_barang, $jml_barang, $deskripsi_barang){
   global $connBarang;
-  $x =$_SESSION['idtoko'];
+  $x =$_SESSION['username'];
   $query = "INSERT INTO jual_barang(name,nama_barang,kondisi_barang,kategori_barang,
-     alamat_barang,harga_barang,jumlah_barang,deskripsi_barang, poto_barang,id_toko
+     alamat_barang,harga_barang,jumlah_barang,deskripsi_barang, poto_barang,user_toko
   ) VALUES ('$name','$nama_barang','$kondisi_barang','$kategori_barang','$alamat_barang',
     '$harga_barang','$jml_barang','$deskripsi_barang','$image','$x')";
   $result = mysqli_query($connBarang,$query);

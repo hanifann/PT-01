@@ -21,9 +21,10 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
         $result = mysqli_query($connBarang,$query);
         while ($row = mysqli_fetch_array($result)){
 
-$x = $_SESSION['udahlah'];
+          $x = $_SESSION['udahlah'];
+          $y=$_SESSION['username'];
 
-          $query1 = "INSERT INTO penjualan(id_barang,nama_barang,jumlah_barang,harga_barang) values($row[0],'$row[2]',$x,$row[6])";
+          $query1 = "INSERT INTO penjualan(id_barang,nama_barang,jumlah_barang,harga_barang,user_toko) values($row[0],'$row[2]',$x,$row[6],'$y')";
           $result1 = mysqli_query($connBarang,$query1);
         }
       }
