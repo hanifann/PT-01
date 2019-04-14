@@ -19,13 +19,10 @@ if(isset($_COOKIE["login"])){
   <body>
     <div class="container mt-4">
       <h6><img src="asset/shop.png" alt=""> &nbsp;Nama_Tokonya_Bang</h6>
-      <div class="container border pt-2 pb-3" style="background:#ffffff;">
+      <div class="container border pt-2 pb-3" style="background:#ffffff;" id="edit_toko">
         <ul class="list-group list-group-horizontal-sm mb-3" style="border-radius:none;">
           <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a href="#">Informasi</a></li>
           <li class="list-group-item flex-fill no_border">Etalase</li>
-          <li class="list-group-item flex-fill no_border">Catatan</li>
-          <li class="list-group-item flex-fill no_border">Informasi</li>
-          <li class="list-group-item flex-fill no_border">Lokasi</li>
           <li class="list-group-item flex-fill no_border">Pengiriman</li>
           <li class="list-group-item flex-fill no_border">Produk Unggulan</li>
         </ul>
@@ -50,7 +47,7 @@ if(isset($_COOKIE["login"])){
             <label for="inputPassword" class="col-sm-2 col-form-label">Deskripsi</label>
             <div class="col-sm-10">
               <textarea class="form-control" id="validationTextarea" maxlength="148"></textarea>
-              <small id="passwordHelpBlock" class="form-text text-muted text-right">
+              <small id="validationTextarea" class="form-text text-muted text-right">
                 Maksimum 148 karakter
               </small>
             </div>
