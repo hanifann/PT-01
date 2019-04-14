@@ -74,7 +74,7 @@ crossorigin="anonymous"></script>
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="../Admin_Toko/tunggu.php">Lacak Pesanan</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Profile Toko</a>
           <a class="dropdown-item" href="/PT-01/materi/logut.php">Keluar</a>
         </div>
 </div>

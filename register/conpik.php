@@ -12,7 +12,7 @@
 <?php
 
 session_start();
-$conn = mysqli_connect("localhost","root","","Login_PT");
+$conn = mysqli_connect("localhost","root","","db_barang_PT");
 
 $connBarang = mysqli_connect(
   "localhost",

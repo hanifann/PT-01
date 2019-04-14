@@ -1,12 +1,24 @@
 <?php
 
-require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
+require '/opt/lampp/htdocs/PT-01/Admin_Toko/editfun.php';
 require '/opt/lampp/htdocs/PT-01/header/header.php';
 
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
         $_SESSION["login"] = true;
     }
+}
+
+if (isset($_POST['simpan'])) {
+  if (getimagesize($_FILES['img_toko']['tmp_name']) == false) {
+    echo "image bang";
+  }else {
+    $image = addslashes($_FILES['img_toko']['tmp_name']);
+    $name = addslashes($_FILES['img_toko']['name']);
+    $image = file_get_contents($image);
+    $image = base64_encode($image);
+  edit_toko($_POST,$image,$name);
+}
 }
 ?>
 <!DOCTYPE html>
@@ -27,55 +39,57 @@ if(isset($_COOKIE["login"])){
           <li class="list-group-item flex-fill no_border">Produk Unggulan</li>
         </ul>
         <h6 class="pb-4">Informasi Toko</h6>
-        <form style="font-size:15px;">
+        <form method="post" enctype="multipart/form-data" style="font-size:15px;">
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nama Toko</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" value="Nama_toko_ga_bisa_di_ganti_bang" disabled>
+              <input type="text" class="form-control" id="staticEmail" placeholder="Toko <?= $_SESSION['username'] ?>" name="ntoko">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Slogan</label>
+            <label for="slogan" class="col-sm-2 col-form-label">Slogan</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPassword" maxlength="48">
+              <input type="text" class="form-control" id="slogan" maxlength="48" name="slogan">
               <small id="passwordHelpBlock" class="form-text text-muted text-right">
                 Maksimum 48 karakter
               </small>
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Deskripsi</label>
+            <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="validationTextarea" maxlength="148"></textarea>
-              <small id="validationTextarea" class="form-text text-muted text-right">
+              <textarea class="form-control" id="deskripsi" maxlength="148" name="deskripsi"></textarea>
+              <small id="deskripsi" class="form-text text-muted text-right">
                 Maksimum 148 karakter
               </small>
             </div>
           </div>
+          <h6 class="pt-5">Gambar Toko</h6>
+          <div class="row">
+            <div class="col-2">
+              <img class="img-thumbnail" src="asset/online-store.png" alt="">
+            </div>
+            <div class="col">
+              <ul class="list-group" style="font-size:12px; color:#9e9e9e">
+                <li class="list-group-item" style="border:none;">Besar file: maksimum 10.000.000 bytes(10mb)
+                  <br>Ekstensi file yang diperbolehkan:JPG, PNG, JPEG</li>
+                  <li class="list-group" style="border:none;">
+                    <label for="img_toko" class="btn btn-outline-secondary col-4" style="border:1px solid #E0E0E0;border-radius:0;">
+                      Browse
+                    </label>
+                       <input id="img_toko" type="file" enctype="multipart/form-data" name="img_toko">
+                  </li>
+                </ul>
+              </div>
+            </div>
           <div class="form-group row">
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
-              <button type="button" class="btn btn-sm btn-info" name="simpan">Simpan</button>
+              <input type="submit" class="btn btn-sm btn-info" name="simpan" value="Simpan"></input>
             </div>
           </div>
+          <input type="hidden" name="hidtoko" value="ok">
         </form>
-        <h6 class="pt-5">Gambar Toko</h6>
-        <div class="row">
-          <div class="col-2">
-            <img class="img-thumbnail" src="asset/online-store.png" alt="">
-          </div>
-          <div class="col">
-            <ul class="list-group" style="font-size:12px; color:#9e9e9e">
-              <li class="list-group-item" style="border:none;">Besar file: maksimum 10.000.000 bytes(10mb)
-                <br>Ekstensi file yang diperbolehkan:JPG, PNG, JPEG</li>
-              <li class="list-group" style="border:none;">
-                <label class="btn btn-outline-secondary col-4" style="border:1px solid #E0E0E0;border-radius:0;">
-                    Browse <input type="file" hidden>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </body>
