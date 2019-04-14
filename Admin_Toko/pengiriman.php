@@ -44,9 +44,54 @@ if(isset($_COOKIE["login"])){
           </div>
         <hr>
         <h6>Layanan Jasa Pengiriman</h6>
+      <div class="row justify-content-center">
+        <div class="col md-4 overflow-hidden">
+          <div class="card" style="width: 15rem;">
+            <img src="asset/j&T.png" class="card-img-top img-thumbnail" style="border-bottom:1px solid #E5E5E5;" alt="...">
+              <div class="card-body" style="height:10rem;">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                  <label class="custom-control-label" for="defaultUnchecked">J&T REG</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col md-4 overflow-hidden">
+            <div class="card" style="width: 15rem;">
+              <img src="asset/j&T.png" class="card-img-top img-thumbnail" style="border-bottom:1px solid #E5E5E5;" alt="...">
+                <div class="card-body" style="height:10rem;">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                    <label class="custom-control-label" for="defaultUnchecked">J&T REG</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col md-4 overflow-hidden">
+              <div class="card" style="width: 15rem;">
+                <img src="asset/j&T.png" class="card-img-top img-thumbnail" style="border-bottom:1px solid #E5E5E5;" alt="...">
+                  <div class="card-body" style="height:10rem;">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                      <label class="custom-control-label" for="defaultUnchecked">J&T REG</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col md-4 overflow-hidden">
+                <div class="card" style="width: 15rem;">
+                  <img src="asset/j&T.png" class="card-img-top img-thumbnail" style="border-bottom:1px solid #E5E5E5;" alt="...">
+                    <div class="card-body" style="height:10rem;">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">J&T REG</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
       </div>
     </div>
-
   </body>
   <!-- Footer -->
   <footer id="myFooter">
