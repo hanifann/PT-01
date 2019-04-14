@@ -75,10 +75,20 @@ tampil_item();
     <ul class="list-group text-center">
       <li class="list-group-item pl-12 mt-3" style="background:#ffffff">
         <img class="img-thumbnail" src="/PT-01/main/img/facebook.png" alt="">
-        <p style="font-size:13px;">Toko Traktor<br>
+        <?php
+        $x = $_SESSION['username'];
+        global $connBarang;
+        $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+        $result2=mysqli_query($connBarang,$query2);
+      while ($roz = mysqli_fetch_array($result2)) {
+        ?>
+        <p style="font-size:13px;"><?=$roz[2]?><br>
           feedback:99%<br>
           Join:10-11-2017
         </p>
+        <?php
+      }
+      ?>
       </li>
       <li class="list-group-item pl-12 mt-3" style="background:#ffffff">
         Dukungan Pengiriman<hr><br>
