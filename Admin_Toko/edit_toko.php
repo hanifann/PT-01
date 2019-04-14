@@ -19,12 +19,13 @@ if(isset($_COOKIE["login"])){
   <body>
     <div class="container mt-4">
       <h6><img src="asset/shop.png" alt=""> &nbsp;Nama_Tokonya_Bang</h6>
-      <div class="container border pt-2 pb-3" style="background:#ffffff;" id="edit_toko">
+      <div class="container border pt-2 pb-3" style="background:#ffffff;">
+        <div id="edit_toko">
         <ul class="list-group list-group-horizontal-sm mb-3" style="border-radius:none;">
           <li class="list-group-item flex-fill no_border" style="border-bottom:2px solid #3FC0B7;"><a href="#">Informasi</a></li>
-          <li class="list-group-item flex-fill no_border">Etalase</li>
-          <li class="list-group-item flex-fill no_border">Pengiriman</li>
-          <li class="list-group-item flex-fill no_border">Produk Unggulan</li>
+          <li class="list-group-item flex-fill no_border" id="etalase"><a href="#">Etalase</a></li>
+          <li class="list-group-item flex-fill no_border" id="pengiriman"><a href="#">Pengiriman</a></li>
+          <li class="list-group-item flex-fill no_border" id="punggulan"><a href="#">Produk Unggulan</a></li>
         </ul>
         <h6 class="pb-4">Informasi Toko</h6>
         <form style="font-size:15px;">
@@ -77,7 +78,21 @@ if(isset($_COOKIE["login"])){
           </div>
         </div>
       </div>
+      </div>
     </div>
+    <script type="text/javascript">
+      $(document).on("click","#etalase",function() {
+        $("#edit_toko").load("etalase_toko.php #etalaset");
+      });
+
+      $(document).on("click","#pengiriman",function() {
+        $("#edit_toko").load("pengiriman.php #pengirimant");
+      });
+
+      $(document).on("click","#unggulan",function() {
+        $("#edit_toko").load("unggulan.php #punggulan");
+      });
+    </script>
   </body>
   <!-- Footer -->
   <footer id="myFooter">
