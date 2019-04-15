@@ -60,9 +60,6 @@ function login($data){
     $password = $data['password'];
     $cek = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 
-
-
-
     if(mysqli_num_rows($cek) > 0){
         $hasil = mysqli_fetch_assoc($cek);
         $passwordhash =  $hasil["password"];
@@ -86,7 +83,8 @@ function keranjang(){
 
     if (isset($_GET['tambah'])) {
     $tambah = $_GET['tambah'];
-    $queryKi = "INSERT INTO keranjang(id_jual) VALUES($tambah)";
+    $num = $_GET['udahlah'];
+    $queryKi = "INSERT INTO keranjang(id_jual,jumlah_barang) VALUES($tambah,$num)";
     $resultKi = mysqli_query($connBarang,$queryKi);
     if ($resultKi) {
       ?>
@@ -119,7 +117,11 @@ function keranjang(){
               <?php echo '<img src=" data:image;base64,'.$row1[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:150px; width:200px;" alt="...">'; ?>
           </div>
           <div class="col">
+            <form class="" action="/PT-01/checkout/checkout.php" method="get">
             <h3><?php echo $row1[2] ?></h3>
+            <h5 class="text-secondary">Jumlah Barang <?=$row[2]?></h5>
+            <input type="hidden" name="udahlah" min="1" value="<?=$row[2]?>">
+            <input type="hidden" name="bayar" value="<?=$row[1]?>">
           </div>
           <div class="col pb-3">
             <div class="text-center">
@@ -128,9 +130,16 @@ function keranjang(){
                 <?php
                 $rupiah = "Rp ".number_format($row1[6],0,',','.');
                 echo "<h5><b> $rupiah </b></h5>"; ?>
-                <a href="/PT-01/checkout/checkout.php?bayar=<?=$row[1] ?>&udahlah=1">
-                <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
-              </a>
+
+                <?php if (isset($_SESSION['login'])):
+                  sudahloginkeranjang();?>
+
+                <?php else:
+                  belumloginkeranjang();?>
+
+                <?php endif; ?>
+
+            </form>
             </div>
           </div>
         </div>
@@ -142,6 +151,38 @@ function keranjang(){
     <?php
   }
   }
+
+  function sudahloginkeranjang(){
+    ?>
+    <input type="submit" style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="lkp" value="Bayar"></input>
+    <?php } ?>
+
+    <?php function belumloginkeranjang(){
+      ?>
+      <!-- trigger -->
+      <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="" value="" data-toggle="modal" data-target="#blmlog">Bayar</button>
+      <!-- Modal -->
+      <div class="modal fade" id="blmlog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Anda belum login</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Silahkan login atau daftar
+            </div>
+            <div class="modal-footer">
+              <a href="/PT-01/login/login.php"><button type="button" class="btn btn-secondary">Login</button></a>
+              <a href="/PT-01/register/register.php"><button type="button" class="btn btn-primary">Daftar</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php }
+
 
   function tunggu(){
     global $connBarang;
@@ -256,9 +297,16 @@ function tampil_item(){
                 <div class="text-center col">
               <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
                 <h5 style="color:#FF7100;"><b> <?= $rupiah ?> </b></h5>
-                <form class="" action="/PT-01/checkout/checkout.php" method="get">
 
-                  <input type="hidden" name="bayar" value="<?= $row[0]   ?>">
+                <?php function gocheck(){?>
+                  <form class="" action="/PT-01/checkout/checkout.php" method="get">
+                    <?php
+                } ?>
+
+                <form class="" action="/PT-01/item/itemfun.php" method="get">
+
+                  <input type="hidden" name="bayar" value="<?= $row[0]?>">
+                  <input type="hidden" name="tambah" value="<?= $row[0]?>">
                   <input type="number" name="udahlah" min="1" value="1">
                   </script>
 
@@ -266,13 +314,13 @@ function tampil_item(){
             </div>
             </div>
             <div class="modal-footer">
-              <a href="/PT-01/keranjang/cart.php?tambah=<?php echo $row[0];?>"> <button type="button" name="tkk" class="btn btn-outline-success">
-                  Tambah ke keranjang
-                </button></a>
+              <a href="/PT-01/keranjang/cart.php?tambah=<?php echo $row[0];?>"> <input type="submit" name="lkk" class="btn btn-outline-success" value="Tambah ke keranjang">
+              </input></a>
+
               <a href="../checkout/checkout.php?bayar=<?= $row[0] ?>" class="col-6">
-                <input type="submit" name="lkp" value="Lanjutkan ke Pembayaran" style="background:#FF7100;color:white;"class="btn btn-success"></textInput>
+                <input type="submit" name="lkp" value="Lanjutkan ke Pembayaran" style="background:#FF7100;color:white;"class="btn btn-success"></input>
+              </form>
               </a>
-            </form>
             </div>
         </div>
       </div>
@@ -288,7 +336,7 @@ function tampil_item(){
       </div></h5>
       <?php
     }
-    
+
     ?>
 
       <div class="d-flex justify-content-center">
