@@ -4,10 +4,6 @@ require '/opt/lampp/htdocs/PT-01/register/conpik.php';
 
 function edit_toko($data,$image,$name){
   $ntoko = $data['ntoko'];
-  if (!isset($data['ntoko'])) {
-    $ntoko = "Toko ".$_SESSION['username'];
-  }
-
   $desctoko = $data['deskripsi'];
   $slotoko = $data['slogan'];
   $atoko = $data['atoko'];

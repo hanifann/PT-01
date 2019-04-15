@@ -57,19 +57,19 @@ if (isset($_POST['simpan'])) {
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nama Toko</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['ntok'] ?>" name="ntoko">
+              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['ntok'] ?>" name="ntoko" value="<?= $_SESSION['ntok'] ?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Alamat Toko</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['atok'] ?>" name="atoko">
+              <input type="text" class="form-control" id="staticEmail" placeholder="<?= $_SESSION['atok'] ?>" name="atoko" value="<?= $_SESSION['atok'] ?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="slogan" class="col-sm-2 col-form-label">Slogan</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="slogan" maxlength="48" name="slogan" placeholder="<?= $_SESSION['slotok'] ?>">
+              <input type="text" class="form-control" id="slogan" maxlength="48" name="slogan" placeholder="<?= $_SESSION['slotok'] ?>" value="<?= $_SESSION['slotok'] ?>">
               <small id="passwordHelpBlock" class="form-text text-muted text-right">
                 Maksimum 48 karakter
               </small>
@@ -78,7 +78,7 @@ if (isset($_POST['simpan'])) {
           <div class="form-group row">
             <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="deskripsi" maxlength="148" name="deskripsi" placeholder="<?= $_SESSION['destok'] ?>"></textarea>
+              <textarea class="form-control" id="deskripsi" maxlength="148" name="deskripsi" placeholder="<?= $_SESSION['destok'] ?>" value="<?= $_SESSION['destok'] ?>"></textarea>
               <small id="deskripsi" class="form-text text-muted text-right">
                 Maksimum 148 karakter
               </small>

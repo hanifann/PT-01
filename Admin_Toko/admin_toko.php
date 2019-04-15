@@ -59,7 +59,12 @@ function kat(){
        <img src="asset/online.png" class="img-thumbnail" alt="">
      </div>
      <div class="col mt-1">
-       <a href="edit_toko.php"><h4><?= $_SESSION['username'] ?> <span><img src="asset/pencil.png" alt=""></span> </h4>  </a>
+       <?php global $connBarang;
+       $sqlq = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+       $result = mysqli_query($connBarang,$sqlq);
+       $ala = mysqli_fetch_array($result);
+       ?>
+       <a href="edit_toko.php"><h4><?= $ala[2] ?> <span><img src="asset/pencil.png" alt=""></span> </h4>  </a>
        <hr>
        <div class="row">
         <div class="col-4">
@@ -67,10 +72,7 @@ function kat(){
             <tr>
               <td>
                 <img src="asset/map.png" data-toggle="tooltip" title="dikirm dari" alt="">
-                <?php global $connBarang;
-                $sqlq = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
-                $result = mysqli_query($connBarang,$sqlq);
-                $ala = mysqli_fetch_array($result);
+                <?php
                 echo "$ala[3]";
                 ?>
 

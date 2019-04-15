@@ -319,11 +319,10 @@ while ($roz = mysqli_fetch_array($result2)) {
 
 function tampil_biasa(){
   global $connBarang;
-  $x = $_SESSION['username'];
 
   $query = "SELECT * FROM jual_barang";
 
-  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
+  $query2 = "SELECT * FROM tb_toko";
 
   $result =mysqli_query($connBarang,$query);
   $result2=mysqli_query($connBarang,$query2);
@@ -342,7 +341,7 @@ function tampil_biasa(){
     <!-- <div class="container mb-5 col mt-5"> -->
       <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border" style="width: 11rem;">
+      <div class="card border" style="width: 11rem; height:400px">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
           <div class="card-body">
             <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
