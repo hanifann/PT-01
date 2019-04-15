@@ -332,8 +332,10 @@ function tampil_biasa(){
   <div class="row">
   <?php
     while ($roz = mysqli_fetch_array($result2)) {
-
+      $i=0;
   while($row = mysqli_fetch_array($result)){
+    if ($i<5) {
+
     ?>
     <table>
       <tr>
@@ -347,7 +349,7 @@ function tampil_biasa(){
             <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
             <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
             <?php $id=$row[1] ?>
-            <p><i class="fas fa-store-alt"></i> <?= $roz[2] ?></p>
+            <p><i class="fas fa-store-alt"></i> <?= $row[10] ?></p>
             <p><?= $row[4] ?></p>
             <div class="harga">
               <?php
@@ -362,6 +364,8 @@ function tampil_biasa(){
   </tr>
 </table>
   <?php
+  $i++;
+}
 }
 }?>
 </div>
