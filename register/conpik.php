@@ -128,7 +128,7 @@ function keranjang(){
                 <?php
                 $rupiah = "Rp ".number_format($row1[6],0,',','.');
                 echo "<h5><b> $rupiah </b></h5>"; ?>
-                <a href="/PT-01/checkout/checkout.php?bayar=<?= $row[1] ?>&udahlah=1">
+                <a href="/PT-01/checkout/checkout.php?bayar=<?=$row[1] ?>&udahlah=1">
                 <button type="button"  style="background:#FF7100;" class="mt-4 btn btn-success col-md-5" name="button">Bayar</button>
               </a>
             </div>
@@ -205,12 +205,8 @@ function tampil_item(){
     $id = $_GET['item'];
   }
   global $connBarang;
-  $x = $_SESSION['username'];
   $query = "SELECT * FROM jual_barang WHERE id_barang=$id";
-  $query2 = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
   $result= mysqli_query($connBarang,$query);
-  $result2=mysqli_query($connBarang,$query2);
-while ($roz = mysqli_fetch_array($result2)) {
   while ($row = mysqli_fetch_array($result)) {
 ?>
   <div class="d-flex justify-content-center row mt-3">
@@ -273,7 +269,7 @@ while ($roz = mysqli_fetch_array($result2)) {
               <a href="/PT-01/keranjang/cart.php?tambah=<?php echo $row[0];?>"> <button type="button" name="tkk" class="btn btn-outline-success">
                   Tambah ke keranjang
                 </button></a>
-              <a href="../checkout/checkout.php?bayar= <?= $row[0] ?>" class="col-6">
+              <a href="../checkout/checkout.php?bayar=<?= $row[0] ?>" class="col-6">
                 <input type="submit" name="lkp" value="Lanjutkan ke Pembayaran" style="background:#FF7100;color:white;"class="btn btn-success"></textInput>
               </a>
             </form>
@@ -292,7 +288,7 @@ while ($roz = mysqli_fetch_array($result2)) {
       </div></h5>
       <?php
     }
-    }
+    
     ?>
 
       <div class="d-flex justify-content-center">
@@ -341,7 +337,8 @@ function tampil_biasa(){
       <tr>
         <td>
     <!-- <div class="container mb-5 col mt-5"> -->
-      <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
+      <a href="/PT-01/item/items.php?item=<?php echo
+       $row[0]; ?>">
     <div class=" col mt-4 overflow-hidden">
       <div class="card border" style="width: 11rem; height:400px">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
