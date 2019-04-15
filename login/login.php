@@ -3,7 +3,6 @@ require '/opt/lampp/htdocs/PT-01/register/conpik.php';
 
 if(isset($_POST["login"])){
     login($_POST);
-    tampilkan($_POST);
 }
 
 ?>
@@ -32,7 +31,7 @@ if(isset($_POST["login"])){
   </head>
   <body>
     <h1>
-      <a href="/PT-01/main/main.php">  
+      <a href="/PT-01/main/main.php">
       <img style="width:15%" src="kambing.png" alt="">
     </a>
     </h1>

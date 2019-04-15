@@ -56,14 +56,22 @@ function kat(){
  <div class="container mt-3">
    <div class="row">
      <div class="col-sm-2">
-       <img src="asset/online.png" class="img-thumbnail" alt="">
-     </div>
-     <div class="col mt-1">
        <?php global $connBarang;
        $sqlq = "SELECT * FROM tb_toko WHERE id_user=(SELECT id FROM user WHERE username='$x')";
        $result = mysqli_query($connBarang,$sqlq);
        $ala = mysqli_fetch_array($result);
        ?>
+       <?php if (isset($ala['6'])) {
+         ?>
+         <img src="data:image;base64,<?=$ala['6']?>" class="img-thumbnail" alt="">
+       <?php
+     }else {
+       // code...
+      ?>
+       <img src="asset/online.png" class="img-thumbnail" alt="">
+     <?php } ?>
+     </div>
+     <div class="col mt-1">
        <a href="edit_toko.php"><h4><?= $ala[2] ?> <span><img src="asset/pencil.png" alt=""></span> </h4>  </a>
        <hr>
        <div class="row">
