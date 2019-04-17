@@ -17,7 +17,17 @@ if(isset($_COOKIE["login"])){
 
 <!-- PANEL -->
 <?php
+if (isset($_GET['bayar'])) {
+  $rupiah = $_SESSION['total'];
+  ?>
+  <h5 class="text-center mt-4">Total Pembelian</h5>
+  <h5 class="text-center" style="color:#FF7300;">
+  <p><b> <?=$rupiah?> </b></p>
+  </h5>
+  <?php
+}else{
 bayar();
+}
 function bayar(){
   if (isset($_GET['bayarkau'])) {
     $id = $_GET['bayarkau'];
@@ -35,7 +45,8 @@ function bayar(){
     <?php
     $r = $_SESSION['udahlah']*$row[6];
     $rupiah = "Rp ".number_format($r,0,',','.');
-    echo "<p><b> $rupiah </b></p>"; ?>
+    echo "<p><b> $rupiah </b></p>";
+    ?>
   </h5>
   <?php
 }

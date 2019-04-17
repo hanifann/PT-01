@@ -299,8 +299,14 @@ if (isset($_GET['lkp'])) {
              </select>
            </div>
          </div>
+         <?php if (isset($_GET['bsemua'])): ?>
+           <form class="" action="../Tata_Cara_Bayar/BayarBang.php" method="GET">
+             <button style="background:#FF5722;font-size:14px;" type="submit" name="bayar" value="ok" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
+           </form>
 
-         <a href="../Tata_Cara_Bayar/BayarBang.php?bayarkau= <?= $row[0];?>"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
+         <?php else: ?>
+           <a href="../Tata_Cara_Bayar/BayarBang.php?bayarkau= <?= $row[0];?>"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
+         <?php endif; ?>
        </div>
        <?php
 
