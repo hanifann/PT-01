@@ -144,7 +144,7 @@ if (isset($_GET['lkp'])) {
        global $connBarang;
        $query1 = "SELECT * FROM keranjang";
        $result1 = mysqli_query($connBarang,$query1);
-
+       $xx =0;
        while ($row1=mysqli_fetch_array($result1)) {
          // code...
          $query = "SELECT * FROM jual_barang WHERE id_barang=$row1[1]";
@@ -196,6 +196,11 @@ if (isset($_GET['lkp'])) {
                      $rupiah = "Rp ". number_format($sub,0,',','.');
                      ?>
                      <p><b> <?= $rupiah?> </b></p></b></h6>
+
+                     <?php
+                     $xx =$xx + $sub;
+                     $_SESSION['total']=$xx;
+                     ?>
                    </div>
                  </div>
 
@@ -236,7 +241,6 @@ if (isset($_GET['lkp'])) {
              $rupiah1 = "Rp ". number_format($r,0,',','.');
              echo "<p style='color:#d50000'><b> $rupiah1 </b></p>";
 
-             $_SESSION['total']=$rupiah1;
              ?>
 
              <div class="form-row">
@@ -261,20 +265,23 @@ if (isset($_GET['lkp'])) {
           global $connBarang;
           $query1 = "SELECT * FROM keranjang";
           $result1 = mysqli_query($connBarang,$query1);
-
-          $row1=mysqli_fetch_array($result1);
-            $x = array_sum($row1[2]);
-
+          $x = 0;
+          while($row1=mysqli_fetch_array($result1)){
+            $x = $x +$row1[2];
           $query = "SELECT * FROM jual_barang WHERE id_barang=$row1[2]";
           $result = mysqli_query($connBarang,$query);
-          $row = mysqli_fetch_array($result);
+          while($row = mysqli_fetch_array($result)){
+
+          }
+        }
+        echo $_SESSION['total'];
             ?>
         <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
           <p>Ringkasan Belanja</p><hr>
           <p>Total Barang : (<?= $x ?> Barang)</p>
 
             <?php
-            $r = $row[2];
+            $r = $_SESSION['total'];
           $rupiah1 = "Rp ". number_format($r,0,',','.');
           echo "<p style='color:#d50000'><b> $rupiah1 </b></p>";
 
@@ -296,7 +303,9 @@ if (isset($_GET['lkp'])) {
          <a href="../Tata_Cara_Bayar/BayarBang.php?bayarkau= <?= $row[0];?>"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
        </div>
        <?php
-     }
+
+   }
+
 
         ?>
         </div>
