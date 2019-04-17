@@ -9,6 +9,8 @@ if(isset($_COOKIE["login"])){
     }
 }
 
+
+
 if(isset($_POST["Alamat"])){
   alamat_jual($_POST);
 }
@@ -63,7 +65,11 @@ if (isset($_GET['lkp'])) {
        <div class="row">
 
          <?php
-         bayar();
+         if (isset($_GET['bsemua'])) {
+           bsemua();
+         }else{
+           bayar();
+         }
          function bayar(){
            if (isset($_GET['bayar'])) {
              $bayar = $_GET['bayar'];
@@ -133,13 +139,85 @@ if (isset($_GET['lkp'])) {
        <?php
      }
      }
+
+     function bsemua(){
+       global $connBarang;
+       $query1 = "SELECT * FROM keranjang";
+       $result1 = mysqli_query($connBarang,$query1);
+
+       while ($row1=mysqli_fetch_array($result1)) {
+         // code...
+         $query = "SELECT * FROM jual_barang WHERE id_barang=$row1[1]";
+         $result=mysqli_query($connBarang,$query);
+         while ($row=mysqli_fetch_array($result)) {
+           ?>
+           <div class="col-8">
+             <ul class="list-group">
+               <li class="list-group-item">
+                 <div class="container">
+                   <div class="row">
+                     <div class="col">
+                       <p>Barang</p><hr>
+
+                       <img src="data:image;base64,<?=$row[9]?>" class="img-thumbnail" alt="" style="height:150px;width:200px;">
+                     </div>
+
+                     <div class="col-5">
+                       <p>Deskripsi</p><hr>
+                       <div class="container">
+                         <h5><?= $row[2] ?></h5>
+                         <p>Kualitas Super</p>
+                       </div>
+                     </div>
+
+                     <div class="col">
+                       <p>Harga</p><hr>
+                       <div class="text-center">
+                         <h6 style="color:#d50000">
+                           <?php $rupiah = "Rp ". number_format($row[6],0,',','.');
+                           echo "<p><b> $rupiah </b></p>"; ?>
+                         </h6>
+                         <button type="button" onclick="hapus()" onclick="pindah()" name="button" class="btn btn-danger">Hapus</button>
+
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+
+                 <hr>
+                 <div class="row">
+                   <div class="col">
+                     <h5>Subtotal : <?= $row1[2]?> Barang</h5>
+                   </div>
+
+                   <div class="col-3 ml-5">
+                     <h6 style="color:#d50000"><b><?php $sub = $row[6];
+                     $sub = $row[6]*$row1[2];
+                     $rupiah = "Rp ". number_format($sub,0,',','.');
+                     ?>
+                     <p><b> <?= $rupiah?> </b></p></b></h6>
+                   </div>
+                 </div>
+
+                 </ul>
+             </ul>
+
+           </div>
+           <?php
+         }
+       }
+     }
        ?>
 
 
 <!--Aside-->
          <div class="col-4">
            <?php
+           if (isset($_GET['bsemua'])) {
+             lsemua();
+           }else{
            Lanjutkan();
+         }
            function Lanjutkan(){
              if (isset($_GET['bayar'])) {
                $id = $_GET['bayar'];
@@ -178,6 +256,48 @@ if (isset($_GET['lkp'])) {
           <?php
         }
         }
+
+        function lsemua(){
+          global $connBarang;
+          $query1 = "SELECT * FROM keranjang";
+          $result1 = mysqli_query($connBarang,$query1);
+
+          $row1=mysqli_fetch_array($result1);
+            $x = array_sum($row1[2]);
+
+          $query = "SELECT * FROM jual_barang WHERE id_barang=$row1[2]";
+          $result = mysqli_query($connBarang,$query);
+          $row = mysqli_fetch_array($result);
+            ?>
+        <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
+          <p>Ringkasan Belanja</p><hr>
+          <p>Total Barang : (<?= $x ?> Barang)</p>
+
+            <?php
+            $r = $row[2];
+          $rupiah1 = "Rp ". number_format($r,0,',','.');
+          echo "<p style='color:#d50000'><b> $rupiah1 </b></p>";
+
+          $_SESSION['total']=$rupiah1;
+          ?>
+
+          <div class="form-row">
+           <div class="form-group col-md-12">
+             <label for="katefori">Pilih Durasi Pengiriman</label>
+             <select id="kategori" name="kategori_barang" class="form-control">
+               <option selected>Pilih Durasi</option>
+               <option>Express (1-2 hari)<p class="kiri">Rp.20.0000</p></option>
+               <option>Regular (2-4 hari)<p class="kiri">Rp.15.0000</p></option>
+               <option>Ekonomi (3-6 hari)<p class="kiri">Rp.10.0000</p></option>
+             </select>
+           </div>
+         </div>
+
+         <a href="../Tata_Cara_Bayar/BayarBang.php?bayarkau= <?= $row[0];?>"><button style="background:#FF5722;font-size:14px;" type="button" name="bayar" class="btn btn-info btn-lg col-12">Lanjutkan Pembayaran</button></a>
+       </div>
+       <?php
+     }
+
         ?>
         </div>
          </div>

@@ -30,7 +30,10 @@
     function ada(){
         keranjang();
         ?>
-        <a href="#" class="btn btn-success float-right mt-2">Bayar Semua</a>
+        <form class="" action="/PT-01/checkout/checkout.php" method="get">
+
+        <button type="submit" class="btn btn-success "name="bsemua" value="ok">Bayar Semua</button>
+      </form>
         <?php
     }
 
@@ -52,7 +55,7 @@
 
 
   ?>
-  
+
   </div>
 </body>
 <footer id="myFooter">

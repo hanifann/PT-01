@@ -23,7 +23,6 @@ function filter($data){
   $konbarang = $data['konbarang'];
   $Hmin = $data['Hmin'];
   $Hmax = $data['Hmax'];
-  $x = $_SESSION['username'];
   global $connBarang;
 
   $query = "SELECT * FROM jual_barang WHERE kondisi_barang LIKE '%".$konbarang."%' && kategori_barang LIKE '%".$katbarang."%' && harga_barang BETWEEN '$Hmin' AND '$Hmax'";
@@ -54,7 +53,7 @@ function filter($data){
         <!-- <div class="container mb-5 col mt-5"> -->
           <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
         <div class=" col mt-4 overflow-hidden">
-          <div class="card border" style="width: 11rem;">
+          <div class="card border" style="width: 11rem; height:350px;">
             <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style=" height:100px;" alt="...">'; ?>
               <div class="card-body">
                 <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
