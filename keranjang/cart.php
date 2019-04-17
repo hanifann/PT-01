@@ -30,12 +30,45 @@
     function ada(){
         keranjang();
         ?>
-        <form class="" action="/PT-01/checkout/checkout.php" method="get">
 
-        <button type="submit" class="btn btn-success "name="bsemua" value="ok">Bayar Semua</button>
-      </form>
         <?php
-    }
+        if (isset($_SESSION['login'])){
+          ?>
+
+          <form class="" action="/PT-01/checkout/checkout.php" method="get">
+            <button type="submit" class="btn btn-success "name="bsemua" value="ok">Bayar Semua</button>
+          </form>
+          <?php
+        }else{
+          ?>
+          <button type="button" class="btn btn-success "name="bsemua" value="ok" data-toggle="modal" data-target="#slsemua">Bayar Semua</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="slsemua" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Anda belum login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Silahkan login atau daftar
+                </div>
+                <div class="modal-footer">
+                  <a href="/PT-01/login/login.php"><button type="button" class="btn btn-secondary">Login</button></a>
+                  <a href="/PT-01/register/register.php"><button type="button" class="btn btn-primary">Daftar</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+      }
+
+
+
 
         function kosong(){
 

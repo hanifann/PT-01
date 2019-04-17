@@ -13,7 +13,11 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
     <hr>
     <h1 class="text-center">Pembayaran Berhasil</h1>
     <?php
+    if ($_SESSION['bayar']=="ok") {
+      pembeliansemua();
+    }else{
     Pembelian($_SESSION);
+  }
       function Pembelian($data){
         $id = $data['bayarkau'];
         global $connBarang;
@@ -26,6 +30,20 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
 
           $query1 = "INSERT INTO penjualan(id_barang,nama_barang,jumlah_barang,harga_barang,user_toko) values($row[0],'$row[2]',$x,$row[6],'$row[10]')";
           $result1 = mysqli_query($connBarang,$query1);
+        }
+      }
+
+      function pembeliansemua(){
+        global $connBarang;
+        $query2 = "SELECT * FROM keranjang";
+        $result2 = mysqli_query($connBarang,$query2);
+        while($row2=mysqli_fetch_array($result2)){
+          $query1 = "SELECT * FROM jual_barang WHERE id_barang =$row2[1]";
+          $result1 = mysqli_query($connBarang,$query1);
+          while ($row1 = mysqli_fetch_array($result1)) {
+            $query = "INSERT INTO penjualan(id_barang,nama_barang,jumlah_barang,harga_barang,user_toko) VALUES($row1[0],'$row1[2]',$row2[2],$row1[6],'$row1[10]')";
+            $result = mysqli_query($connBarang,$query);
+          }
         }
       }
      ?>

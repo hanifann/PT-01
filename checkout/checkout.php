@@ -119,12 +119,12 @@ if (isset($_GET['lkp'])) {
                <hr>
                <div class="row">
                  <div class="col">
-                   <h5>Subtotal : <?= $_SESSION['udahlah'] ?> Barang</h5>
+                   <h5>Subtotal : <?= $_GET['udahlah'] ?> Barang</h5>
                  </div>
 
                  <div class="col-3 ml-5">
                    <h6 style="color:#d50000"><b><?php $sub = $row[6];
-                   $sub = $row[6]*$_SESSION['udahlah'];
+                   $sub = $row[6]*$_GET['udahlah'];
                    $rupiah = "Rp ". number_format($sub,0,',','.');
                    ?>
                    <p><b> <?= $rupiah?> </b></p></b></h6>
@@ -151,7 +151,7 @@ if (isset($_GET['lkp'])) {
          $result=mysqli_query($connBarang,$query);
          while ($row=mysqli_fetch_array($result)) {
            ?>
-           <div class="col-8">
+           <div class="col-8 mt-3">
              <ul class="list-group">
                <li class="list-group-item">
                  <div class="container">
@@ -234,10 +234,10 @@ if (isset($_GET['lkp'])) {
                ?>
            <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
              <p>Ringkasan Belanja</p><hr>
-             <p>Total Barang : (<?= $_SESSION['udahlah'] ?> Barang)</p>
+             <p>Total Barang : (<?= $_GET['udahlah'] ?> Barang)</p>
 
                <?php
-               $r = $row[6]*$_SESSION['udahlah'];
+               $r = $row[6]*$_GET['udahlah'];
              $rupiah1 = "Rp ". number_format($r,0,',','.');
              echo "<p style='color:#d50000'><b> $rupiah1 </b></p>";
 

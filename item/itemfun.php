@@ -8,6 +8,7 @@ if (isset($_GET['lkk'])) {
 if (isset($_GET['lkp'])) {
   $num=$_GET['udahlah'];
   $bayar=$_GET['bayar'];
+  header("location:/PT-01/checkout/checkout.php?bayar=$bayar&udahlah=$num");
 }
 
  ?>

@@ -18,8 +18,10 @@ if(isset($_COOKIE["login"])){
 <!-- PANEL -->
 <?php
 if (isset($_GET['bayar'])) {
+  $_SESSION['bayar']=$_GET['bayar'];
   $rupiah = $_SESSION['total'];
   ?>
+  <div class="container border mt-3">
   <h5 class="text-center mt-4">Total Pembelian</h5>
   <h5 class="text-center" style="color:#FF7300;">
   <p><b> <?=$rupiah?> </b></p>
