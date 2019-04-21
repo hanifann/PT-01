@@ -194,11 +194,11 @@ function keranjang(){
       if ($resultKi) {
         ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Berhasil !</strong> barang berhasil ditambahkan ke keranjang.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+          <strong>Berhasil !</strong> barang berhasil ditambahkan ke keranjang.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <?php
       }else{
       }
@@ -618,11 +618,26 @@ function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang
     '$harga_barang','$jml_barang','$deskripsi_barang','$image','$x')";
   $result = mysqli_query($connBarang,$query);
   if($result){
-    echo "<br/>Mantul bang";
+    ?>
+    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+      <strong>Berhasil !</strong> menambahkan barang.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php
   }else{
-    echo "<br/>gagal upload bang.";
+    ?>
+    <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+      <strong>Gagal !</strong> menambahkan barang.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php
   }
 }
+
 
 function alamat_jual($data){
   global $connJual;
