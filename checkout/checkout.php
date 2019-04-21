@@ -18,6 +18,7 @@ if(isset($_POST["Alamat"])){
 if (isset($_GET['lkp'])) {
   $x = $_GET['udahlah'];
   $_SESSION['udahlah']= $x;
+  echo $_SESSION['udahlah'];
 }
 
 ?>
