@@ -60,15 +60,11 @@ if(isset($_COOKIE["login"])){
       $queryk = "SELECT * FROM keranjang";
       $resultk = mysqli_query($connBarang,$queryk);
 
-      if (mysqli_num_rows($resultk)) {
-      ada();
-    }else if(mysqli_num_rows($resultk)==0){
-      if (isset($_GET['tambah'])) {
+      if(mysqli_num_rows($resultk)>1){
         ada();
       }else{
         kosong();
       }
-    }
 
 
       function ada(){
