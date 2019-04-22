@@ -387,7 +387,7 @@ function tampil_biasa(){
       <a href="/PT-01/item/items.php?item=<?php echo
        $row[0]; ?>">
     <div class=" col mt-4 overflow-hidden">
-      <div class="card border" style="width: 11rem; height:400px">
+      <div class="card border" style="width: 11rem; height:350px">
         <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style="border-bottom:1px solid #E5E5E5; height:100px;" alt="...">'; ?>
           <div class="card-body">
             <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
