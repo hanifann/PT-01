@@ -236,8 +236,7 @@ function keranjang(){
 
         </div>
       <?php
-    }?>
-      <?php
+    }
     }
     }
 
@@ -548,7 +547,6 @@ function tampilkan_admin(){
 }?>
 </div>
 </div>
-<hr>
   <?php
 }
 
