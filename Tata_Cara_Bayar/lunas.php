@@ -13,7 +13,7 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
     <hr>
     <h1 class="text-center">Pembayaran Berhasil</h1>
     <?php
-    if ($_SESSION['bayar']=="ok") {
+    if (isset($_SESSION['bayar'])) {
       pembeliansemua();
     }else{
     Pembelian($_SESSION);
