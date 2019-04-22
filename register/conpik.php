@@ -298,10 +298,6 @@ function tampil_item(){
               <?php  $rupiah = "Rp ".number_format($row[6],0,',','.');?>
                 <h5 style="color:#FF7100;"><b> <?= $rupiah ?> </b></h5>
 
-                <?php function gocheck(){?>
-                  <form class="" action="/PT-01/checkout/checkout.php" method="get">
-                    <?php
-                } ?>
 
                 <form class="" action="/PT-01/item/itemfun.php" method="get">
 
@@ -314,13 +310,12 @@ function tampil_item(){
             </div>
             </div>
             <div class="modal-footer">
-              <a href="/PT-01/keranjang/cart.php?tambah=<?php echo $row[0];?>"> <input type="submit" name="lkk" class="btn btn-outline-success" value="Tambah ke keranjang">
-              </input></a>
+              <input type="submit" name="lkk" class="btn btn-outline-success" value="Tambah ke keranjang">
+              </input>
 
-              <a href="../checkout/checkout.php?bayar=<?= $row[0] ?>" class="col-6">
+
                 <input type="submit" name="lkp" value="Lanjutkan ke Pembayaran" style="background:#FF7100;color:white;"class="btn btn-success"></input>
               </form>
-              </a>
             </div>
         </div>
       </div>

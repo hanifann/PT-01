@@ -275,9 +275,8 @@ if (isset($_GET['lkp'])) {
 
           }
         }
-        echo $_SESSION['total'];
             ?>
-        <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
+        <div class="container border rounded pt-3 pb-3" style="background:#ffffff">
           <p>Ringkasan Belanja</p><hr>
           <p>Total Barang : (<?= $x ?> Barang)</p>
 
