@@ -1,5 +1,4 @@
 <?php
-$conn = mysqli_connect("localhost","root","","Login_PT");
 
 $connBarang = mysqli_connect(
   "localhost",
@@ -12,11 +11,9 @@ if(!$connBarang){
   die("Gagal terhubung ke database");
 }
 
-
 if(!$connBarang){
   die("Gagal terhubung ke database");
 }
-
 
 function caribang($data){
 

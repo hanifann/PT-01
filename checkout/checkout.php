@@ -18,7 +18,6 @@ if(isset($_POST["Alamat"])){
 if (isset($_GET['lkp'])) {
   $x = $_GET['udahlah'];
   $_SESSION['udahlah']= $x;
-  echo $_SESSION['udahlah'];
 }
 
 ?>
@@ -121,6 +120,7 @@ if (isset($_GET['lkp'])) {
                <div class="row">
                  <div class="col">
                    <h5>Subtotal : <?= $_GET['udahlah'] ?> Barang</h5>
+                   <?php $_SESSION['udahlah']=$_GET['udahlah']; ?>
                  </div>
 
                  <div class="col-3 ml-5">
@@ -275,9 +275,8 @@ if (isset($_GET['lkp'])) {
 
           }
         }
-        echo $_SESSION['total'];
             ?>
-        <div class="container border rounded pt-3 pb-3" style="background:#ffffff;">
+        <div class="container border rounded pt-3 pb-3" style="background:#ffffff">
           <p>Ringkasan Belanja</p><hr>
           <p>Total Barang : (<?= $x ?> Barang)</p>
 
