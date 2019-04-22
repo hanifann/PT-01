@@ -598,9 +598,23 @@ if (isset($_GET['delete'])) {
     $result = mysqli_query($connBarang,$query);
 
     if($result){
-      echo "<br/>Mantul bang";
+      ?>
+      <div class="alert alert-success alert-dismissible container fade show mt-4" role="alert">
+        <strong>Berhasil !</strong> edit barang.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <?php
     }else{
-      echo "<br/>gagal update bang.";
+      ?>
+      <div class="alert alert-danger alert-dismissible container fade show mt-4" role="alert">
+        <strong>Gagal !</strong> edit barang.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <?php
     }
   }
 
@@ -617,7 +631,7 @@ function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang
   $result = mysqli_query($connBarang,$query);
   if($result){
     ?>
-    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+    <div class="alert alert-success container alert-dismissible fade show mt-4" role="alert">
       <strong>Berhasil !</strong> menambahkan barang.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -626,7 +640,7 @@ function saveimages($name,$image,$nama_barang, $kondisi_barang, $kategori_barang
     <?php
   }else{
     ?>
-    <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+    <div class="alert alert-danger container alert-dismissible fade show mt-4" role="alert">
       <strong>Gagal !</strong> menambahkan barang.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
