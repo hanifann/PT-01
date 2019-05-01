@@ -27,10 +27,6 @@ function filter($data){
 
   $query = "SELECT * FROM jual_barang WHERE kondisi_barang LIKE '%".$konbarang."%' && kategori_barang LIKE '%".$katbarang."%' && harga_barang BETWEEN '$Hmin' AND '$Hmax'";
 
-
-
-
-
   $result = mysqli_query($connBarang,$query);
   $y = mysqli_num_rows($result);
     ?>

@@ -80,28 +80,32 @@ if(isset($_COOKIE["login"])){
   <div class="container col-md-7">
     <div class="row text-center">
       <div class="col">
-        <a href="/PT-01/kategori/kategori.php"><img src="kategory/tractor.png" alt="" class="img-thumbnail"></a>
-        <p></p>
+        <a href="/PT-01/kategori/kategori.php?kategori=Pupuk"><img src="kategory/bucket.png" alt="" class="img-thumbnail"></a>
+        <p>Pupuk</p>
       </div>
       <div class="col">
-        <img src="kategory/bin.png" alt="" class="img-thumbnail">
-        <p></p>
+        <a href="/PT-01/kategori/kategori.php?kategori=Alat-alat pertanian"><img src="kategory/scythe.png" alt="" class="img-thumbnail"></a>
+        <p>Alat Pertanian</p>
+      </div>
+      <div class="col">
+        <a href="/PT-01/kategori/kategori.php?kategori=Bibit"><img src="kategory/plant-1.png" alt="" class="img-thumbnail"></a>
+        <p>Bibit</p>
       </div>
       <div class="w-60">
       </div>
 
       <div class="col">
-        <img src="kategory/duck.png" alt="" class="img-thumbnail">
-        <p></p>
+        <a href="/PT-01/kategori/kategori.php?kategori=Sewakan Alat"><img src="kategory/tractor.png" alt="" class="img-thumbnail"></a>
+        <p>Sewakan Alat</p>
       </div>
       <div class="col">
-        <img src="kategory/eggs.png" alt="" class="img-thumbnail">
-        <p></p>
+        <a href="/PT-01/kategori/kategori.php?kategori=Hasil Pertanian"><img src="kategory/vegetables.png" alt="" class="img-thumbnail"></a>
+        <p>Hasil Pertanian</p>
       </div>
       <div class="w-60">
       </div>
 
-      <div class="col">
+      <!-- <div class="col">
         <img src="kategory/farmer.png" alt="" class="img-thumbnail">
         <p></p>
       </div>
@@ -190,7 +194,7 @@ if(isset($_COOKIE["login"])){
         <p></p>
       </div>
       <div class="w-60">
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- end of category-->

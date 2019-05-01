@@ -1,5 +1,6 @@
 <?php
 require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
+require '/opt/lampp/htdocs/PT-01/header/header.php';
 
 if(isset($_COOKIE["login"])){
     if($_COOKIE["login"] == "ok"){
@@ -30,63 +31,18 @@ if(isset($_COOKIE["login"])){
 
    </head>
    <body>
-     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
-       <a class="nav-link" href="#">Jual Beli</a>
-       <a class="nav-link" href="#">Tutorial</a>
-       <div class="input-group md-form form-sm form-2 pl-0 w-50  ">
-       <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
-       <div class="input-group-append">
-         <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fas fa-search text-grey"
-             aria-hidden="true"></i></span>
-       </div>
-       </div>
-         <a class="nav-link dropdown-toggle dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Our Partner
-         </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a class="dropdown-item" href="#">Action</a>
-           <a class="dropdown-item" href="#">Another action</a>
-           <a class="dropdown-item" href="#">Something else here</a>
-         </div>
-         <?php
-         if(!isset($_SESSION['login'])){
-         echo "<a class='nav-link' href='/login/login.php'>Login </a>";
-       }else{
+     <?php
+     global $connBarang;
+     if (isset($_GET['kategori'])) {
+       $kat = $_GET['kategori'];
+     }
 
-         echo " Selamat Datang <a class='nav-link dropdown' href='/materi/logut.php'> hanifan</a>";
-       }
-         ?>
-     </nav>
-     <!--end of navbar 1-->
-     <!--navbar 2-->
-     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3FC0B7;">
-     <a class="navbar-brand" href="/main/main.php">Home</a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav mr-auto">
-         <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Kategori
-           </a>
-           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-             <a class="dropdown-item" href="#">Alat-alat Pertanian</a>
-             <a class="dropdown-item" href="#">Pupuk</a>
-             <a class="dropdown-item" href="#">Bibit</a>
-             <a class="dropdown-item" href="#">Sewa Alat Pertanian</a>
-           </div>
-         </li>
-       </ul>
-       <ul class="navbar-nav">
-         <li class="nav-item d-flex align-items-end">
-           <a class="nav-link" href="/barang/barang.php"><i class="fas fa-shopping-bag"> &nbsp;</i>Buat Lapak</a>
-         </li>
-       </ul>
-     </div>
-   </nav>
+     $query = "SELECT * FROM jual_barang WHERE kategori_barang='$kat'";
+     $result = mysqli_query($connBarang,$query);
+     ?>
    <div class="container pt-3">
-     <img src="coba.png" alt="">
+     <!-- <img src="coba.png" alt=""> -->
+     <h1 class="text-center">Kategori</h1>
 
    </div>
      <div class="container">
@@ -95,10 +51,49 @@ if(isset($_COOKIE["login"])){
            </div>
          </div>
          <hr>
+         <div class="laku">
+           <h6><i class="far fa-clock"> <?=$kat?> </i> <hr></h6>
+         </div>
 
-         <div class="row mt-5">
+         <?php
+         while($row = mysqli_fetch_array($result)){
+           ?>
+             <table>
+               <tr>
+                 <td>
+             <!-- <div class="container mb-5 col mt-5"> -->
+               <a href="/PT-01/item/items.php?item=<?php echo $row[0]; ?>">
+             <div class=" col mt-4 overflow-hidden">
+               <div class="card border" style="width: 11rem; height:350px;">
+                 <?php echo '<img src=" data:image;base64,'.$row[9].'" class="card-img-top" style=" height:100px;" alt="...">'; ?>
+                   <div class="card-body">
+                     <span style="font-size:10pt" class="badge badge-secondary"><?= $row[3] ?></span>
+                     <?php echo '<h5 class="card-title"> '.$row[2].' </h5>'; ?>
+                     <?php $id=$row[1] ?>
+                     <p><i class="fas fa-store-alt"></i> <?=$row[10]?></p>
+                     <p><?= $row[4] ?></p>
+                     <div class="harga">
+                       <?php
+                       $rupiah = "Rp ".number_format($row[6],0,',','.');
+                       echo "<p><b> $rupiah </b></p>"; ?>
+                     </div>
+                   </a>
+                 </div>
+               </div>
+             </div>
+           </td>
+           </tr>
+         </table>
+           <?php
+         }?>
+         </div>
 
-         <div class="col md-4 overflow-hidden mt-3">
+           <!-- </div> -->
+         </div>
+
+         <!-- <div class="row mt-5">
+
+         <div class="col overflow-hidden mt-3">
            <div class="card" style="width: 15rem;">
              <img src="/PT-01/main/img/data3.jpg" class="card-img-top" style="border-bottom:1px solid #E5E5E5;" alt="...">
              <div class="card-body">
@@ -125,7 +120,7 @@ if(isset($_COOKIE["login"])){
      </div>
 
      <?php
-       
+
      ?>
      <div class="col md-4 overflow-hidden mt-3">
        <div class="card" style="width: 15rem;">
@@ -259,7 +254,7 @@ if(isset($_COOKIE["login"])){
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 
 </div>
