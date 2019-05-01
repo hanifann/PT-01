@@ -97,7 +97,7 @@ if (isset($_POST['simpan'])) {
                     <label for="img_toko" class="btn btn-outline-secondary col-4" style="border:1px solid #E0E0E0;border-radius:0;">
                       Browse
                     </label>
-                       <input id="img_toko" type="file" enctype="multipart/form-data" name="img_toko">
+                       <input id="img_toko" type="file" hidden enctype="multipart/form-data" name="img_toko">
                   </li>
                 </ul>
               </div>

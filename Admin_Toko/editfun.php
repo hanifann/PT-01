@@ -18,9 +18,23 @@ function edit_toko($data,$image,$name){
   $result = mysqli_query($connBarang,$query);
   // $result2 = mysqli_query($connBarang,$query2);
   if ($result) {
-    echo "berhasil bang";
+    ?>
+    <div class="alert alert-success container alert-dismissible fade show mt-4" role="alert">
+      <strong>Berhasil !</strong> edit toko.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php
   }else{
-    echo "bapkamu ngebug";
+    ?>
+    <div class="alert alert-success container alert-dismissible fade show mt-4" role="alert">
+      <strong>Gagal !</strong> edit toko.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php
   }
 
   // if ($result2) {

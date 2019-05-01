@@ -127,7 +127,7 @@ if (isset($_POST["jual_barang"])) {
           </div>
           <div class="container" style="background: #ffffff; border: 1px solid #E0E0E0; margin-top:1rem;">
             <a href="/PT-01/Admin_Toko/admin_toko.php">
-              <button  "type="submit" class="btn btn-primary btn-lg btn-block" style="background:#3FC0B7;" name="jual_barang">Jual Barang</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block" style="background:#3FC0B7;" name="jual_barang">Jual Barang</button>
             </a>
 
             <hr>
