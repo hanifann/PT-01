@@ -203,7 +203,7 @@ if(isset($_COOKIE["login"])){
       tampil_biasa();
       ?>
     </div>
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex">
       <img class="agraris" src="Asset/Agraris.png" alt="">
     </div>
     <!--end of paling laku-->

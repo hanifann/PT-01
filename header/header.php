@@ -30,7 +30,7 @@ require_once '/opt/lampp/htdocs/PT-01/register/conpik.php';
     <div class="header border-bottom border-info sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background:#f7f7f7;height:4rem">
       <a class="nav-link" href="#">Jual Beli</a>
-      <a class="nav-link" href="/PT-01/turorial/tutorial.php">Tutorial</a>
+      <a class="nav-link" href="/PT-01/main/tutorial.php">Tutorial</a>
     <form class="col-5 form-inline needs-validation" method="post" action="/PT-01/cari/cari.php" >
 
 
